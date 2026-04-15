@@ -102,6 +102,20 @@ export type TeachingItem = {
 
 export const teaching: TeachingItem[] = [
   {
+    title: "TA — AAE 350: World Hunger and Malnutrition",
+    org: "University of Wisconsin–Madison",
+    period: "Spring 2024",
+    detail: "Undergraduate course on global food security and nutrition",
+    tag: "TEACHING",
+  },
+  {
+    title: "TA — AAE 215: Introduction to Agricultural and Applied Economics",
+    org: "University of Wisconsin–Madison",
+    period: "Fall 2023",
+    detail: "Undergraduate introduction to agricultural economics",
+    tag: "TEACHING",
+  },
+  {
     title: "TA — Development Economics (M.A.)",
     org: "New Economic School",
     period: "Fall 2020",
