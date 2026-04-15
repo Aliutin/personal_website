@@ -34,3 +34,9 @@ Screenshots for Claude/
 
 # Personal memo — not for the public repo
 memo.md
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
