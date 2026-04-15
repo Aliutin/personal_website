@@ -3,7 +3,7 @@ import Layout from "./Layout";
 import Home from "./pages/Home";
 import Research from "./pages/Research";
 import Blog from "./pages/Blog";
-import Teaching from "./pages/Teaching";
+import Experience from "./pages/Experience";
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="/research" element={<Research />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/teaching" element={<Teaching />} />
+          <Route path="/experience" element={<Experience />} />
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>

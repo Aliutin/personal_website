@@ -6,7 +6,7 @@ import {
   researchInterests,
   publications,
   blogPosts,
-  teaching,
+  experiences,
   images,
   publicationTagStyle,
 } from "../../content";
@@ -19,7 +19,19 @@ function scrollToContact() {
 export default function Home() {
   const recentPublications = publications.slice(0, 3);
   const recentBlogs = blogPosts.slice(0, 3);
-  const recentTeaching = teaching.slice(0, 2);
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const currentMonth = now.getMonth() + 1;
+  const recentExperiences = [...experiences]
+    .filter(
+      (e) =>
+        e.startYear < currentYear ||
+        (e.startYear === currentYear && e.startMonth <= currentMonth)
+    )
+    .sort((a, b) =>
+      b.startYear !== a.startYear ? b.startYear - a.startYear : b.startMonth - a.startMonth
+    )
+    .slice(0, 2);
 
   return (
     <>
@@ -218,36 +230,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Teaching preview */}
+      {/* Experience preview */}
       <section className="container mx-auto border-b border-[#d2d2d3]">
         <div className="px-6 lg:px-12 py-12 pb-6 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-          <h2 className="text-[40px] font-['Ovo',serif]">Teaching</h2>
+          <h2 className="text-[40px] font-['Ovo',serif]">Experience</h2>
           <Link
-            to="/teaching"
+            to="/experience"
             className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-wider text-[#1a1a1b] hover:text-[#ff7b1b] transition-colors"
           >
-            See teaching &amp; experience
+            See full timeline
             <ArrowDownRight className="w-4 h-4 -rotate-45" />
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {recentTeaching.map((item, idx) => (
-            <div
-              key={idx}
-              className="border-t border-[#d2d2d3] md:border-r last:md:border-r-0 p-8 flex flex-col"
-            >
-              <div className="flex items-center gap-2 text-[#757578] text-sm font-medium uppercase mb-6">
-                <span>{item.tag}</span>
-                <span className="w-1 h-1 bg-gray-400 rounded-full" />
-                <span>{item.period}</span>
+          {recentExperiences.map((item, idx) => {
+            const tag =
+              item.kind === "teaching"
+                ? "TEACHING"
+                : item.kind === "research"
+                ? "RESEARCH"
+                : "FIELDWORK";
+            const heading =
+              item.kind === "research" ? `${item.role} · ${item.title}` : item.title;
+            return (
+              <div
+                key={idx}
+                className="border-t border-[#d2d2d3] md:border-r last:md:border-r-0 p-8 flex flex-col"
+              >
+                <div className="flex items-center gap-2 text-[#757578] text-sm font-medium uppercase mb-6">
+                  <span>{tag}</span>
+                  <span className="w-1 h-1 bg-gray-400 rounded-full" />
+                  <span>{item.periodLabel}</span>
+                </div>
+                <h3 className="text-2xl font-['Ovo',serif] leading-tight mb-4">{heading}</h3>
+                <p className="text-[#565659] text-base font-medium mb-2">{item.orgShort}</p>
+                {item.detail && <p className="text-[#757578] text-sm">{item.detail}</p>}
               </div>
-              <h3 className="text-2xl font-['Ovo',serif] leading-tight mb-4">
-                {item.title}
-              </h3>
-              <p className="text-[#565659] text-base font-medium mb-2">{item.org}</p>
-              <p className="text-[#757578] text-sm">{item.detail}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

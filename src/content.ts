@@ -47,7 +47,7 @@ export type NavLink = { label: string; to: string };
 export const navLinks: NavLink[] = [
   { label: "About", to: "/" },
   { label: "Research", to: "/research" },
-  { label: "Teaching", to: "/teaching" },
+  { label: "Experience", to: "/experience" },
   { label: "Blog", to: "/blog" },
   { label: "CV", to: "/cv.pdf" },
 ];
@@ -92,80 +92,183 @@ export const education: Education[] = [
   },
 ];
 
-export type TeachingItem = {
+export type ExperienceKind = "teaching" | "research" | "fieldwork";
+
+export type Experience = {
+  kind: ExperienceKind;
+  role: string;
   title: string;
   org: string;
-  period: string;
-  detail: string;
-  tag: string;
+  orgShort: string;
+  periodLabel: string;
+  startYear: number;
+  startMonth: number;
+  endYear: number;
+  endMonth: number;
+  ongoing?: boolean;
+  detail?: string;
 };
 
-export const teaching: TeachingItem[] = [
+export const experiences: Experience[] = [
   {
-    title: "TA — AAE 350: World Hunger and Malnutrition",
+    kind: "research",
+    role: "Research Assistant",
+    title: "Paul Castañeda Dower",
     org: "University of Wisconsin–Madison",
-    period: "Spring 2024",
+    orgShort: "UW–Madison",
+    periodLabel: "Summer 2023",
+    startYear: 2023,
+    startMonth: 6,
+    endYear: 2023,
+    endMonth: 8,
+    detail: "Russian economic history",
+  },
+  {
+    kind: "research",
+    role: "Research Assistant",
+    title: "Paul Castañeda Dower",
+    org: "University of Wisconsin–Madison",
+    orgShort: "UW–Madison",
+    periodLabel: "Summer 2026",
+    startYear: 2026,
+    startMonth: 6,
+    endYear: 2026,
+    endMonth: 8,
+    detail: "Community institutions and adaptation",
+  },
+  {
+    kind: "research",
+    role: "Research Assistant",
+    title: "Dustin Frye & Gisella Kagy",
+    org: "University of Wisconsin–Madison",
+    orgShort: "UW–Madison",
+    periodLabel: "Fall 2024 – Summer 2025",
+    startYear: 2024,
+    startMonth: 9,
+    endYear: 2025,
+    endMonth: 8,
+    detail: "Environmental health and economic history",
+  },
+  {
+    kind: "fieldwork",
+    role: "Fieldwork",
+    title: "Uzbekistan — Farmer interviews on water-saving technology",
+    org: "7 regions of Uzbekistan",
+    orgShort: "Uzbekistan",
+    periodLabel: "Summer 2023",
+    startYear: 2023,
+    startMonth: 6,
+    endYear: 2023,
+    endMonth: 8,
+    detail:
+      "Focus group discussions and in-depth interviews with farmers across 7 regions of Uzbekistan on adoption of water-saving technology. Worked together with Paul Castañeda Dower under IFPRI cooperation.",
+  },
+  {
+    kind: "fieldwork",
+    role: "Fieldwork",
+    title: "Uzbekistan — Large farmer survey (IFPRI collaboration)",
+    org: "IFPRI · CGIAR NEXUS Gains",
+    orgShort: "Uzbekistan · IFPRI",
+    periodLabel: "Sep – Nov 2024",
+    startYear: 2024,
+    startMonth: 9,
+    endYear: 2024,
+    endMonth: 11,
+    detail:
+      "Prepared a large interview study of small and large farmers in Uzbekistan with IFPRI. Trained and monitored local enumerators, traveled across survey regions.",
+  },
+  {
+    kind: "fieldwork",
+    role: "Fieldwork",
+    title: "Uzbekistan — Behavioral games experiment",
+    org: "CGIAR SPIA · with Jamshid Shukurullaev",
+    orgShort: "Uzbekistan · SPIA",
+    periodLabel: "Nov – Dec 2024",
+    startYear: 2024,
+    startMonth: 11,
+    endYear: 2024,
+    endMonth: 12,
+    detail:
+      "Ran the framed-field behavioral games experiment on a subsample from the IFPRI farmer survey. Funded by CGIAR SPIA, conducted jointly with Jamshid Shukurullaev.",
+  },
+  {
+    kind: "teaching",
+    role: "TA",
+    title: "AAE 350: World Hunger and Malnutrition",
+    org: "University of Wisconsin–Madison",
+    orgShort: "UW–Madison",
+    periodLabel: "Spring 2024",
+    startYear: 2024,
+    startMonth: 1,
+    endYear: 2024,
+    endMonth: 5,
     detail: "Undergraduate course on global food security and nutrition",
-    tag: "TEACHING",
   },
   {
-    title: "TA — AAE 215: Introduction to Agricultural and Applied Economics",
+    kind: "teaching",
+    role: "TA",
+    title: "AAE 215: Introduction to Agricultural and Applied Economics",
     org: "University of Wisconsin–Madison",
-    period: "Fall 2023",
+    orgShort: "UW–Madison",
+    periodLabel: "Fall 2023",
+    startYear: 2023,
+    startMonth: 9,
+    endYear: 2023,
+    endMonth: 12,
     detail: "Undergraduate introduction to agricultural economics",
-    tag: "TEACHING",
   },
   {
-    title: "TA — Development Economics (M.A.)",
+    kind: "research",
+    role: "Research Assistant",
+    title: "Corbett Grainger",
+    org: "University of Wisconsin–Madison",
+    orgShort: "UW–Madison",
+    periodLabel: "Summer 2022 – Spring 2023",
+    startYear: 2022,
+    startMonth: 6,
+    endYear: 2023,
+    endMonth: 5,
+    detail: "Environmental and natural-resource economics",
+  },
+  {
+    kind: "research",
+    role: "Research Assistant",
+    title: "Andrei Markevich",
     org: "New Economic School",
-    period: "Fall 2020",
-    detail: "Course by Michele Valsecchi, Assistant Professor, NES",
-    tag: "TEACHING",
-  },
-];
-
-export type RARole = { role: string; pi: string; org: string; period: string };
-
-export const researchAssistantRoles: RARole[] = [
-  {
-    role: "Research Assistant",
-    pi: "Paul Castañeda Dower",
-    org: "UW–Madison",
-    period: "Summer 2023 – present",
+    orgShort: "NES",
+    periodLabel: "Winter 2020 – Summer 2021",
+    startYear: 2020,
+    startMonth: 12,
+    endYear: 2021,
+    endMonth: 8,
+    detail: "Russian economic history",
   },
   {
-    role: "Research Assistant",
-    pi: "Corbett Grainger",
-    org: "UW–Madison",
-    period: "Summer 2022 – Spring 2023",
-  },
-  {
-    role: "Research Assistant",
-    pi: "Andrei Markevich",
-    org: "New Economic School",
-    period: "Winter 2020 – Summer 2021",
-  },
-  {
+    kind: "research",
     role: "Junior Researcher",
-    pi: "Hosny Zoabi",
+    title: "Hosny Zoabi",
     org: "New Economic School",
-    period: "Winter 2020 – Summer 2021",
+    orgShort: "NES",
+    periodLabel: "Winter 2020 – Summer 2021",
+    startYear: 2020,
+    startMonth: 12,
+    endYear: 2021,
+    endMonth: 8,
+    detail: "Family and growth economics",
   },
-];
-
-export type Tool = { name: string; detail: string };
-
-export const tools: Tool[] = [
-  { name: "Python", detail: "Pandas, GeoPandas, NumPy, SciPy" },
-  { name: "ArcGIS", detail: "Geospatial analysis" },
-  { name: "QGIS", detail: "Open-source GIS" },
-  { name: "Stata", detail: "Econometrics" },
-  { name: "LaTeX", detail: "Typesetting" },
-];
-
-export const languages = [
-  { name: "Russian", level: "Native" },
-  { name: "English", level: "Fluent" },
+  {
+    kind: "teaching",
+    role: "TA",
+    title: "Development Economics (M.A.)",
+    org: "New Economic School",
+    orgShort: "NES",
+    periodLabel: "Fall 2020",
+    startYear: 2020,
+    startMonth: 9,
+    endYear: 2020,
+    endMonth: 12,
+    detail: "Course by Michele Valsecchi, Assistant Professor, NES",
+  },
 ];
 
 export type PublicationFigure = { src: string; caption?: string };
