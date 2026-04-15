@@ -7,6 +7,7 @@ import portrait from "./assets/9639e22a7351a93d2c01765205f58231eff8179f.webp";
 import column1 from "./assets/bf0b7251441e4704ceca49b268e03bf6d4a58be1.webp";
 import column2 from "./assets/5136d2c4cc870258fb915013ac009e1fe7620808.webp";
 import column3 from "./assets/9c6167c3e6a3b4333785e3ce161f7341c950782d.webp";
+import ifpriAnonymityCover from "./assets/ifpri-anonymity-uzbekistan.webp";
 import personal1 from "./assets/cbb1fa94e4f852cb03119d1c6bddf1948f01c8e1.webp";
 import personal2 from "./assets/ef7a374bee7e4966b910f79bca9b81011dc988cd.webp";
 import personal3 from "./assets/9edfaff294da4b113d5d956e36f592c600ae24bf.webp";
@@ -17,6 +18,7 @@ export const images = {
   column1,
   column2,
   column3,
+  ifpriAnonymityCover,
   personal1,
   personal2,
   personal3,
@@ -205,7 +207,7 @@ export const blogPosts: BlogPost[] = [
     venue: "IFPRI",
     year: "2025",
     url: "https://www.ifpri.org/blog/policy-change-and-farmer-feedback-does-anonymity-matter-evidence-from-uzbekistan/",
-    image: column2,
+    image: ifpriAnonymityCover,
   },
   {
     title:
