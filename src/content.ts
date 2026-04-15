@@ -168,6 +168,18 @@ export const languages = [
   { name: "English", level: "Fluent" },
 ];
 
+export type PublicationFigure = { src: string; caption?: string };
+
+export function publicationTagStyle(tag: string) {
+  if (tag === "JOB MARKET PAPER") {
+    return { text: "text-[#ff7b1b]", dot: "bg-[#ff7b1b]" };
+  }
+  if (tag === "UNDER REVIEW") {
+    return { text: "text-[#1a1a1b]", dot: "bg-[#1a1a1b]" };
+  }
+  return { text: "text-[#757578]", dot: "bg-gray-400" };
+}
+
 export type Publication = {
   title: string;
   authors: string[];
@@ -176,17 +188,59 @@ export type Publication = {
   tag: string;
   url?: string;
   abstract?: string;
+  keyFindings?: string[];
+  figures?: PublicationFigure[];
+  draftOnRequest?: boolean;
 };
 
 export const publications: Publication[] = [
   {
     title:
-      "Water Conservation Through Simplified Drip Irrigation Scheduling for Cotton Cultivation in Uzbekistan",
-    authors: ["Jamshid Shukurullaev", "Anton Liutin", "Ahmad Hamidov"],
-    year: "2025",
-    venue: "SSRN Working Paper",
+      "Upstream Advantage in Surface Water Systems: Measuring Inequality Using a Water-Graph Approach",
+    authors: ["Anton Liutin"],
+    year: "2026",
+    venue: "Job Market Paper · UW–Madison",
+    tag: "JOB MARKET PAPER",
+    draftOnRequest: true,
+    abstract:
+      "Surface water flows sequentially through canal networks, reaching upstream users before downstream users. Tail-end deprivation is well documented in developing countries with weak institutions, but whether formal water rights eliminate this inequality in developed settings remains untested at scale. I construct a \u201Cwater-graph\u201D mapping upstream\u2013downstream relationships among 54,946 agricultural plots across Arizona's canal networks and test whether network position affects crop outcomes during the unprecedented Colorado River drought (2016\u20132023). A \u201Cdonut\u201D identification strategy isolates far upstream competition (>1\u201310\u00A0km) from spatially correlated local shocks. Downstream plots experience significantly lower vegetation health, moisture, and evapotranspiration; the drought amplification of this position penalty roughly doubles to triples across outcomes between the full canal path and the 10\u00A0km cutoff (2.0\u00D7 for NDMI, 2.2\u00D7 for GCVI, 2.5\u00D7 for ET). The position\u2013drought gradient is significant only in surface-water-dominant districts\u2014groundwater access eliminates it entirely. Physical delivery infrastructure creates distributional consequences not resolved by prior appropriation rights, pointing to infrastructure targeting and groundwater investment as policy levers in arid regions facing increasing scarcity.",
+    keyFindings: [
+      "Downstream plots experience significantly lower NDMI, GCVI, and evapotranspiration even after controlling for water rights, soil quality, and market proximity.",
+      "Drought amplifies the position penalty by 2\u00D7\u20132.5\u00D7, and a downstream placebo rules out spatially correlated local shocks.",
+      "Groundwater access eliminates the position\u2013drought gradient entirely, pointing to infrastructure targeting and groundwater investment as policy levers.",
+    ],
+  },
+  {
+    title:
+      "Using Behavioral Games to Understand Water-Saving Technology Adoption in Uzbekistan",
+    authors: ["Anton Liutin", "Jamshid Shukurullaev"],
+    year: "2026",
+    venue: "Working Paper",
     tag: "WORKING PAPER",
+    draftOnRequest: true,
+    abstract:
+      "We conduct a framed field experiment with 190 farmers across four regions of Uzbekistan, modifying the standard Irrigation Game to include an explicit drip irrigation adoption decision. Players positioned along a simulated canal make sequential choices about infrastructure investment, water extraction, and technology adoption. We develop a two-social-cost model that separately captures community norms around infrastructure investment (SC_I) and water extraction (SC_W). The model predicts that (i) adoption concentrates among water-scarce downstream players, (ii) upstream adoption generates positive spillovers that cascade along the canal, and (iii) social norms and technology adoption are complements\u2014stronger water-sharing norms amplify the relative advantage of drip irrigation. The experimental data confirm these predictions: downstream players adopt at higher rates (62% vs. 49% for upstream), each upstream adopter increases downstream water availability by 0.407 units (p < 0.01), and upstream adoption triggers peer adoption downstream. Linking experimental behavior to survey data, we find that farmers' in-game decisions reflect their real-world water access conditions, irrigation costs, and social network connections (p < 0.01)\u2014validating behavioral games as tools for measuring technology adoption decisions. These findings support position-based targeting of subsidies and leveraging farmer networks to diffuse water-saving technologies.",
+    keyFindings: [
+      "Downstream players adopt drip irrigation at 62% versus 49% for upstream players; each upstream adopter raises downstream water availability by 0.407 units (p < 0.01).",
+      "Upstream adoption triggers peer adoption cascades downstream, consistent with a positive-spillover mechanism.",
+      "In-game decisions track real-world water access, irrigation costs, and social networks, validating behavioral games as measurement tools for adoption decisions.",
+    ],
+  },
+  {
+    title:
+      "Water Conservation Through Simplified Drip Irrigation Scheduling for Cotton Cultivation in Uzbekistan",
+    authors: ["Jamshid Shukurullaev", "Ahmad Hamidov", "Anton Liutin"],
+    year: "2025",
+    venue: "R&R · Water (MDPI)",
+    tag: "UNDER REVIEW",
     url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5535146",
+    abstract:
+      "Water scarcity has become an increasingly critical issue in Uzbekistan's agricultural sector, with significant decline in available water resources since the 1990s. Despite drip irrigation's water-saving potential, a research gap exists in practical standards for farmers transitioning from furrow irrigation, especially under heterogeneous agricultural conditions. This study validates a simplified, evapotranspiration-based irrigation scheduling framework through a dual-phase approach: a controlled longitudinal experiment (2021\u20132023) and a farmer adoption panel (N = 32). Our controlled experiments demonstrated that scientific drip scheduling increased cotton yields by 39.9% while reducing water use by 24.3% compared to furrow irrigation. Our Difference-in-Differences analysis of the farmer panel revealed a novel behavioral insight: unguided farmers utilizing drip technology systematically under-irrigated, failing to meet crop physiological needs. Spatial analysis across water-stressed agricultural regions reveals that evaporation rates exhibit remarkable temporal stability precisely where water conservation is most urgently needed, enabling scalable implementation through a \u201Chub-and-spoke\u201D model in which centralized evaporation calculations reliably inform irrigation schedules across surrounding areas without requiring sophisticated equipment at individual farms.",
+    keyFindings: [
+      "Scientific drip scheduling raised cotton yields by 39.9% while cutting water use by 24.3% relative to furrow irrigation in a controlled longitudinal experiment (2021\u20132023).",
+      "Difference-in-differences on a farmer adoption panel (N = 32) shows unguided drip adopters systematically under-irrigate and fail to meet crop physiological needs\u2014technology alone is not enough.",
+      "Evaporation rates are temporally stable in the most water-stressed regions, supporting a \u201Chub-and-spoke\u201D scheduling model that scales without farm-level equipment.",
+    ],
   },
 ];
 

@@ -8,6 +8,7 @@ import {
   blogPosts,
   teaching,
   images,
+  publicationTagStyle,
 } from "../../content";
 
 function scrollToContact() {
@@ -133,37 +134,42 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex flex-col">
-          {recentPublications.map((pub, idx) => (
-            <article
-              key={idx}
-              className="border-t border-[#d2d2d3] px-6 lg:px-12 py-10 flex flex-col lg:flex-row gap-6 lg:gap-12"
-            >
-              <div className="lg:w-1/4 shrink-0">
-                <div className="flex items-center gap-2 text-[#757578] text-sm font-medium uppercase tracking-wider">
-                  <span>{pub.tag}</span>
-                  <span className="w-1 h-1 bg-gray-400 rounded-full" />
-                  <span>{pub.year}</span>
+          {recentPublications.map((pub, idx) => {
+            const tagStyle = publicationTagStyle(pub.tag);
+            return (
+              <article
+                key={idx}
+                className="border-t border-[#d2d2d3] px-6 lg:px-12 py-10 flex flex-col lg:flex-row gap-6 lg:gap-12"
+              >
+                <div className="lg:w-1/4 shrink-0">
+                  <div
+                    className={`flex items-center gap-2 text-sm font-medium uppercase tracking-wider ${tagStyle.text}`}
+                  >
+                    <span>{pub.tag}</span>
+                    <span className={`w-1 h-1 rounded-full ${tagStyle.dot}`} />
+                    <span>{pub.year}</span>
+                  </div>
+                  <p className="text-[#565659] text-sm font-medium mt-2">{pub.venue}</p>
                 </div>
-                <p className="text-[#565659] text-sm font-medium mt-2">{pub.venue}</p>
-              </div>
-              <div className="lg:w-3/4">
-                <h3 className="text-2xl lg:text-[26px] font-['Ovo',serif] leading-tight">
-                  {pub.title}
-                </h3>
-                <p className="text-[#565659] text-base leading-relaxed mt-3">
-                  {pub.authors.map((a, i) => {
-                    const isMe = a.includes("Liutin");
-                    return (
-                      <span key={i}>
-                        <span className={isMe ? "font-semibold text-[#1a1a1b]" : ""}>{a}</span>
-                        {i < pub.authors.length - 1 ? ", " : ""}
-                      </span>
-                    );
-                  })}
-                </p>
-              </div>
-            </article>
-          ))}
+                <div className="lg:w-3/4">
+                  <h3 className="text-2xl lg:text-[26px] font-['Ovo',serif] leading-tight">
+                    {pub.title}
+                  </h3>
+                  <p className="text-[#565659] text-base leading-relaxed mt-3">
+                    {pub.authors.map((a, i) => {
+                      const isMe = a.includes("Liutin");
+                      return (
+                        <span key={i}>
+                          <span className={isMe ? "font-semibold text-[#1a1a1b]" : ""}>{a}</span>
+                          {i < pub.authors.length - 1 ? ", " : ""}
+                        </span>
+                      );
+                    })}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
