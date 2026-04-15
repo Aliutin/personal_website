@@ -9,7 +9,7 @@ export default function Teaching() {
             Teaching &amp; Working Experience
           </h1>
           <p className="text-[#565659] text-lg font-medium mt-4 max-w-2xl">
-            Courses taught, tutoring, and research assistant roles.
+            Courses taught and research assistant roles.
           </p>
         </div>
       </section>

@@ -122,13 +122,6 @@ export const teaching: TeachingItem[] = [
     detail: "Course by Michele Valsecchi, Assistant Professor, NES",
     tag: "TEACHING",
   },
-  {
-    title: "Individual Tutoring — Mathematics for Economics",
-    org: "Students from NES, HSE Math Dept, ICES HSE",
-    period: "2017 – 2022",
-    detail: "Bachelor & Master degree students in math-intensive programs",
-    tag: "TUTORING",
-  },
 ];
 
 export type RARole = { role: string; pi: string; org: string; period: string };
