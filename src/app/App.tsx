@@ -12,17 +12,17 @@ import {
   Area,
 } from "recharts";
 
-import portrait from "../assets/9639e22a7351a93d2c01765205f58231eff8179f.png";
-import research1Bg from "../assets/4cd09791391bbe4100c0987d0be2d891ff9f42e0.png";
-import column1 from "../assets/bf0b7251441e4704ceca49b268e03bf6d4a58be1.png";
-import column2 from "../assets/5136d2c4cc870258fb915013ac009e1fe7620808.png";
-import column3 from "../assets/9c6167c3e6a3b4333785e3ce161f7341c950782d.png";
-import column4 from "../assets/671168248dd320b7836d5185ee585e80668204a2.png";
-import column5 from "../assets/7dec002ac553762ed6090e415cec09bbeae05a57.png";
-import personal1 from "../assets/cbb1fa94e4f852cb03119d1c6bddf1948f01c8e1.png";
-import personal2 from "../assets/ef7a374bee7e4966b910f79bca9b81011dc988cd.png";
-import personal3 from "../assets/9edfaff294da4b113d5d956e36f592c600ae24bf.png";
-import personal4 from "../assets/0b20486cba0eb82a4807829f9369745f7f68026a.png";
+import portrait from "../assets/9639e22a7351a93d2c01765205f58231eff8179f.webp";
+import research1Bg from "../assets/4cd09791391bbe4100c0987d0be2d891ff9f42e0.webp";
+import column1 from "../assets/bf0b7251441e4704ceca49b268e03bf6d4a58be1.webp";
+import column2 from "../assets/5136d2c4cc870258fb915013ac009e1fe7620808.webp";
+import column3 from "../assets/9c6167c3e6a3b4333785e3ce161f7341c950782d.webp";
+import column4 from "../assets/671168248dd320b7836d5185ee585e80668204a2.webp";
+import column5 from "../assets/7dec002ac553762ed6090e415cec09bbeae05a57.webp";
+import personal1 from "../assets/cbb1fa94e4f852cb03119d1c6bddf1948f01c8e1.webp";
+import personal2 from "../assets/ef7a374bee7e4966b910f79bca9b81011dc988cd.webp";
+import personal3 from "../assets/9edfaff294da4b113d5d956e36f592c600ae24bf.webp";
+import personal4 from "../assets/0b20486cba0eb82a4807829f9369745f7f68026a.webp";
 
 // ============================================================================
 // EDITABLE CONTENT — change values here, the page below will update automatically
