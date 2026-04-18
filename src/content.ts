@@ -12,6 +12,7 @@ import personal1 from "./assets/cbb1fa94e4f852cb03119d1c6bddf1948f01c8e1.webp";
 import personal2 from "./assets/ef7a374bee7e4966b910f79bca9b81011dc988cd.webp";
 import personal3 from "./assets/9edfaff294da4b113d5d956e36f592c600ae24bf.webp";
 import personal4 from "./assets/0b20486cba0eb82a4807829f9369745f7f68026a.webp";
+import bagdata from "./assets/Gemini_Generated_Image_3czbop3czbop3czb.png"
 
 export const images = {
   portrait,
@@ -23,6 +24,7 @@ export const images = {
   personal2,
   personal3,
   personal4,
+  bagdata,
 };
 
 export const profile = {

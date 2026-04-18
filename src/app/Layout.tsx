@@ -12,8 +12,11 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#f9f9f7] border-b border-[#d2d2d3] sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between gap-6">
+    <header className="bg-[#f9f9f7] border-b border-[#d2d2d3] sticky top-0 z-50 w-full">
+      {/* Здесь мы задали жесткую ширину max-w-[1440px], центрирование mx-auto 
+        и отступы px-8 (по 32px слева и справа) 
+      */}
+      <div className="max-w-[1440px] mx-auto px-8 py-4 flex items-center justify-between gap-6">
         <Link to="/" className="flex flex-col min-w-0">
           <h1 className="text-4xl font-['Ovo',serif] leading-tight whitespace-nowrap">
             {profile.name}
@@ -24,8 +27,8 @@ function Header() {
           </div>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-5 shrink-0">
-          <nav className="flex gap-5 font-medium text-[#565659]">
+        <div className="hidden lg:flex items-center gap-8 shrink-0">
+          <nav className="flex gap-8 font-medium text-[#565659]">
             {navLinks.map((link) =>
               link.to.startsWith("/") && !link.to.endsWith(".pdf") ? (
                 <NavLink
@@ -72,7 +75,8 @@ function Header() {
 
       {menuOpen && (
         <div className="lg:hidden border-t border-[#d2d2d3] bg-[#f9f9f7]">
-          <nav className="container mx-auto px-6 py-6 flex flex-col gap-4 font-medium text-[#565659]">
+          {/* В мобильном меню тоже применяем max-w-[1440px] и px-8 для консистентности */}
+          <nav className="max-w-[1440px] mx-auto px-8 py-6 flex flex-col gap-4 font-medium text-[#565659]">
             {navLinks.map((link) =>
               link.to.startsWith("/") && !link.to.endsWith(".pdf") ? (
                 <Link
@@ -114,61 +118,54 @@ function Header() {
 
 function Footer() {
   return (
-    <footer id="contact" className="bg-[#f3f3f4] py-16 scroll-mt-24">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row justify-between gap-16">
-          <div className="flex flex-col justify-between h-full min-h-[300px]">
-            <h2 className="text-[40px] font-['Ovo',serif]">Contacts</h2>
-            <div className="flex gap-2">
+    <footer id="contact" className="bg-[#f3f3f4] py-12 scroll-mt-24">
+      <div className="max-w-[1440px] mx-auto px-8">
+        {/* Добавили items-stretch, чтобы обе колонки были одной высоты */}
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-16">
+          
+          {/* Левая колонка: теперь она всегда тянется во всю высоту ряда */}
+          <div className="flex flex-col justify-between lg:w-1/2">
+            <h2 className="text-[40px] font-['Ovo',serif] text-[#1a1a1b]">Contacts</h2>
+            
+            {/* mt-auto гарантирует, что на мобильных, если текста мало, 
+                кнопки все равно будут стремиться вниз.
+                ИЗМЕНЕНО: gap-1, размеры кнопок и квадратная CV точно как в Hero */}
+            <div className="flex gap-1 mt-auto pt-8">
               <a
                 href={`mailto:${profile.email}`}
-                className="bg-[#ff7b1b] text-white px-8 py-5 text-xl font-medium uppercase hover:bg-orange-600 transition-colors"
+                className="bg-[#ff7b1b] text-white px-8 py-4 text-base font-medium hover:bg-orange-600 transition-colors uppercase"
               >
-                Email
+                EMAIL
               </a>
               <a
                 href={profile.cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#d2d2d3] px-8 py-5 text-xl font-medium hover:bg-gray-300 transition-colors"
+                className="bg-[#e5e5e5] text-[#1a1a1b] w-14 h-14 flex items-center justify-center text-base font-medium hover:bg-gray-300 transition-colors"
               >
                 CV
               </a>
             </div>
           </div>
-          <div className="flex flex-col lg:w-1/2 gap-8 text-[#1a1a1b] font-medium text-xl lg:text-[22px] leading-relaxed">
-            <div className="text-[#565659]">
+
+          {/* Правая колонка */}
+          <div className="flex flex-col justify-between lg:w-1/2">
+            <div className="text-[#565659] font-medium text-xl lg:text-[22px] leading-relaxed">
               <p>{profile.email}</p>
-              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium uppercase tracking-wider mt-4">
-                <a
-                  href={profile.scholarUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#ff7b1b] transition-colors"
-                >
-                  Google Scholar
-                </a>
-                <a
-                  href={profile.orcidUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#ff7b1b] transition-colors"
-                >
-                  ORCID
-                </a>
-                <a
-                  href={profile.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#ff7b1b] transition-colors"
-                >
-                  GitHub
-                </a>
-              </div>
+              <p className="mt-6">{profile.affiliation}</p>
+              <p>{profile.office}</p>
             </div>
-            <div className="max-w-xl">
-              <p className="text-[#565659]">{profile.affiliation}</p>
-              <p className="text-[#565659] text-base mt-1">{profile.office}</p>
+            
+            <div className="flex flex-col gap-y-1 font-medium text-xl lg:text-[22px] text-[#0E0E0D] mt-12">
+              <a href={profile.scholarUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b] transition-colors w-fit">
+                Google Scholar
+              </a>
+              <a href={profile.orcidUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b] transition-colors w-fit">
+                ORCID
+              </a>
+              <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b] transition-colors w-fit">
+                GitHub
+              </a>
             </div>
           </div>
         </div>
@@ -176,7 +173,6 @@ function Footer() {
     </footer>
   );
 }
-
 function ScrollToTopOnRouteChange() {
   const location = useLocation();
   useEffect(() => {
