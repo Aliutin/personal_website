@@ -1,173 +1,291 @@
-import { ArrowDownRight, Mail } from "lucide-react";
-import { profile, publications, education, publicationTagStyle } from "../../content";
+import { profile, publications, researchIntro, publicationTagStyle } from "../../content";
+import { ArrRigth, Mail } from "../../componets/CustomIcons";
+import { useNavigate } from "react-router-dom";
 
 export default function Research() {
+  const navigate = useNavigate();
   return (
-    <>
-      <section className="container mx-auto border-b border-[#d2d2d3]">
-        <div className="px-6 lg:px-12 py-16 pb-6">
-          <h1 className="text-[48px] lg:text-[56px] font-['Ovo',serif] leading-tight">
-            Research
+    <div className="w-full flex flex-col bg-[#fafafa] min-h-screen">
+      
+      {/* Шапка (Hero) */}
+      <section className="w-full border-b border-border">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-8 pt-16 pb-8">
+          <h1 className="max-w-4xl mb-6 text-foreground">
+            {researchIntro.title}
           </h1>
-          <p className="text-[#565659] text-lg font-medium mt-4 max-w-2xl">
-            Peer-reviewed publications and current working papers. Full list also on{" "}
-            <a
-              href={profile.scholarUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-[#ff7b1b] transition-colors"
-            >
-              Google Scholar
-            </a>
-            .
+          <p className="text-body text-muted-foreground max-w-3xl leading-relaxed">
+            {researchIntro.description}
           </p>
         </div>
       </section>
 
-      <section className="container mx-auto border-b border-[#d2d2d3]">
-        <div className="px-6 lg:px-12 py-12 pb-6">
-          <h2 className="text-[32px] font-['Ovo',serif]">Publications &amp; Working Papers</h2>
-        </div>
-
-        <div className="flex flex-col">
+      {/* Список публикаций */}
+      <section className="w-full border-b border-border">
+        <div className="w-full flex flex-col">
           {publications.map((pub, idx) => {
             const tagStyle = publicationTagStyle(pub.tag);
+            
             return (
               <article
                 key={idx}
-                className="border-t border-[#d2d2d3] px-6 lg:px-12 py-12 flex flex-col lg:flex-row gap-8 lg:gap-12"
+                onClick={() => navigate(`/research/${pub.slug}`)}
+                className={`w-full group hover:bg-white transition-colors cursor-pointer ${
+                  idx > 0 ? "border-t border-border" : ""
+                }`}
               >
-                <div className="lg:w-1/4 flex flex-col gap-3 shrink-0">
-                  <div
-                    className={`inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider ${tagStyle.text}`}
-                  >
-                    <span>{pub.tag}</span>
-                    <span className={`w-1 h-1 rounded-full ${tagStyle.dot}`} />
-                    <span>{pub.year}</span>
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 lg:py-16 w-full">
+                  
+                  {/* =========================================================
+                      МОБИЛЬНАЯ И ПЛАНШЕТНАЯ ВЕРСИЯ (до lg)
+                      Порядок: Заголовок -> Абстракт -> Кей -> Картинка -> Теги -> Кнопка
+                  ========================================================= */}
+                  <div className="flex lg:hidden flex-col w-full">
+                    
+                    {/* 1. Заголовок и Авторы */}
+                    {/* ИЗМЕНЕНО: Используем системный тег h3 без жестких размеров */}
+                    <h3 className="text-foreground mb-3 group-hover:text-[#ff7b1b] transition-colors">
+                      {pub.title}
+                    </h3>
+                    {/* ИЗМЕНЕНО: Простое перечисление авторов без выделения жирным */}
+                    <p className="text-body text-muted-foreground mb-8">
+                      {pub.authors.join(", ")}
+                    </p>
+
+                    {/* 2. Абстракт */}
+                    {pub.abstract && (
+                      <div className="mb-8">
+                        <div className="text-small uppercase tracking-wider text-muted-foreground mb-4">
+                          Abstract
+                        </div>
+                        <p className="text-body text-foreground">
+                          {pub.abstract}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* 3. Находки (Key findings) */}
+                    {pub.keyFindings && pub.keyFindings.length > 0 && (
+                      <div className="mb-10 w-full">
+                        <div className="text-small uppercase tracking-wider text-muted-foreground mb-6">
+                          Key findings
+                        </div>
+                        <div className="flex flex-col gap-5">
+                          {pub.keyFindings.map((finding, i) => (
+                            <div key={i} className="flex items-start gap-4 border-b border-border pb-4 last:border-0 last:pb-0">
+                              <span className="text-small text-[#ff7b1b] mt-0.5 shrink-0">
+                                {String(i + 1).padStart(2, "0")}
+                              </span>
+                              <span className="text-body text-foreground">
+                                {finding}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* 4. Картинка */}
+                    {pub.figures && pub.figures.length > 0 && (
+                      <div className="w-full aspect-[4/3] overflow-hidden bg-muted border border-border mb-10">
+                        <img 
+                          src={pub.figures[0].src} 
+                          alt={pub.title} 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+
+                    {/* 5. Теги и мета-данные */}
+                    <div className="w-full mb-8">
+                      <div className={`flex items-center gap-2 text-small uppercase tracking-wider ${tagStyle.text}`}>
+                        <span>{pub.tag}</span>
+                        <span className={`w-1.5 h-1.5 rounded-full ${tagStyle.dot}`} />
+                        <span>{pub.year}</span>
+                      </div>
+                      <div className="text-small text-muted-foreground mt-3">
+                        {pub.venue}
+                      </div>
+
+                      {pub.pages && (
+                        <div className="mt-4 text-small uppercase tracking-wider text-muted-foreground">
+                          {String(pub.pages).padStart(3, "0")} pp
+                        </div>
+                      )}
+
+                      {pub.draftOnRequest && (
+                        <div className="mt-2 text-small uppercase tracking-wider text-[#ff7b1b]">
+                          Draft on request
+                        </div>
+                      )}
+                    </div>
+
+                    {/* 6. Функциональная Кнопка */}
+                    <div className="w-full">
+                      {pub.draftOnRequest ? (
+                        <a
+                          href={`mailto:${profile.email}?subject=${encodeURIComponent(`Draft request: ${pub.title}`)}`}
+                          onClick={(e) => e.stopPropagation()} 
+                          className="inline-flex items-center gap-4 cursor-pointer group/btn"
+                        >
+                          <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
+                            Request Draft
+                          </span>
+                          <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
+                            <Mail className="w-5 h-5" />
+                          </div>
+                        </a>
+                      ) : (
+                        <a
+                          href={pub.url || "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()} 
+                          className="inline-flex items-center gap-4 cursor-pointer group/btn"
+                        >
+                          <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
+                            Extended preview
+                          </span>
+                          <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
+                            <ArrRigth className="w-5 h-5" />
+                          </div>
+                        </a>
+                      )}
+                    </div>
+
                   </div>
-                  <span className="text-[#565659] text-sm font-medium">{pub.venue}</span>
-                </div>
-                <div className="lg:w-3/4 flex flex-col gap-5 max-w-4xl">
-                  <h3 className="text-2xl lg:text-[30px] font-['Ovo',serif] leading-tight">
-                    {pub.title}
-                  </h3>
-                  <p className="text-[#565659] text-base leading-relaxed">
-                    {pub.authors.map((a, i) => {
-                      const isMe = a.includes("Liutin");
-                      return (
-                        <span key={i}>
-                          <span className={isMe ? "font-semibold text-[#1a1a1b]" : ""}>{a}</span>
-                          {i < pub.authors.length - 1 ? ", " : ""}
-                        </span>
-                      );
-                    })}
-                  </p>
-                  {pub.abstract && (
-                    <div className="mt-2">
-                      <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#757578] mb-2">
-                        Abstract
+
+
+                  {/* =========================================================
+                      ДЕСКТОПНАЯ ВЕРСИЯ (от lg и выше)
+                      Сетка 1/3 и 2/3
+                  ========================================================= */}
+                  <div className="hidden lg:grid grid-cols-3 gap-12 items-stretch w-full">
+                    
+                    {/* ЛЕВАЯ ЧАСТЬ (1/3) */}
+                    <div className="col-span-1 flex flex-col items-start h-full">
+                      
+                      {/* 1. Мета-данные */}
+                      <div className="w-full">
+                        <div className={`flex items-center gap-2 text-small uppercase tracking-wider ${tagStyle.text}`}>
+                          <span>{pub.tag}</span>
+                          <span className={`w-1.5 h-1.5 rounded-full ${tagStyle.dot}`} />
+                          <span>{pub.year}</span>
+                        </div>
+                        <div className="text-small text-muted-foreground mt-3">
+                          {pub.venue}
+                        </div>
+
+                        {pub.pages && (
+                          <div className="mt-8 text-small uppercase tracking-wider text-muted-foreground">
+                            {String(pub.pages).padStart(3, "0")} pp
+                          </div>
+                        )}
+
+                        {pub.draftOnRequest && (
+                          <div className="mt-2 text-small uppercase tracking-wider text-[#ff7b1b]">
+                            Draft on request
+                          </div>
+                        )}
                       </div>
-                      <p className="text-[#565659] text-[15px] leading-relaxed">{pub.abstract}</p>
-                    </div>
-                  )}
-                  {pub.keyFindings && pub.keyFindings.length > 0 && (
-                    <div className="mt-2">
-                      <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#757578] mb-3">
-                        Key findings
+
+                      {/* 2. Кнопка */}
+                      <div className="mt-8 w-full">
+                        {pub.draftOnRequest ? (
+                          <a
+                            href={`mailto:${profile.email}?subject=${encodeURIComponent(`Draft request: ${pub.title}`)}`}
+                            onClick={(e) => e.stopPropagation()} 
+                            className="inline-flex items-center gap-4 cursor-pointer group/btn"
+                          >
+                            <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
+                              Request Draft
+                            </span>
+                            <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
+                              <Mail className="w-5 h-5" />
+                            </div>
+                          </a>
+                        ) : (
+                          <a
+                            href={pub.url || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()} 
+                            className="inline-flex items-center gap-4 cursor-pointer group/btn"
+                          >
+                            <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
+                              Extended preview
+                            </span>
+                            <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
+                              <ArrRigth className="w-5 h-5" />
+                            </div>
+                          </a>
+                        )}
                       </div>
-                      <ul className="flex flex-col gap-2 text-[#565659] text-[15px] leading-relaxed">
-                        {pub.keyFindings.map((finding, i) => (
-                          <li key={i} className="flex gap-3">
-                            <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#ff7b1b] shrink-0" />
-                            <span>{finding}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  {pub.figures && pub.figures.length > 0 && (
-                    <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {pub.figures.map((fig, i) => (
-                        <figure key={i} className="flex flex-col gap-2">
-                          <div className="bg-white border border-[#e5e5e5] overflow-hidden">
-                            <img
-                              src={fig.src}
-                              alt={fig.caption || `Figure ${i + 1}`}
-                              loading="lazy"
-                              className="w-full h-auto"
+
+                      {/* 3. Картинка (прижата к низу) */}
+                      {pub.figures && pub.figures.length > 0 && (
+                        <div className="mt-auto pt-12 w-full">
+                          <div className="w-full aspect-[4/3] overflow-hidden bg-muted border border-border">
+                            <img 
+                              src={pub.figures[0].src} 
+                              alt={pub.title} 
+                              className="w-full h-full object-cover"
                             />
                           </div>
-                          {fig.caption && (
-                            <figcaption className="text-[#757578] text-xs leading-relaxed">
-                              {fig.caption}
-                            </figcaption>
-                          )}
-                        </figure>
-                      ))}
+                        </div>
+                      )}
                     </div>
-                  )}
-                  <div className="flex flex-wrap gap-4 mt-4">
-                    {pub.url && (
-                      <a
-                        href={pub.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-wider text-[#1a1a1b] hover:text-[#ff7b1b] transition-colors self-start"
-                      >
-                        Read paper
-                        <span className="w-10 h-10 bg-[#1a1a1b] text-white rounded-full flex items-center justify-center">
-                          <ArrowDownRight className="w-5 h-5" />
-                        </span>
-                      </a>
-                    )}
-                    {pub.draftOnRequest && (
-                      <a
-                        href={`mailto:${profile.email}?subject=${encodeURIComponent(
-                          `Draft request: ${pub.title}`
-                        )}`}
-                        className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-wider text-[#1a1a1b] hover:text-[#ff7b1b] transition-colors self-start"
-                      >
-                        Draft available on request
-                        <span className="w-10 h-10 bg-[#1a1a1b] text-white rounded-full flex items-center justify-center">
-                          <Mail className="w-4 h-4" />
-                        </span>
-                      </a>
-                    )}
+
+                    {/* ПРАВАЯ ЧАСТЬ (2/3) */}
+                    <div className="col-span-2 flex flex-col items-start max-w-[750px]">
+                      {/* ИЗМЕНЕНО: Используем системный тег h3 */}
+                      <h3 className="text-foreground mb-4 group-hover:text-[#ff7b1b] transition-colors">
+                        {pub.title}
+                      </h3>
+                      
+                      {/* ИЗМЕНЕНО: Простое перечисление авторов без выделения жирным */}
+                      <p className="text-body text-muted-foreground">
+                        {pub.authors.join(", ")}
+                      </p>
+
+                      {pub.abstract && (
+                        <div className="mt-10">
+                          <div className="text-small uppercase tracking-wider text-muted-foreground mb-4">
+                            Abstract
+                          </div>
+                          <p className="text-body text-foreground">
+                            {pub.abstract}
+                          </p>
+                        </div>
+                      )}
+
+                      {pub.keyFindings && pub.keyFindings.length > 0 && (
+                        <div className="mt-10 w-full">
+                          <div className="text-small uppercase tracking-wider text-muted-foreground mb-6">
+                            Key findings
+                          </div>
+                          <div className="flex flex-col gap-5">
+                            {pub.keyFindings.map((finding, i) => (
+                              <div key={i} className="flex items-start gap-4 border-b border-border pb-4 last:border-0 last:pb-0">
+                                <span className="text-small text-[#ff7b1b] mt-0.5 shrink-0">
+                                  {String(i + 1).padStart(2, "0")}
+                                </span>
+                                <span className="text-body text-foreground">
+                                  {finding}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
+
                 </div>
               </article>
             );
           })}
         </div>
-      </section>
-
-      <section className="container mx-auto border-b border-[#d2d2d3]">
-        <div className="px-6 lg:px-12 py-12 pb-6">
-          <h2 className="text-[32px] font-['Ovo',serif]">Education</h2>
-        </div>
-        <div className="flex flex-col">
-          {education.map((e, idx) => (
-            <div
-              key={idx}
-              className="border-t border-[#d2d2d3] px-6 lg:px-12 py-8 flex flex-col lg:flex-row gap-6"
-            >
-              <div className="lg:w-1/4 shrink-0 text-[#757578] text-sm font-medium uppercase tracking-wider">
-                {e.period}
-              </div>
-              <div className="lg:w-3/4">
-                <h3 className="text-2xl font-['Ovo',serif] leading-tight">{e.degree}</h3>
-                <p className="text-[#565659] text-base font-medium mt-1">{e.school}</p>
-                {e.thesis && (
-                  <p className="text-[#757578] text-sm mt-3">
-                    Thesis: <span className="italic">{e.thesis}</span>
-                    {e.advisor ? ` — advised by ${e.advisor}` : ""}
-                  </p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
+      </section>      
+    </div>
   );
 }

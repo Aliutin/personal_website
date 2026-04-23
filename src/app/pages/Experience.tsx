@@ -1,124 +1,143 @@
 import { experiences, Experience, ExperienceKind } from "../../content";
 
-function kindBadgeClasses(kind: ExperienceKind) {
-  if (kind === "teaching") {
-    return "bg-[#ff7b1b] text-white border-[#ff7b1b]";
-  }
-  if (kind === "research") {
-    return "bg-[#1a1a1b] text-white border-[#1a1a1b]";
-  }
-  return "bg-[#2e5b82] text-white border-[#2e5b82]";
-}
+// --- ЛОГИКА ГРУППИРОВКИ ---
+function groupExperiencesByYear(items: Experience[]) {
+  const grouped: Record<number, Experience[]> = {};
 
-function sortedByStartDesc(items: Experience[]) {
-  return [...items].sort((a, b) => {
-    if (b.startYear !== a.startYear) return b.startYear - a.startYear;
-    return b.startMonth - a.startMonth;
+  items.forEach((item) => {
+    const year = item.startYear;
+    if (!grouped[year]) {
+      grouped[year] = [];
+    }
+    grouped[year].push(item);
   });
+
+  const sortedYears = Object.keys(grouped)
+    .map(Number)
+    .sort((a, b) => b - a);
+
+  sortedYears.forEach((year) => {
+    grouped[year].sort((a, b) => b.startMonth - a.startMonth);
+  });
+
+  return { grouped, sortedYears };
 }
 
-function TimelineSection({ items }: { items: Experience[] }) {
-  const sorted = sortedByStartDesc(items);
-  if (sorted.length === 0) {
-    return (
-      <p className="text-[#757578] text-sm italic">No entries yet.</p>
-    );
-  }
+// --- ЛОКАЛЬНЫЕ КОМПОНЕНТЫ ---
+
+function DotIcon({ kind }: { kind: ExperienceKind }) {
+  let bgColor = "bg-gray-400";
+  if (kind === "research") bgColor = "bg-[#ff7b1b]"; 
+  if (kind === "fieldwork") bgColor = "bg-[#1a1a1b]"; 
+  if (kind === "teaching") bgColor = "bg-[#2e5b82]"; 
+
+  return <span className={`w-1.5 h-1.5 rounded-full ${bgColor} shrink-0`} />;
+}
+
+function ExperienceItem({ item }: { item: Experience }) {
   return (
-    <div className="relative pl-14 lg:pl-20">
-      <div className="absolute left-6 lg:left-10 top-0 bottom-0 w-px bg-[#d2d2d3]" />
-      <div className="flex flex-col gap-10">
-        {sorted.map((item, idx) => (
-          <div key={idx} className="relative">
-            <div
-              className={`absolute -left-[38px] lg:-left-[47px] top-2 w-4 h-4 rounded-full border-[3px] ${kindBadgeClasses(
-                item.kind
-              )}`}
-            />
-            <div className="flex flex-col gap-2">
-              <div className="text-[#757578] text-sm font-medium uppercase tracking-wider">
-                {item.periodLabel}
-              </div>
-              <h3 className="text-2xl font-['Ovo',serif] leading-tight">
-                {item.kind === "teaching" && (
-                  <>
-                    <span className="text-[#757578]">{item.role} — </span>
-                    {item.title}
-                  </>
-                )}
-                {item.kind === "research" && (
-                  <>
-                    <span className="text-[#757578]">{item.role} · </span>
-                    {item.title}
-                  </>
-                )}
-                {item.kind === "fieldwork" && <>{item.title}</>}
-              </h3>
-              <p className="text-[#565659] text-base font-medium">{item.org}</p>
-              {item.detail && (
-                <p className="text-[#757578] text-sm leading-relaxed max-w-2xl">{item.detail}</p>
+    <div className="flex flex-col items-start">
+      <div className="flex items-center gap-2 text-small uppercase tracking-wider text-muted-foreground mb-3">
+        <DotIcon kind={item.kind} />
+        <span>{item.kind}</span>
+        <span className="w-1 h-1 bg-gray-300 rounded-full" />
+        <span>{item.periodLabel}</span>
+      </div>
+      
+      <h3 className="text-foreground mb-1">
+        {item.kind === "teaching" && item.role && <span className="text-muted-foreground">{item.role} · </span>}
+        {item.kind === "research" && item.role && <span className="text-muted-foreground">{item.role} · </span>}
+        {item.title}
+      </h3>
+      
+      <p className="text-body text-muted-foreground mb-4">
+        {item.org}
+      </p>
+      
+      {item.detail && (
+        <p className="text-subtitle text-foreground max-w-3xl">
+          {item.detail}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function YearBlock({
+  year,
+  items,
+  locationLabel,
+}: {
+  year: number;
+  items: Experience[];
+  locationLabel: string;
+}) {
+  return (
+    <div className="w-full border-b border-border last:border-0">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 pt-20 pb-12 lg:py-16 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+        
+        {/* Левая колонка 1/3: Год, локация */}
+        <div className="lg:col-span-1 flex flex-col items-start">
+          <h2 className="text-foreground">
+            {year}
+          </h2>
+          <span className="text-small uppercase tracking-wider text-muted-foreground mt-2">
+            {locationLabel}
+          </span>
+        </div>
+
+        {/* Правая колонка 2/3: Список событий */}
+        <div className="lg:col-span-2 flex flex-col">
+          {items.map((item, idx) => (
+            <div key={idx}>
+              <ExperienceItem item={item} />
+              {idx < items.length - 1 && (
+                <div className="w-full h-px bg-border my-10" />
               )}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        
       </div>
     </div>
   );
 }
 
+// --- ОСНОВНАЯ СТРАНИЦА ---
 export default function ExperiencePage() {
-  const researchItems = experiences.filter((e) => e.kind === "research");
-  const teachingItems = experiences.filter((e) => e.kind === "teaching");
-  const fieldworkItems = experiences.filter((e) => e.kind === "fieldwork");
+  const { grouped, sortedYears } = groupExperiencesByYear(experiences);
 
   return (
-    <>
-      <section className="container mx-auto border-b border-[#d2d2d3]">
-        <div className="px-6 lg:px-12 py-16 pb-6">
-          <h1 className="text-[48px] lg:text-[56px] font-['Ovo',serif] leading-tight">
+    <div className="w-full flex flex-col bg-[#fafafa] min-h-screen">
+      
+      {/* Шапка (Hero) */}
+      <section className="w-full border-b border-border">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 pt-16 pb-8">
+          <h1 className="max-w-4xl mb-6 text-foreground">
             Experience
           </h1>
-          <p className="text-[#565659] text-lg font-medium mt-4 max-w-2xl">
+          <p className="text-body text-muted-foreground max-w-3xl leading-relaxed">
             Research, teaching, and fieldwork since 2020.
           </p>
         </div>
       </section>
 
-      <section className="container mx-auto border-b border-[#d2d2d3]">
-        <div className="px-6 lg:px-12 py-12 pb-6">
-          <h2 className="text-[32px] font-['Ovo',serif]">Research</h2>
-          <p className="text-[#757578] text-sm mt-2 max-w-2xl">
-            Research assistant roles with principal investigators.
-          </p>
-        </div>
-        <div className="px-6 lg:px-12 pb-16">
-          <TimelineSection items={researchItems} />
-        </div>
+      {/* Список по годам */}
+      <section className="w-full flex flex-col">
+        {sortedYears.map((year) => {
+          const locationLabel = year === 2020 ? "AT NES" : "AT UW-MADISON";
+
+          return (
+            <YearBlock
+              key={year}
+              year={year}
+              items={grouped[year]}
+              locationLabel={locationLabel}
+            />
+          );
+        })}
       </section>
 
-      <section className="container mx-auto border-b border-[#d2d2d3]">
-        <div className="px-6 lg:px-12 py-12 pb-6">
-          <h2 className="text-[32px] font-['Ovo',serif]">Fieldwork</h2>
-          <p className="text-[#757578] text-sm mt-2 max-w-2xl">
-            Primary data collection in Uzbekistan — surveys, interviews, and field experiments.
-          </p>
-        </div>
-        <div className="px-6 lg:px-12 pb-16">
-          <TimelineSection items={fieldworkItems} />
-        </div>
-      </section>
-
-      <section className="container mx-auto border-b border-[#d2d2d3]">
-        <div className="px-6 lg:px-12 py-12 pb-6">
-          <h2 className="text-[32px] font-['Ovo',serif]">Teaching</h2>
-          <p className="text-[#757578] text-sm mt-2 max-w-2xl">
-            Teaching assistant roles at UW–Madison and the New Economic School.
-          </p>
-        </div>
-        <div className="px-6 lg:px-12 pb-16">
-          <TimelineSection items={teachingItems} />
-        </div>
-      </section>
-    </>
+    </div>
   );
 }

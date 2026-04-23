@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Research from "./pages/Research";
 import Blog from "./pages/Blog";
 import Experience from "./pages/Experience";
+import ResearchDetail from "./pages/ResearchDetail";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="*" element={<Home />} />
+          <Route path="/research/:slug" element={<ResearchDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

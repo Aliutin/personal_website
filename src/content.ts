@@ -12,10 +12,15 @@ import personal1 from "./assets/cbb1fa94e4f852cb03119d1c6bddf1948f01c8e1.webp";
 import personal2 from "./assets/ef7a374bee7e4966b910f79bca9b81011dc988cd.webp";
 import personal3 from "./assets/9edfaff294da4b113d5d956e36f592c600ae24bf.webp";
 import personal4 from "./assets/0b20486cba0eb82a4807829f9369745f7f68026a.webp";
-import bagdata from "./assets/Gemini_Generated_Image_3czbop3czbop3czb.png"
+import bagdata from "./assets/Gemini_Generated_Image_3czbop3czbop3czb.png";
+import graph1 from "./assets/image 61.png";
+import graph2 from "./assets/image 62.png";
+import graph3 from "./assets/image 63.png";
+import researchImage from "./assets/image 49.png";  
 
 export const images = {
   portrait,
+  researchImage,
   column1,
   column2,
   column3,
@@ -25,12 +30,15 @@ export const images = {
   personal3,
   personal4,
   bagdata,
+  graph1,
+  graph2,
+  graph3,
 };
 
 export const profile = {
   name: "Anton Liutin",
   title: "PhD Candidate · Ag & Applied Economics",
-  email: "liutin@wisc.edu",
+  email: "LIUTIN@WISC.EDU",
   phone: "+1 608 640 15 06",
   affiliation:
     "University of Wisconsin–Madison · Department of Agricultural & Applied Economics",
@@ -63,6 +71,12 @@ export const researchInterests = [
   "Economic History",
 ];
 
+// --- НОВЫЙ БЛОК ДЛЯ ШАПКИ RESEARCH ---
+export const researchIntro = {
+  title: "Publications & working papers.",
+  description: "Job market paper on water-graph inequality in Arizona; fieldwork-grounded work on drip irrigation adoption in Uzbekistan. Click any paper for an extended preview."
+};
+
 export type Education = {
   degree: string;
   school: string;
@@ -71,29 +85,169 @@ export type Education = {
   advisor?: string;
 };
 
-export const education: Education[] = [
+export const Experiences: Experience[] = [
+  // 2026
   {
-    degree: "PhD in Agricultural & Applied Economics",
-    school: "University of Wisconsin–Madison",
-    period: "2021 – present",
+    kind: "research",
+    startYear: 2026,
+    startMonth: 6, // Summer
+    endYear: 2026,
+    endMonth: 8,
+    periodLabel: "Summer 2026",
+    role: "Research Assistant",
+    title: "Paul Castañeda Dower",
+    org: "UW–Madison",
+    orgShort: "UW–Madison",
+    detail: "Community institutions and adaptation"
+  },
+  // 2024
+  {
+    kind: "fieldwork",
+    startYear: 2024,
+    startMonth: 11,
+    endYear: 2024,
+    endMonth: 12,
+    periodLabel: "Nov – Dec 2024",
+    role: "Fieldwork",
+    title: "Behavioral games experiment — Uzbekistan",
+    org: "CGIAR SPIA",
+    orgShort: "CGIAR SPIA",
+    detail: "Framed-field behavioral games experiment on a subsample from the IFPRI farmer survey. Funded by CGIAR SPIA, with Jamshid Shukurullaev."
   },
   {
-    degree: "MA in Economics",
-    school: "New Economic School, Moscow",
-    period: "2020",
-    thesis: "Polygamy and inequality in a male dominant society",
-    advisor: "Hosny Zoabi",
+    kind: "fieldwork",
+    startYear: 2024,
+    startMonth: 9,
+    endYear: 2024,
+    endMonth: 11,
+    periodLabel: "Sep – Nov 2024",
+    role: "Fieldwork",
+    title: "Large farmer survey — Uzbekistan",
+    org: "IFPRI · CGIAR NEXUS Gains",
+    orgShort: "IFPRI",
+    detail: "Prepared a large interview study of small and large farmers in Uzbekistan with IFPRI. Trained and monitored local enumerators across survey regions."
   },
   {
-    degree: "BS in Theoretical Physics",
-    school: "NRNU MEPhI, Moscow",
-    period: "2018",
-    thesis:
-      "Source spectrum influence on image quality and dose in Angiography",
-    advisor: "Dyachkov Nikolay (Lebedev Physical Institute)",
+    kind: "research",
+    startYear: 2024,
+    startMonth: 8, // Fall
+    endYear: 2025,
+    endMonth: 8,
+    periodLabel: "Fall 2024 – Summer 2025",
+    role: "Research Assistant",
+    title: "Dustin Frye & Gisella Kagy",
+    org: "UW–Madison",
+    orgShort: "UW–Madison",
+    detail: "Environmental health and economic history."
   },
+  {
+    kind: "teaching",
+    startYear: 2024,
+    startMonth: 1, // Spring
+    endYear: 2024,
+    endMonth: 5,
+    periodLabel: "Spring 2024",
+    role: "AAE 350",
+    title: "World Hunger and Malnutrition",
+    org: "UW–Madison",
+    orgShort: "UW–Madison",
+    detail: "Undergraduate course on global food security and nutrition."
+  },
+  // 2023
+  {
+    kind: "teaching",
+    startYear: 2023,
+    startMonth: 8, // Fall
+    endYear: 2023,
+    endMonth: 12,
+    periodLabel: "Fall 2023",
+    role: "AAE 215",
+    title: "Intro to Agricultural & Applied Economics",
+    org: "UW–Madison",
+    orgShort: "UW–Madison",
+    detail: "Undergraduate introduction to agricultural economics."
+  },
+  {
+    kind: "research",
+    startYear: 2023,
+    startMonth: 6, // Summer
+    endYear: 2023,
+    endMonth: 8,
+    periodLabel: "Summer 2023",
+    role: "Research Assistant",
+    title: "Paul Castañeda Dower",
+    org: "UW–Madison",
+    orgShort: "UW–Madison",
+    detail: "Russian economic history."
+  },
+  {
+    kind: "fieldwork",
+    startYear: 2023,
+    startMonth: 5, // Summer
+    endYear: 2023,
+    endMonth: 8,
+    periodLabel: "Summer 2023",
+    role: "Fieldwork",
+    title: "Farmer interviews on water-saving technology — Uzbekistan",
+    org: "7 regions of Uzbekistan",
+    orgShort: "Uzbekistan",
+    detail: "Focus group discussions and in-depth interviews with farmers across 7 regions of Uzbekistan on adoption of water-saving technology. Worked together with Paul Castañeda Dower under IFPRI cooperation."
+  },
+  // 2022
+  {
+    kind: "research",
+    startYear: 2022,
+    startMonth: 6,
+    endYear: 2023,
+    endMonth: 5,
+    periodLabel: "Summer 2022 – Spring 2023",
+    role: "Research Assistant",
+    title: "Corbett Grainger",
+    org: "UW–Madison",
+    orgShort: "UW–Madison",
+    detail: "Environmental and natural-resource economics."
+  },
+  // 2020
+  {
+    kind: "research",
+    startYear: 2020,
+    startMonth: 12, // Winter
+    endYear: 2021,
+    endMonth: 8,
+    periodLabel: "Winter 2020 – Summer 2021",
+    role: "Research Assistant",
+    title: "Andrei Markevich",
+    org: "NES",
+    orgShort: "NES",
+    detail: "Russian economic history."
+  },
+  {
+    kind: "research",
+    startYear: 2020,
+    startMonth: 11, // Winter
+    endYear: 2021,
+    endMonth: 8,
+    periodLabel: "Winter 2020 – Summer 2021",
+    role: "Junior Researcher",
+    title: "Hosny Zoabi",
+    org: "NES",
+    orgShort: "NES",
+    detail: "Family and growth economics."
+  },
+  {
+    kind: "teaching",
+    startYear: 2020,
+    startMonth: 8, // Fall
+    endYear: 2020,
+    endMonth: 12,
+    periodLabel: "Fall 2020",
+    role: "Teaching Assistant",
+    title: "Development Economics (MA)",
+    org: "NES",
+    orgShort: "NES",
+    detail: "TA for Michele Valsecchi, Assistant Professor, NES." // Оставил деталь из старого контента, если не нужна - можешь удалить
+  }
 ];
-
 export type ExperienceKind = "teaching" | "research" | "fieldwork";
 
 export type Experience = {
@@ -285,7 +439,9 @@ export function publicationTagStyle(tag: string) {
   return { text: "text-[#757578]", dot: "bg-gray-400" };
 }
 
+// --- ДОБАВЛЕНО ПОЛЕ pages?: number; ---
 export type Publication = {
+  slug: string;
   title: string;
   authors: string[];
   year: string;
@@ -296,59 +452,68 @@ export type Publication = {
   keyFindings?: string[];
   figures?: PublicationFigure[];
   draftOnRequest?: boolean;
+  pages?: number; 
 };
 
 export const publications: Publication[] = [
   {
-    title:
-      "Upstream Advantage in Surface Water Systems: Measuring Inequality Using a Water-Graph Approach",
+    slug: "upstream-advantage",
+    title: "Upstream Advantage in Surface Water Systems: Measuring Inequality Using a Water-Graph Approach",
     authors: ["Anton Liutin"],
     year: "2026",
     venue: "Job Market Paper · UW–Madison",
     tag: "JOB MARKET PAPER",
     draftOnRequest: true,
-    abstract:
-      "Surface water flows sequentially through canal networks, reaching upstream users before downstream users. Tail-end deprivation is well documented in developing countries with weak institutions, but whether formal water rights eliminate this inequality in developed settings remains untested at scale. I construct a \u201Cwater-graph\u201D mapping upstream\u2013downstream relationships among 54,946 agricultural plots across Arizona's canal networks and test whether network position affects crop outcomes during the unprecedented Colorado River drought (2016\u20132023). A \u201Cdonut\u201D identification strategy isolates far upstream competition (>1\u201310\u00A0km) from spatially correlated local shocks. Downstream plots experience significantly lower vegetation health, moisture, and evapotranspiration; the drought amplification of this position penalty roughly doubles to triples across outcomes between the full canal path and the 10\u00A0km cutoff (2.0\u00D7 for NDMI, 2.2\u00D7 for GCVI, 2.5\u00D7 for ET). The position\u2013drought gradient is significant only in surface-water-dominant districts\u2014groundwater access eliminates it entirely. Physical delivery infrastructure creates distributional consequences not resolved by prior appropriation rights, pointing to infrastructure targeting and groundwater investment as policy levers in arid regions facing increasing scarcity.",
+    pages: 58,
+    abstract: "Do formal water rights actually eliminate the inequality created by sequential canal access? I build a water-graph of 54,946 Arizona agricultural plots to estimate how network position shapes crop outcomes during a historic 22-year drought. A novel spatial identification strategy isolates upstream competition from local shocks, validating a directional water-competition mechanism over omitted local variation.",
     keyFindings: [
-      "Downstream plots experience significantly lower NDMI, GCVI, and evapotranspiration even after controlling for water rights, soil quality, and market proximity.",
-      "Drought amplifies the position penalty by 2\u00D7\u20132.5\u00D7, and a downstream placebo rules out spatially correlated local shocks.",
-      "Groundwater access eliminates the position\u2013drought gradient entirely, pointing to infrastructure targeting and groundwater investment as policy levers.",
+      "Downstream plots experience significantly lower NDMI, GCVI, and evapotranspiration — even after controlling for water-rights seniority, soil, groundwater access, and market proximity.",
+      "Drought amplifies the position penalty by 2.0× (NDMI), 2.2× (GCVI), and 2.5× (ET) between the full canal path and the 10 km cutoff; effects emerge within-plot over time.",
+      "The position–drought gradient is significant only in surface-water-dominant districts — groundwater access eliminates it entirely, pointing to infrastructure targeting and groundwater investment as policy levers."
     ],
+    // ДОБАВЛЕНО: привязка картинки
+    figures: [{ src: images.graph1 }]
   },
   {
-    title:
-      "Using Behavioral Games to Understand Water-Saving Technology Adoption in Uzbekistan",
+    slug: "behavioral-games",
+    title: "Using Behavioral Games to Understand Water-Saving Technology Adoption in Uzbekistan",
     authors: ["Anton Liutin", "Jamshid Shukurullaev"],
     year: "2026",
     venue: "Working Paper",
     tag: "WORKING PAPER",
     draftOnRequest: true,
-    abstract:
-      "We conduct a framed field experiment with 190 farmers across four regions of Uzbekistan, modifying the standard Irrigation Game to include an explicit drip irrigation adoption decision. Players positioned along a simulated canal make sequential choices about infrastructure investment, water extraction, and technology adoption. We develop a two-social-cost model that separately captures community norms around infrastructure investment (SC_I) and water extraction (SC_W). The model predicts that (i) adoption concentrates among water-scarce downstream players, (ii) upstream adoption generates positive spillovers that cascade along the canal, and (iii) social norms and technology adoption are complements\u2014stronger water-sharing norms amplify the relative advantage of drip irrigation. The experimental data confirm these predictions: downstream players adopt at higher rates (62% vs. 49% for upstream), each upstream adopter increases downstream water availability by 0.407 units (p < 0.01), and upstream adoption triggers peer adoption downstream. Linking experimental behavior to survey data, we find that farmers' in-game decisions reflect their real-world water access conditions, irrigation costs, and social network connections (p < 0.01)\u2014validating behavioral games as tools for measuring technology adoption decisions. These findings support position-based targeting of subsidies and leveraging farmer networks to diffuse water-saving technologies.",
+    pages: 35,
+    abstract: "We conduct a framed field experiment with 190 farmers in Uzbekistan, modifying the standard Irrigation Game to include a drip-irrigation (DI) adoption decision. Using a two-social-cost model grounded in Ostrom's framework, we analyze how adoption concentrates downstream, upstream adoptions create positive spillovers, and social norms complement technology. By linking in-game behavior to real-world survey data, we test whether behavioral games can serve as accurate measurement tools for real-life adoption decisions.",
     keyFindings: [
-      "Downstream players adopt drip irrigation at 62% versus 49% for upstream players; each upstream adopter raises downstream water availability by 0.407 units (p < 0.01).",
-      "Upstream adoption triggers peer adoption cascades downstream, consistent with a positive-spillover mechanism.",
-      "In-game decisions track real-world water access, irrigation costs, and social networks, validating behavioral games as measurement tools for adoption decisions.",
+      "Downstream players adopt drip irrigation at 62% versus 49% upstream — consistent with positional scarcity driving adoption.",
+      "Each upstream adopter raises downstream water availability by 0.407 units (p < 0.01) and increases each downstream player's own adoption probability by 6.4 pp (21.5 pp with player fixed effects).",
+      "Sessions with higher DI adoption exhibit significantly lower water-consumption Gini — technology adoption reduces distributional inequality along the canal.",
+      "In-game decisions reflect real-world water access, irrigation cost, and social-network size (p < 0.01), validating the game as a measurement tool."
     ],
+    // ДОБАВЛЕНО: привязка картинки
+    figures: [{ src: images.graph2 }]
   },
   {
-    title:
-      "Water Conservation Through Simplified Drip Irrigation Scheduling for Cotton Cultivation in Uzbekistan",
+    slug: "water-conservation",
+    title: "Water Conservation Through Simplified Drip Irrigation Scheduling for Cotton Cultivation in Uzbekistan",
     authors: ["Jamshid Shukurullaev", "Ahmad Hamidov", "Anton Liutin"],
     year: "2025",
     venue: "R&R · Water (MDPI)",
     tag: "UNDER REVIEW",
     url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5535146",
-    abstract:
-      "Water scarcity has become an increasingly critical issue in Uzbekistan's agricultural sector, with significant decline in available water resources since the 1990s. Despite drip irrigation's water-saving potential, a research gap exists in practical standards for farmers transitioning from furrow irrigation, especially under heterogeneous agricultural conditions. This study validates a simplified, evapotranspiration-based irrigation scheduling framework through a dual-phase approach: a controlled longitudinal experiment (2021\u20132023) and a farmer adoption panel (N = 32). Our controlled experiments demonstrated that scientific drip scheduling increased cotton yields by 39.9% while reducing water use by 24.3% compared to furrow irrigation. Our Difference-in-Differences analysis of the farmer panel revealed a novel behavioral insight: unguided farmers utilizing drip technology systematically under-irrigated, failing to meet crop physiological needs. Spatial analysis across water-stressed agricultural regions reveals that evaporation rates exhibit remarkable temporal stability precisely where water conservation is most urgently needed, enabling scalable implementation through a \u201Chub-and-spoke\u201D model in which centralized evaporation calculations reliably inform irrigation schedules across surrounding areas without requiring sophisticated equipment at individual farms.",
+    pages: 31,
+    draftOnRequest: false,
+    abstract: "While drip irrigation saves water, farmers transitioning from traditional furrow irrigation often lack practical scheduling standards. We validate a simplified, evapotranspiration-based scheduling framework through a controlled longitudinal experiment (2021–2023) and a linked farmer adoption panel (N=32). Our difference-in-differences analysis isolates a critical behavioral guidance gap largely overlooked in the drip-adoption literature, while spatial stability analysis maps where this approach can easily transfer globally.",
     keyFindings: [
-      "Scientific drip scheduling raised cotton yields by 39.9% while cutting water use by 24.3% relative to furrow irrigation in a controlled longitudinal experiment (2021\u20132023).",
-      "Difference-in-differences on a farmer adoption panel (N = 32) shows unguided drip adopters systematically under-irrigate and fail to meet crop physiological needs\u2014technology alone is not enough.",
-      "Evaporation rates are temporally stable in the most water-stressed regions, supporting a \u201Chub-and-spoke\u201D scheduling model that scales without farm-level equipment.",
+      "Scientific drip scheduling raised cotton yields by 39.9% (+1,116 kg/ha) and cut water use by 24.3% versus furrow — lifting water productivity by 84.9%.",
+      "Unguided drip adopters used 47% less water than furrow plots but yielded well below the Phase I frontier — evidence of systematic under-irrigation.",
+      "Pre-calculated irrigation tables alone (no training, no new equipment) led farmers to raise drip water use by 31.6%, converging yields with the experimental frontier.",
+      "The binding constraint on smallholder drip performance is scheduling guidance, not drip adoption itself — guidance costs ≈5–7% of current hardware subsidy levels."
     ],
+    // ДОБАВЛЕНО: привязка картинки
+    figures: [{ src: images.graph3 }]
   },
 ];
-
 export type BlogPost = {
   title: string;
   venue: string;
