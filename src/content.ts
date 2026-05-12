@@ -17,6 +17,25 @@ import graph1 from "./assets/image 61.png";
 import graph2 from "./assets/image 62.png";
 import graph3 from "./assets/image 63.png";
 import researchImage from "./assets/image 49.png";  
+import jmpStudyAreaMap from "./assets/jmp-study-area-map.png";
+import jmpWaterGraphPosition from "./assets/jmp-water-graph-position.png";
+import jmpDonutIdentification from "./assets/jmp-donut-identification.png";
+import jmpDonutCoefficients from "./assets/jmp-donut-coefficients.png";
+import jmpUpstreamDownstreamHorserace from "./assets/jmp-upstream-downstream-horserace.png";
+import jmpProductionFunction from "./assets/jmp-production-function.png";
+import behavioralGamesHero from "./assets/behavioral-games-hero.webp";
+import behavioralGamesAdoption from "./assets/behavioral-games-adoption.png";
+import behavioralGamesGini from "./assets/behavioral-games-gini.png";
+import behavioralGamesProductionFunctions from "./assets/behavioral-games-production-functions.png";
+import behavioralGamesSessionDynamics from "./assets/behavioral-games-session-dynamics.png";
+import behavioralGamesSpilloverHeatmap from "./assets/behavioral-games-spillover-heatmap.png";
+import behavioralGamesSpilloverCascade from "./assets/behavioral-games-spillover-cascade.png";
+import behavioralGamesAdoptionThreshold from "./assets/behavioral-games-adoption-threshold.png";
+import behavioralGamesGamePrimitives from "./assets/behavioral-games-game-primitives.png";
+import waterCottonHero from "./assets/water-cotton-hero.webp";
+import waterCottonKcStages from "./assets/water-cotton-kc-stages.webp";
+import waterEvaporationStabilityMap from "./assets/water-evaporation-stability-map.webp";
+import waterStressStabilityScatter from "./assets/water-stress-stability-scatter.png";
 
 export const images = {
   portrait,
@@ -33,6 +52,25 @@ export const images = {
   graph1,
   graph2,
   graph3,
+  jmpStudyAreaMap,
+  jmpWaterGraphPosition,
+  jmpDonutIdentification,
+  jmpDonutCoefficients,
+  jmpUpstreamDownstreamHorserace,
+  jmpProductionFunction,
+  behavioralGamesHero,
+  behavioralGamesAdoption,
+  behavioralGamesGini,
+  behavioralGamesProductionFunctions,
+  behavioralGamesSessionDynamics,
+  behavioralGamesSpilloverHeatmap,
+  behavioralGamesSpilloverCascade,
+  behavioralGamesAdoptionThreshold,
+  behavioralGamesGamePrimitives,
+  waterCottonHero,
+  waterCottonKcStages,
+  waterEvaporationStabilityMap,
+  waterStressStabilityScatter,
 };
 
 export const profile = {
@@ -74,7 +112,7 @@ export const researchInterests = [
 // --- НОВЫЙ БЛОК ДЛЯ ШАПКИ RESEARCH ---
 export const researchIntro = {
   title: "Publications & working papers.",
-  description: "Job market paper on water-graph inequality in Arizona; fieldwork-grounded work on drip irrigation adoption in Uzbekistan. Click any paper for an extended preview."
+  description: "Job market paper on water-graph inequality in Arizona; fieldwork-grounded work on drip irrigation adoption and simplified irrigation scheduling in Uzbekistan. Click any paper for an extended preview."
 };
 
 export type Education = {
@@ -465,14 +503,22 @@ export const publications: Publication[] = [
     tag: "JOB MARKET PAPER",
     draftOnRequest: true,
     pages: 58,
-    abstract: "Do formal water rights actually eliminate the inequality created by sequential canal access? I build a water-graph of 54,946 Arizona agricultural plots to estimate how network position shapes crop outcomes during a historic 22-year drought. A novel spatial identification strategy isolates upstream competition from local shocks, validating a directional water-competition mechanism over omitted local variation.",
+    abstract: "Do formal water rights eliminate the inequality created by sequential canal access? I build a directed water graph of 54,946 Arizona agricultural plots and test whether network position shapes satellite-derived crop outcomes from 2016 to 2023. A donut identification strategy isolates far-upstream competition (>1–10 km) from spatially correlated local shocks, validating a directional water-competition mechanism. The paper estimates whether tail-end plots have lower crop health, whether drought amplifies that penalty, and which district institutions buffer or concentrate it.",
     keyFindings: [
-      "Downstream plots experience significantly lower NDMI, GCVI, and evapotranspiration — even after controlling for water-rights seniority, soil, groundwater access, and market proximity.",
-      "Drought amplifies the position penalty by 2.0× (NDMI), 2.2× (GCVI), and 2.5× (ET) between the full canal path and the 10 km cutoff; effects emerge within-plot over time.",
-      "The position–drought gradient is significant only in surface-water-dominant districts — groundwater access eliminates it entirely, pointing to infrastructure targeting and groundwater investment as policy levers."
+      "Tail-end plots have lower NDMI, GCVI, and evapotranspiration even after controls for water-rights seniority, soil, groundwater access, market proximity, and fixed effects.",
+      "The drought–position penalty strengthens with distance: at the >10 km threshold, the interaction is −0.014 for NDMI, −0.061 for GCVI, and −0.047 for ET (roughly 2× the full-path coefficients).",
+      "A horse-race specification confirms directionality: upstream position drives the gradient, while downstream position fades toward zero.",
+      "The gradient is concentrated in surface-water-dominant, junior-rights districts; groundwater access eliminates it entirely, and volumetric pricing nearly fully offsets it where the penalty is largest."
     ],
     // ДОБАВЛЕНО: привязка картинки
-    figures: [{ src: images.graph1 }]
+    figures: [
+      { src: images.jmpStudyAreaMap, caption: "Arizona sample and canal setting" },
+      { src: images.jmpWaterGraphPosition, caption: "Water-graph construction" },
+      { src: images.jmpDonutIdentification, caption: "Donut identification strategy" },
+      { src: images.jmpDonutCoefficients, caption: "Donut coefficients" },
+      { src: images.jmpUpstreamDownstreamHorserace, caption: "Upstream vs downstream horse race" },
+      { src: images.jmpProductionFunction, caption: "Production function calibration" }
+    ]
   },
   {
     slug: "behavioral-games",
@@ -482,36 +528,80 @@ export const publications: Publication[] = [
     venue: "Working Paper",
     tag: "WORKING PAPER",
     draftOnRequest: true,
-    pages: 35,
-    abstract: "We conduct a framed field experiment with 190 farmers in Uzbekistan, modifying the standard Irrigation Game to include a drip-irrigation (DI) adoption decision. Using a two-social-cost model grounded in Ostrom's framework, we analyze how adoption concentrates downstream, upstream adoptions create positive spillovers, and social norms complement technology. By linking in-game behavior to real-world survey data, we test whether behavioral games can serve as accurate measurement tools for real-life adoption decisions.",
+    pages: 23,
+    abstract: "We conduct a framed field experiment with 190 farmers across four regions of Uzbekistan, modifying the standard Irrigation Game to include an explicit drip irrigation adoption decision. The design surfaces a structural asymmetry: downstream players face the scarcity that drives adoption, but each upstream adopter generates the largest spillover—and the diffusion channel runs only downstream, leaving the social returns to upstream adoption uncollected at equilibrium. A two-social-cost model formalizes the wedge, and the experimental data confirm it: in-game decisions also reflect farmers' real water access, irrigation costs, and social networks.",
     keyFindings: [
-      "Downstream players adopt drip irrigation at 62% versus 49% upstream — consistent with positional scarcity driving adoption.",
-      "Each upstream adopter raises downstream water availability by 0.407 units (p < 0.01) and increases each downstream player's own adoption probability by 6.4 pp (21.5 pp with player fixed effects).",
-      "Sessions with higher DI adoption exhibit significantly lower water-consumption Gini — technology adoption reduces distributional inequality along the canal.",
-      "In-game decisions reflect real-world water access, irrigation cost, and social-network size (p < 0.01), validating the game as a measurement tool."
+      "Adoption is downstream-driven by scarcity: in-game, P5 adopts at 62% versus 49% for P1, and the same pattern appears in real-world data—farmers with more downstream plots and higher irrigation costs adopt more in the game (p < 0.01).",
+      "Spillover is upstream-driven: each upstream adopter frees 0.407 downstream water units (p < 0.01); the model predicts P1's adoption alone yields 4.3 lifetime tokens of total downstream gain—the largest single-position externality.",
+      "Diffusion runs one way only: upstream adoption raises downstream adoption by 6.4 pp (21.5 pp with player FE), but downstream adoption does not propagate upward. The equilibrium leaves the largest social returns uncollected.",
+      "Sessions with higher drip adoption have lower water-consumption Gini coefficients, suggesting that technology adoption can reduce distributional inequality along the canal.",
+      "Social structure matters: each additional in-game connection adds 1.5 pp (p < 0.05); agricultural cluster membership adds 40 pp (p < 0.01)."
     ],
     // ДОБАВЛЕНО: привязка картинки
-    figures: [{ src: images.graph2 }]
+    figures: [
+      {
+        src: images.behavioralGamesSpilloverHeatmap,
+        caption: "Spillover matrix — upstream adoption benefits downstream; downstream adoption benefits no one (below-diagonal cells = 0)"
+      },
+      {
+        src: images.behavioralGamesAdoption,
+        caption: "Drip adoption rate by canal position (empirical) — P5 reaches 62%, P1 stays at 49%"
+      },
+      {
+        src: images.behavioralGamesAdoptionThreshold,
+        caption: "Break-even DI value by position — P5 never crosses the R=14 cost line, explaining why the most-downstream player doesn't adopt"
+      },
+      {
+        src: images.behavioralGamesSpilloverCascade,
+        caption: "Water cascade from P1's DI adoption — P1 saves 0.52 units, downstream gains rise from +0.09 (P2) to +0.21 (P5)"
+      },
+      {
+        src: images.behavioralGamesGamePrimitives,
+        caption: "Game mechanics — water supply vs. infrastructure (a); GI vs. DI production curves with water-saved region shaded (b)"
+      },
+      {
+        src: images.behavioralGamesSessionDynamics,
+        caption: "Water consumption and infrastructure investment dynamics by position (empirical)"
+      },
+      {
+        src: images.behavioralGamesGini,
+        caption: "Water-consumption Gini falls as DI spreads in Sessions 2–3; investment Gini stays low"
+      }
+    ]
   },
   {
     slug: "water-conservation",
     title: "Water Conservation Through Simplified Drip Irrigation Scheduling for Cotton Cultivation in Uzbekistan",
     authors: ["Jamshid Shukurullaev", "Ahmad Hamidov", "Anton Liutin"],
-    year: "2025",
+    year: "2026",
     venue: "R&R · Water (MDPI)",
     tag: "UNDER REVIEW",
     url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5535146",
     pages: 31,
     draftOnRequest: false,
-    abstract: "While drip irrigation saves water, farmers transitioning from traditional furrow irrigation often lack practical scheduling standards. We validate a simplified, evapotranspiration-based scheduling framework through a controlled longitudinal experiment (2021–2023) and a linked farmer adoption panel (N=32). Our difference-in-differences analysis isolates a critical behavioral guidance gap largely overlooked in the drip-adoption literature, while spatial stability analysis maps where this approach can easily transfer globally.",
+    abstract: "Water scarcity has accelerated in Central Asia, while practical scheduling guidance for drip irrigation remains limited. We apply an FAO-56 evapotranspiration-based scheduling approach to drip-irrigated cotton in Jizzakh, packaged as pre-calculated tables for farmers, and validate it through a two-phase design: paired researcher-supervised drip–furrow fields during 2021–2023, and a 32-farmer adoption panel during 2022–2023. Pre-calculated scheduling tables can convert existing drip hardware into measurable water-saving and yield gains.",
     keyFindings: [
-      "Scientific drip scheduling raised cotton yields by 39.9% (+1,116 kg/ha) and cut water use by 24.3% versus furrow — lifting water productivity by 84.9%.",
-      "Unguided drip adopters used 47% less water than furrow plots but yielded well below the Phase I frontier — evidence of systematic under-irrigation.",
-      "Pre-calculated irrigation tables alone (no training, no new equipment) led farmers to raise drip water use by 31.6%, converging yields with the experimental frontier.",
-      "The binding constraint on smallholder drip performance is scheduling guidance, not drip adoption itself — guidance costs ≈5–7% of current hardware subsidy levels."
+      "Phase I (researcher-supervised) establishes the production frontier: scheduled drip vs farmer-managed furrow yields +39.9% seed-cotton, uses 24.3% less water, and raises water productivity by 84.9%.",
+      "The paradox: in 2022 farmer drip plots used 47% less water than furrow yet stayed well below the Phase I frontier. Drip without scheduling means systematic under-irrigation—the intuition 'less water = better' over-saves and sacrifices yield.",
+      "The fix is more water, counter-intuitively: pre-calculated tables raised drip water application by 31.6% in 2023, lifting yields to the experimental frontier while keeping water use below furrow.",
+      "The Difference-in-Differences estimate identifies the guidance gap, not drip adoption itself, as the binding constraint on smallholder drip performance.",
+      "Reference evapotranspiration is temporally stable in arid regions (Jizzakh CV = 21.1%), and the same stable-ET cluster contains nine critically water-stressed countries—Kuwait, Libya, Egypt, UAE, Qatar, Turkmenistan, Syria, Uzbekistan, Saudi Arabia—where a hub-and-spoke distribution of pre-calculated tables should transfer."
     ],
     // ДОБАВЛЕНО: привязка картинки
-    figures: [{ src: images.graph3 }]
+    figures: [
+      {
+        src: images.waterCottonKcStages,
+        caption: "Cotton growth stages and crop coefficients — the underlying schedule indexed by Kc and ET₀"
+      },
+      {
+        src: images.waterEvaporationStabilityMap,
+        caption: "Spatial view — evaporation stability and agricultural water stress overlap in the arid belt"
+      },
+      {
+        src: images.waterStressStabilityScatter,
+        caption: "Analytical view — countries with critical water stress (top) cluster at low evaporation CV (left). The transfer-target zone."
+      }
+    ]
   },
 ];
 export type BlogPost = {

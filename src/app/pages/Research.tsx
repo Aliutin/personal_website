@@ -1,6 +1,8 @@
 import { profile, publications, researchIntro, publicationTagStyle } from "../../content";
 import { ArrRigth, Mail } from "../../componets/CustomIcons";
+import { Lightbox } from "../../componets/Lightbox";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Research() {
   const navigate = useNavigate();
@@ -86,13 +88,11 @@ export default function Research() {
 
                     {/* 4. Картинка */}
                     {pub.figures && pub.figures.length > 0 && (
-                      <div className="w-full aspect-[4/3] overflow-hidden bg-muted border border-border mb-10">
-                        <img 
-                          src={pub.figures[0].src} 
-                          alt={pub.title} 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <FigureCarousel
+                        figures={pub.figures}
+                        title={pub.title}
+                        className="mb-10"
+                      />
                     )}
 
                     {/* 5. Теги и мета-данные */}
@@ -224,13 +224,7 @@ export default function Research() {
                       {/* 3. Картинка (прижата к низу) */}
                       {pub.figures && pub.figures.length > 0 && (
                         <div className="mt-auto pt-12 w-full">
-                          <div className="w-full aspect-[4/3] overflow-hidden bg-muted border border-border">
-                            <img 
-                              src={pub.figures[0].src} 
-                              alt={pub.title} 
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
+                          <FigureCarousel figures={pub.figures} title={pub.title} />
                         </div>
                       )}
                     </div>
@@ -286,6 +280,86 @@ export default function Research() {
           })}
         </div>
       </section>      
+    </div>
+  );
+}
+
+function FigureCarousel({
+  figures,
+  title,
+  className = "",
+}: {
+  figures: { src: string; caption?: string }[];
+  title: string;
+  className?: string;
+}) {
+  const [index, setIndex] = useState(0);
+  const [zoomed, setZoomed] = useState(false);
+  const active = figures[index];
+  const hasMultiple = figures.length > 1;
+
+  const goTo = (nextIndex: number) => {
+    setIndex((nextIndex + figures.length) % figures.length);
+  };
+
+  return (
+    <div
+      className={`w-full ${className}`}
+      onClick={(event) => event.stopPropagation()}
+    >
+      <div className="relative w-full aspect-[4/3] overflow-hidden bg-muted border border-border">
+        <img
+          src={active.src}
+          alt={active.caption ? `${title}: ${active.caption}` : title}
+          onClick={(e) => {
+            e.stopPropagation();
+            setZoomed(true);
+          }}
+          className="w-full h-full object-contain p-3 cursor-zoom-in"
+        />
+        {zoomed && (
+          <Lightbox
+            images={figures.map((f) => ({
+              src: f.src,
+              alt: f.caption ? `${title}: ${f.caption}` : title,
+              caption: f.caption,
+            }))}
+            initialIndex={index}
+            onClose={() => setZoomed(false)}
+          />
+        )}
+
+        {hasMultiple && (
+          <>
+            <button
+              type="button"
+              aria-label="Previous figure"
+              onClick={() => goTo(index - 1)}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 text-[#1a1a1b] border border-border flex items-center justify-center hover:bg-[#1a1a1b] hover:text-white transition-colors"
+            >
+              <ArrRigth className="w-4 h-4 rotate-180" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next figure"
+              onClick={() => goTo(index + 1)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 text-[#1a1a1b] border border-border flex items-center justify-center hover:bg-[#1a1a1b] hover:text-white transition-colors"
+            >
+              <ArrRigth className="w-4 h-4" />
+            </button>
+            <div className="absolute left-3 bottom-3 right-3 flex items-end justify-between gap-3">
+              {active.caption && (
+                <div className="bg-white/95 border border-border px-3 py-2 text-small text-foreground leading-tight">
+                  {active.caption}
+                </div>
+              )}
+              <div className="ml-auto bg-[#1a1a1b] text-white px-3 py-2 text-small tabular-nums">
+                {index + 1}/{figures.length}
+              </div>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
