@@ -71,9 +71,9 @@ export default function Home() {
             <div className="px-4 md:px-6 lg:px-8 md:pt-8 lg:pr-10"> 
               
               <div className="flex flex-col lg:flex-row lg:items-center gap-1 lg:gap-3 text-small text-muted-foreground uppercase tracking-wider mb-6">
-                <span>Agricultural Economist</span>
+                <span>PhD Candidate</span>
                 <span className="hidden lg:block w-1.5 h-1.5 bg-gray-400 rounded-full shrink-0"></span>
-                <span>Available 2026</span>
+                <span>Available 2026-2027</span>
               </div>
               
               <h1 className="text-foreground mb-5">
@@ -413,7 +413,7 @@ export default function Home() {
             
             <div className="flex flex-col items-start lg:pr-16">
               <div className="flex items-center gap-3 text-small text-[#a1a1aa] uppercase tracking-wider mb-6">
-                <span>Agricultural Economist</span>
+                <span>PhD Candidate</span>
               </div>
               <h1 className="text-white mb-10 leading-[1.1]">
                 Code &amp;<br />
