@@ -84,9 +84,9 @@ export default function Home() {
               
               <p className="text-body text-muted-foreground max-w-[550px]">
                 PhD candidate in Agricultural &amp; Applied Economics at UW–Madison. I collect the data my questions need — building GIS pipelines
-                that link 54,946 Arizona plots to their shared canal network, running framed-field experiments
-                with farmers across seven regions of Uzbekistan, and working with historical archival records —
-                to measure how canal position, institutions, and technology shape crop outcomes.<br />
+                that link 54,946 Arizona plots to their shared canal network, running fieldwork with IFPRI and CGIAR SPIA
+                across seven regions of Uzbekistan (surveys, framed-field experiments, and farmer interviews),
+                and working with historical archival records — to measure how canal position, institutions, and technology shape crop outcomes.<br />
               </p>
             </div>
 
