@@ -101,7 +101,7 @@ export const navLinks: NavLink[] = [
 ];
 
 export const aboutBio =
-  "I'm a PhD candidate in Agricultural & Applied Economics at UW–Madison. I came to economics from physics via development economics at the New Economic School in Moscow. My research interests are development economics, environmental and natural resource economics, and economic history.";
+  "Most of my work asks a version of the same question: when a resource gets scarce, who absorbs the loss, who escapes it, and how much of that is decided by the rules rather than the rain?";
 
 export const researchInterests = [
   "Development Economics",
