@@ -83,7 +83,7 @@ export default function Home() {
               </h1>
               
               <p className="text-body text-muted-foreground max-w-[550px]">
-                PhD candidate at UW–Madison. I collect the data my questions need — building GIS pipelines
+                PhD candidate in Agricultural &amp; Applied Economics at UW–Madison. I collect the data my questions need — building GIS pipelines
                 that link 54,946 Arizona plots to their shared canal network, running framed-field experiments
                 with farmers across seven regions of Uzbekistan, and working with historical archival records —
                 to measure how canal position, institutions, and technology shape crop outcomes.<br />
