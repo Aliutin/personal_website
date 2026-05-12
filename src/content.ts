@@ -106,7 +106,7 @@ export const aboutBio =
 export const researchInterests = [
   "Development Economics",
   "Environmental & Natural Resource Economics",
-  "Economic History",
+  "GIS & Spatial Analysis",
 ];
 
 // --- НОВЫЙ БЛОК ДЛЯ ШАПКИ RESEARCH ---
