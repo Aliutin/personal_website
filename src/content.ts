@@ -101,7 +101,7 @@ export const navLinks: NavLink[] = [
 ];
 
 export const aboutBio =
-  "Most of my work asks a version of the same question: when a resource gets scarce, who absorbs the loss, who escapes it, and how much of that is decided by the rules rather than the rain?";
+  "Most of my work asks a version of the same question: when water grows scarce, who absorbs the loss, who escapes it, and how much of that is shaped by the rules rather than by nature?";
 
 export const researchInterests = [
   "Development Economics",

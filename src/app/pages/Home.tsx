@@ -79,7 +79,7 @@ export default function Home() {
               <h1 className="text-foreground mb-5">
                 Economist of water,<br />
                 institutions, and the<br />
-                farms in between
+                people they shape
               </h1>
               
               <p className="text-body text-muted-foreground max-w-[550px]">
@@ -172,21 +172,21 @@ export default function Home() {
                 
                 <div className="group border-b border-border pb-6">
                   <div className="flex justify-between items-center mb-4 gap-4">
-                    <h4 className="text-foreground">Development Economics</h4>
-                    <Mountains className="w-6 h-6 text-foreground shrink-0 opacity-50 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <p className="text-body text-muted-foreground">
-                    Economic mechanisms of sustainable growth and policy evaluation in developing regions.
-                  </p>
-                </div>
-
-                <div className="group border-b border-border pb-6">
-                  <div className="flex justify-between items-center mb-4 gap-4">
                     <h4 className="text-foreground">Environmental Economics</h4>
                     <Water className="w-6 h-6 text-foreground shrink-0 opacity-50 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <p className="text-body text-muted-foreground">
                     Sustainable management of water resources and balancing production with environmental health.
+                  </p>
+                </div>
+
+                <div className="group border-b border-border pb-6">
+                  <div className="flex justify-between items-center mb-4 gap-4">
+                    <h4 className="text-foreground">Development Economics</h4>
+                    <Mountains className="w-6 h-6 text-foreground shrink-0 opacity-50 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <p className="text-body text-muted-foreground">
+                    Economic mechanisms of sustainable growth and policy evaluation in developing regions.
                   </p>
                 </div>
 
