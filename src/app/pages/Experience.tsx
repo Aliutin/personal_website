@@ -65,7 +65,7 @@ function ExperienceItem({ item }: { item: Experience }) {
       </p>
       
       {item.detail && (
-        <p className="text-subtitle text-foreground max-w-3xl">
+        <p className="text-body text-foreground max-w-3xl leading-relaxed">
           {item.detail}
         </p>
       )}
