@@ -53,7 +53,7 @@ export default function Research() {
                     
                     {/* 1. Заголовок и Авторы */}
                     {/* ИЗМЕНЕНО: Используем системный тег h3 без жестких размеров */}
-                    <h2 className="text-foreground mb-3 !text-[var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#ff7b1b] transition-colors">
+                    <h2 className="text-foreground mb-3 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#ff7b1b] transition-colors">
                       {pub.title}
                     </h2>
                     {/* ИЗМЕНЕНО: Простое перечисление авторов без выделения жирным */}
@@ -240,7 +240,7 @@ export default function Research() {
                     {/* ПРАВАЯ ЧАСТЬ (2/3) */}
                     <div className="col-span-2 flex flex-col items-start max-w-[750px]">
                       {/* ИЗМЕНЕНО: Используем системный тег h3 */}
-                      <h2 className="text-foreground mb-4 !text-[var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#ff7b1b] transition-colors">
+                      <h2 className="text-foreground mb-4 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#ff7b1b] transition-colors">
                         {pub.title}
                       </h2>
                       

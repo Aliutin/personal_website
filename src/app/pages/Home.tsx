@@ -412,7 +412,7 @@ export default function Home() {
               <div className="flex items-center gap-3 text-small text-[#a1a1aa] uppercase tracking-wider mb-6">
                 <span>Environmental &amp; Development Economist</span>
               </div>
-              <h2 className="text-white mb-10 !text-[var(--h1-size)] !leading-[1.1]">
+              <h2 className="text-white mb-10 !text-[length:var(--h1-size)] !leading-[1.1]">
                 Code &amp;<br />
                 replication files<br />
                 coming to GitHub.

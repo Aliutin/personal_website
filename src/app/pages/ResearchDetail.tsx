@@ -106,7 +106,7 @@ function UpstreamAdvantageDetail() {
               <span>64 PP</span>
             </div>
 
-            <h1 className="text-white mb-6 !text-[var(--h3-size)] !leading-[var(--h3-lh)]">
+            <h1 className="text-white mb-6 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
               First in Time, Last in Line? Water Rights, Canal Position, and
               Drought Inequality in Arizona
             </h1>
@@ -284,7 +284,7 @@ function WaterConservationDetail() {
               <span>26 PP</span>
             </div>
 
-            <h1 className="text-white mb-6 !text-[var(--h3-size)] !leading-[var(--h3-lh)]">
+            <h1 className="text-white mb-6 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
               Water Conservation Through Simplified Drip Irrigation Scheduling
               for Cotton Cultivation in Uzbekistan
             </h1>
@@ -494,7 +494,7 @@ function BehavioralGamesDetail() {
               <span>51 PP</span>
             </div>
 
-            <h1 className="text-white mb-6 !text-[var(--h3-size)] !leading-[var(--h3-lh)]">
+            <h1 className="text-white mb-6 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
               Using Behavioral Games to Understand Water-Saving Technology
               Adoption in Uzbekistan
             </h1>
@@ -710,7 +710,7 @@ function GenericResearchDetail({
               )}
             </div>
 
-            <h1 className="text-white mb-6 !text-[var(--h3-size)] !leading-[var(--h3-lh)]">{publication.title}</h1>
+            <h1 className="text-white mb-6 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">{publication.title}</h1>
             {publication.abstract && (
               <p className="text-body text-gray-300 mb-10 max-w-3xl">
                 {publication.abstract}
@@ -794,7 +794,7 @@ function ResearchHeader() {
         >
           <ArrRigth className="w-5 h-5 rotate-180" />
         </Link>
-        <div className="font-['Ovo',serif] text-[var(--h3-size)] leading-[var(--h3-lh)] tracking-[var(--h3-ls)] text-foreground">Research</div>
+        <div className="font-['Ovo',serif] text-[length:var(--h3-size)] leading-[var(--h3-lh)] tracking-[var(--h3-ls)] text-foreground">Research</div>
       </div>
     </div>
   );
@@ -817,7 +817,7 @@ function StatsBand({ stats }: { stats: [string, string][] }) {
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div className="flex flex-col">
-      <div className="font-['Ovo',serif] text-[var(--h2-size)] leading-[var(--h2-lh)] text-foreground mb-2">{value}</div>
+      <div className="font-['Ovo',serif] text-[length:var(--h2-size)] leading-[var(--h2-lh)] text-foreground mb-2">{value}</div>
       <div className="text-small uppercase text-muted-foreground">{label}</div>
     </div>
   );
