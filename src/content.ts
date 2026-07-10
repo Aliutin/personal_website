@@ -577,7 +577,7 @@ export const publications: Publication[] = [
     title: "Water Conservation Through Simplified Drip Irrigation Scheduling for Cotton Cultivation in Uzbekistan",
     authors: ["Jamshid Shukurullaev", "Ahmad Hamidov", "Anton Liutin"],
     year: "2026",
-    venue: "Revision resubmitted · Water (MDPI), manuscript water-4014559 · June 30, 2026",
+    venue: "Water (MDPI)",
     tag: "REVISION RESUBMITTED",
     pages: 26,
     draftOnRequest: true,
