@@ -12,7 +12,7 @@ export default function Blog() {
             Blog
           </h1>
           <p className="text-body text-muted-foreground max-w-3xl leading-relaxed">
-            Policy briefs and outreach writing on agriculture, water, and development.
+            Selected policy and outreach writing on water, agriculture, and development.
           </p>
         </div>
       </section>
@@ -36,15 +36,15 @@ export default function Blog() {
                 <div className="h-[220px] w-full overflow-hidden mb-6 bg-muted">
                   <img
                     src={post.image}
-                    alt={post.title}
+                    alt=""
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 
-                <h4 className="text-subtitle text-foreground mb-8 flex-1 group-hover:text-[#ff7b1b] transition-colors">
+                <h2 className="text-subtitle text-foreground mb-8 flex-1 group-hover:text-[#b84a00] transition-colors">
                   {post.title}
-                </h4>
+                </h2>
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-muted-foreground text-small uppercase tracking-wider">

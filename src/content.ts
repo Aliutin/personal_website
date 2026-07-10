@@ -8,6 +8,8 @@ import column1 from "./assets/bf0b7251441e4704ceca49b268e03bf6d4a58be1.webp";
 import column2 from "./assets/5136d2c4cc870258fb915013ac009e1fe7620808.webp";
 import column3 from "./assets/9c6167c3e6a3b4333785e3ce161f7341c950782d.webp";
 import ifpriAnonymityCover from "./assets/ifpri-anonymity-uzbekistan.webp";
+import cgiarWaterSubsidiesCover from "./assets/cgiar-water-subsidies.jpg";
+import cgiarIrrigationInnovationCover from "./assets/cgiar-irrigation-innovation.jpg";
 import personal1 from "./assets/cbb1fa94e4f852cb03119d1c6bddf1948f01c8e1.webp";
 import personal2 from "./assets/ef7a374bee7e4966b910f79bca9b81011dc988cd.webp";
 import personal3 from "./assets/9edfaff294da4b113d5d956e36f592c600ae24bf.webp";
@@ -75,8 +77,8 @@ export const images = {
 
 export const profile = {
   name: "Anton Liutin",
-  title: "PhD Candidate · Ag & Applied Economics",
-  email: "LIUTIN@WISC.EDU",
+  title: "PhD Candidate · Agricultural & Applied Economics",
+  email: "liutin@wisc.edu",
   phone: "+1 608 640 15 06",
   affiliation:
     "University of Wisconsin–Madison · Department of Agricultural & Applied Economics",
@@ -93,7 +95,7 @@ export const profile = {
 export type NavLink = { label: string; to: string };
 
 export const navLinks: NavLink[] = [
-  { label: "About", to: "/" },
+  { label: "About", to: "/#about" },
   { label: "Research", to: "/research" },
   { label: "Experience", to: "/experience" },
   { label: "Blog", to: "/blog" },
@@ -104,15 +106,15 @@ export const aboutBio =
   "Most of my work asks a version of the same question: when water grows scarce, who absorbs the loss, who escapes it, and how much of that is shaped by the rules rather than by nature?";
 
 export const researchInterests = [
-  "Development Economics",
   "Environmental & Natural Resource Economics",
+  "Development Economics",
   "GIS & Spatial Analysis",
 ];
 
 // --- НОВЫЙ БЛОК ДЛЯ ШАПКИ RESEARCH ---
 export const researchIntro = {
-  title: "Publications & working papers.",
-  description: "Job market paper on water-graph inequality in Arizona; fieldwork-grounded work on drip irrigation adoption and simplified irrigation scheduling in Uzbekistan. Click any paper for an extended preview."
+  title: "Research papers.",
+  description: "Research on water allocation and drought inequality in Arizona, alongside fieldwork-based studies of technology adoption and irrigation scheduling in Uzbekistan. Select a paper for an extended preview."
 };
 
 export type Education = {
@@ -150,7 +152,7 @@ export const Experiences: Experience[] = [
     title: "Behavioral games experiment — Uzbekistan",
     org: "CGIAR SPIA",
     orgShort: "CGIAR SPIA",
-    detail: "Framed-field behavioral games experiment on a subsample from the IFPRI farmer survey. Funded by CGIAR SPIA, with Jamshid Shukurullaev."
+    detail: "Framed field experiment with 190 farmers across four regions, drawing participants from the IFPRI farmer survey. Supported by CGIAR SPIA, with Jamshid Shukurullaev."
   },
   {
     kind: "fieldwork",
@@ -160,10 +162,10 @@ export const Experiences: Experience[] = [
     endMonth: 11,
     periodLabel: "Sep – Nov 2024",
     role: "Fieldwork",
-    title: "Large farmer survey — Uzbekistan",
+    title: "Large-scale farmer survey — Uzbekistan",
     org: "IFPRI · CGIAR NEXUS Gains",
     orgShort: "IFPRI",
-    detail: "Prepared a large interview study of small and large farmers in Uzbekistan with IFPRI. Trained and monitored local enumerators across survey regions."
+    detail: "Prepared and fielded a survey of small and large farmers across five regions of Uzbekistan with IFPRI. Trained and monitored local enumerators across survey regions."
   },
   {
     kind: "research",
@@ -346,7 +348,7 @@ export const experiences: Experience[] = [
   {
     kind: "fieldwork",
     role: "Fieldwork",
-    title: "Uzbekistan — Farmer interviews on water-saving technology",
+    title: "Uzbekistan — Interviews on water-saving technologies",
     org: "7 regions of Uzbekistan",
     orgShort: "Uzbekistan",
     periodLabel: "Summer 2023",
@@ -355,12 +357,12 @@ export const experiences: Experience[] = [
     endYear: 2023,
     endMonth: 8,
     detail:
-      "Focus group discussions and in-depth interviews with farmers across 7 regions of Uzbekistan on adoption of water-saving technology. Worked together with Paul Castañeda Dower under IFPRI cooperation.",
+      "Conducted focus-group discussions and in-depth farmer interviews across seven regions of Uzbekistan on the adoption of water-saving technologies, in collaboration with Paul Castañeda Dower and IFPRI.",
   },
   {
     kind: "fieldwork",
     role: "Fieldwork",
-    title: "Uzbekistan — Large farmer survey (IFPRI collaboration)",
+    title: "Uzbekistan — Large-scale farmer survey",
     org: "IFPRI · CGIAR NEXUS Gains",
     orgShort: "Uzbekistan · IFPRI",
     periodLabel: "Sep – Nov 2024",
@@ -369,7 +371,7 @@ export const experiences: Experience[] = [
     endYear: 2024,
     endMonth: 11,
     detail:
-      "Prepared a large interview study of small and large farmers in Uzbekistan with IFPRI. Trained and monitored local enumerators, traveled across survey regions.",
+      "Prepared and fielded a survey of small and large farmers across five regions of Uzbekistan with IFPRI. Trained and supervised local enumerators across the survey regions.",
   },
   {
     kind: "fieldwork",
@@ -383,11 +385,11 @@ export const experiences: Experience[] = [
     endYear: 2024,
     endMonth: 12,
     detail:
-      "Ran the framed-field behavioral games experiment on a subsample from the IFPRI farmer survey. Funded by CGIAR SPIA, conducted jointly with Jamshid Shukurullaev.",
+      "Designed and ran a framed-field experiment with 190 farmers across four regions, using a subsample of the IFPRI survey. Conducted jointly with Jamshid Shukurullaev with support from CGIAR SPIA.",
   },
   {
     kind: "teaching",
-    role: "TA",
+    role: "Teaching Assistant",
     title: "AAE 350: World Hunger and Malnutrition",
     org: "University of Wisconsin–Madison",
     orgShort: "UW–Madison",
@@ -400,7 +402,7 @@ export const experiences: Experience[] = [
   },
   {
     kind: "teaching",
-    role: "TA",
+    role: "Teaching Assistant",
     title: "AAE 215: Introduction to Agricultural and Applied Economics",
     org: "University of Wisconsin–Madison",
     orgShort: "UW–Madison",
@@ -452,7 +454,7 @@ export const experiences: Experience[] = [
   },
   {
     kind: "teaching",
-    role: "TA",
+    role: "Teaching Assistant",
     title: "Development Economics (M.A.)",
     org: "New Economic School",
     orgShort: "NES",
@@ -469,9 +471,9 @@ export type PublicationFigure = { src: string; caption?: string };
 
 export function publicationTagStyle(tag: string) {
   if (tag === "JOB MARKET PAPER") {
-    return { text: "text-[#ff7b1b]", dot: "bg-[#ff7b1b]" };
+    return { text: "text-[#b84a00]", dot: "bg-[#ff7b1b]" };
   }
-  if (tag === "UNDER REVIEW") {
+  if (tag === "UNDER REVIEW" || tag === "REVISION RESUBMITTED") {
     return { text: "text-[#1a1a1b]", dot: "bg-[#1a1a1b]" };
   }
   return { text: "text-[#757578]", dot: "bg-gray-400" };
@@ -496,28 +498,29 @@ export type Publication = {
 export const publications: Publication[] = [
   {
     slug: "upstream-advantage",
-    title: "Upstream Advantage in Surface Water Systems: Measuring Inequality Using a Water-Graph Approach",
+    title: "First in Time, Last in Line? Water Rights, Canal Position, and Drought Inequality in Arizona",
     authors: ["Anton Liutin"],
     year: "2026",
     venue: "Job Market Paper · UW–Madison",
     tag: "JOB MARKET PAPER",
     draftOnRequest: true,
-    pages: 58,
-    abstract: "Do formal water rights eliminate the inequality created by sequential canal access? I build a directed water graph of 54,946 Arizona agricultural plots and test whether network position shapes satellite-derived crop outcomes from 2016 to 2023. A donut identification strategy isolates far-upstream competition (>1–10 km) from spatially correlated local shocks, validating a directional water-competition mechanism. The paper estimates whether tail-end plots have lower crop health, whether drought amplifies that penalty, and which district institutions buffer or concentrate it.",
+    pages: 64,
+    abstract: "Do formal water rights eliminate within-canal inequality when water physically moves from head to tail? I build a water-graph linking 54,946 agricultural plots across Arizona's canal networks. The cross-section measures whether delivery position predicts crop outcomes; the panel uses year-to-year changes in distant upstream irrigation activity during the 2016–2023 Colorado River drought. Nearby fallowing controls absorb spatially correlated local shocks, while activity among canal-connected upstream plots beyond exclusion cutoffs provides the identifying variation. The results show a pattern-supported drought gradient concentrated in surface-water-dominant and junior-rights districts, while groundwater access and district institutions are associated with substantial attenuation.",
     keyFindings: [
-      "Tail-end plots have lower NDMI, GCVI, and evapotranspiration even after controls for water-rights seniority, soil, groundwater access, market proximity, and fixed effects.",
-      "The drought–position penalty strengthens with distance: at the >10 km threshold, the interaction is −0.014 for NDMI, −0.061 for GCVI, and −0.047 for ET (roughly 2× the full-path coefficients).",
-      "A horse-race specification confirms directionality: upstream position drives the gradient, while downstream position fades toward zero.",
-      "The gradient is concentrated in surface-water-dominant, junior-rights districts; groundwater access eliminates it entirely, and volumetric pricing nearly fully offsets it where the penalty is largest."
+      "Downstream plots show significantly lower canopy moisture (NDMI) and chlorophyll vigor (GCVI) after controls; the corresponding evapotranspiration level estimate is smaller and statistically insignificant. The full head-to-tail movement predicts a GCVI decline equal to 5.1% of a standard deviation.",
+      "The distant-upstream-activity × drought interaction strengthens as nearby variation is excluded. At the >10 km cutoff, the estimates are −0.008 for NDMI, −0.035 for GCVI, and −0.023 for ET; the paper treats the pattern across cutoffs and outcomes as the evidence rather than any single coefficient.",
+      "A downstream-activity placebo attenuates once distant upstream activity is included, supporting a directional water-competition interpretation most clearly for vegetation health.",
+      "The drought-state upstream-activity gradient is concentrated in surface-water-dominant districts and is near zero in groundwater-dominant and mixed districts. Junior-rights districts face substantially steeper drought amplification than senior-rights districts.",
+      "Calibrated magnitudes imply roughly $6.0 million per year of gross revenue-equivalent exposure, concentrated almost entirely in junior surface-water-dependent districts. These are scale exercises, not estimates of profit, causal welfare, or an optimal allocation."
     ],
     // ДОБАВЛЕНО: привязка картинки
     figures: [
-      { src: images.jmpStudyAreaMap, caption: "Arizona sample and canal setting" },
+      { src: images.jmpStudyAreaMap, caption: "Arizona study area and canal systems" },
       { src: images.jmpWaterGraphPosition, caption: "Water-graph construction" },
-      { src: images.jmpDonutIdentification, caption: "Donut identification strategy" },
-      { src: images.jmpDonutCoefficients, caption: "Donut coefficients" },
-      { src: images.jmpUpstreamDownstreamHorserace, caption: "Upstream vs downstream horse race" },
-      { src: images.jmpProductionFunction, caption: "Production function calibration" }
+      { src: images.jmpDonutIdentification, caption: "Distant upstream activity design" },
+      { src: images.jmpDonutCoefficients, caption: "Distant upstream activity coefficients" },
+      { src: images.jmpUpstreamDownstreamHorserace, caption: "Upstream vs downstream activity placebo" },
+      { src: images.jmpProductionFunction, caption: "Calibrated water-reallocation example" }
     ]
   },
   {
@@ -528,32 +531,32 @@ export const publications: Publication[] = [
     venue: "Working Paper",
     tag: "WORKING PAPER",
     draftOnRequest: true,
-    pages: 23,
-    abstract: "We conduct a framed field experiment with 190 farmers across four regions of Uzbekistan, modifying the standard Irrigation Game to include an explicit drip irrigation adoption decision. The design surfaces a structural asymmetry: downstream players face the scarcity that drives adoption, but each upstream adopter generates the largest spillover—and the diffusion channel runs only downstream, leaving the social returns to upstream adoption uncollected at equilibrium. A two-social-cost model formalizes the wedge, and the experimental data confirm it: in-game decisions also reflect farmers' real water access, irrigation costs, and social networks.",
+    pages: 51,
+    abstract: "We conduct a framed field experiment with 190 farmers across four regions of Uzbekistan, covering 15 of the 16 surveyed districts in 38 five-player games. Random assignment to canal position shows that new adoption concentrates at the scarcity-stressed tail: Player 5's first-adoption hazard is 8.9 percentage points above Player 1's. Upstream adoption is associated with 0.407 units more water consumed by each downstream player, but we find no robust evidence that it triggers others to adopt. Linked survey data show that in-game behavior also reflects farmers' real water-access positions, agricultural-cluster ties, and willingness to pay.",
     keyFindings: [
-      "Adoption is downstream-driven by scarcity: in-game, P5 adopts at 62% versus 49% for P1, and the same pattern appears in real-world data—farmers with more downstream plots and higher irrigation costs adopt more in the game (p < 0.01).",
-      "Spillover is upstream-driven: each upstream adopter frees 0.407 downstream water units (p < 0.01); the model predicts P1's adoption alone yields 4.3 lifetime tokens of total downstream gain—the largest single-position externality.",
-      "Diffusion runs one way only: upstream adoption raises downstream adoption by 6.4 pp (21.5 pp with player FE), but downstream adoption does not propagate upward. The equilibrium leaves the largest social returns uncollected.",
-      "Sessions with higher drip adoption have lower water-consumption Gini coefficients, suggesting that technology adoption can reduce distributional inequality along the canal.",
-      "Social structure matters: each additional in-game connection adds 1.5 pp (p < 0.05); agricultural cluster membership adds 40 pp (p < 0.01)."
+      "Player 5's first-adoption hazard is 8.9 percentage points above Player 1's (wild-bootstrap p = 0.009; randomization-inference p = 0.001), even though the calibrated model predicts that the tail player should not adopt.",
+      "Each additional upstream adopter is associated with 0.407 units more water consumed by downstream players (wild-bootstrap p = 0.018) and a 1.9 percentage-point larger downstream share of group water (p < 0.001). Adoption itself is not randomly assigned, so these are conditional associations.",
+      "There is no robust evidence of peer-triggered adoption: the first-adoption-hazard estimate for contemporaneous upstream adoption is 0.005 (p = 0.855), and lagged estimates are not positive. The measurable spillover operates through water quantities, not observable imitation.",
+      "The conservation association is concentrated upstream: adopters in positions 1–2 consume 0.886 fewer units than non-adopters (p < 0.001), while the downstream estimate is not statistically different from zero.",
+      "Agricultural-cluster membership is associated with a 31 percentage-point higher probability of ever adopting in the game (p = 0.042); informal social connections do not robustly predict adoption once inference respects the 38 game clusters."
     ],
     // ДОБАВЛЕНО: привязка картинки
     figures: [
       {
         src: images.behavioralGamesSpilloverHeatmap,
-        caption: "Spillover matrix — upstream adoption benefits downstream; downstream adoption benefits no one (below-diagonal cells = 0)"
+        caption: "Calibrated model — upstream adoption creates downstream water benefits, while downstream adoption creates no upstream benefit"
       },
       {
         src: images.behavioralGamesAdoption,
-        caption: "Drip adoption rate by canal position (empirical) — P5 reaches 62%, P1 stays at 49%"
+        caption: "Raw drip-adoption rates by canal position — pooled rates are 62% for P5 and 49% for P1"
       },
       {
         src: images.behavioralGamesAdoptionThreshold,
-        caption: "Break-even DI value by position — P5 never crosses the R=14 cost line, explaining why the most-downstream player doesn't adopt"
+        caption: "Calibrated model — DI profitability varies non-monotonically with water supply and canal position"
       },
       {
         src: images.behavioralGamesSpilloverCascade,
-        caption: "Water cascade from P1's DI adoption — P1 saves 0.52 units, downstream gains rise from +0.09 (P2) to +0.21 (P5)"
+        caption: "Calibrated model — P1 adoption reduces own extraction and increases water available to every downstream player"
       },
       {
         src: images.behavioralGamesGamePrimitives,
@@ -565,7 +568,7 @@ export const publications: Publication[] = [
       },
       {
         src: images.behavioralGamesGini,
-        caption: "Water-consumption Gini falls as DI spreads in Sessions 2–3; investment Gini stays low"
+        caption: "Descriptive inequality dynamics across the three experimental sessions"
       }
     ]
   },
@@ -574,18 +577,17 @@ export const publications: Publication[] = [
     title: "Water Conservation Through Simplified Drip Irrigation Scheduling for Cotton Cultivation in Uzbekistan",
     authors: ["Jamshid Shukurullaev", "Ahmad Hamidov", "Anton Liutin"],
     year: "2026",
-    venue: "R&R · Water (MDPI)",
-    tag: "UNDER REVIEW",
-    url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5535146",
-    pages: 31,
-    draftOnRequest: false,
+    venue: "Revision resubmitted · Water (MDPI), manuscript water-4014559 · June 30, 2026",
+    tag: "REVISION RESUBMITTED",
+    pages: 26,
+    draftOnRequest: true,
     abstract: "Water scarcity has accelerated in Central Asia, while practical scheduling guidance for drip irrigation remains limited. We apply an FAO-56 evapotranspiration-based scheduling approach to drip-irrigated cotton in Jizzakh, packaged as pre-calculated tables for farmers, and validate it through a two-phase design: paired researcher-supervised drip–furrow fields during 2021–2023, and a 32-farmer adoption panel during 2022–2023. Pre-calculated scheduling tables can convert existing drip hardware into measurable water-saving and yield gains.",
     keyFindings: [
       "Phase I (researcher-supervised) establishes the production frontier: scheduled drip vs farmer-managed furrow yields +39.9% seed-cotton, uses 24.3% less water, and raises water productivity by 84.9%.",
       "The paradox: in 2022 farmer drip plots used 47% less water than furrow yet stayed well below the Phase I frontier. Drip without scheduling means systematic under-irrigation—the intuition 'less water = better' over-saves and sacrifices yield.",
-      "The fix is more water, counter-intuitively: pre-calculated tables raised drip water application by 31.6% in 2023, lifting yields to the experimental frontier while keeping water use below furrow.",
-      "The Difference-in-Differences estimate identifies the guidance gap, not drip adoption itself, as the binding constraint on smallholder drip performance.",
-      "Reference evapotranspiration is temporally stable in arid regions (Jizzakh CV = 21.1%), and the same stable-ET cluster contains nine critically water-stressed countries—Kuwait, Libya, Egypt, UAE, Qatar, Turkmenistan, Syria, Uzbekistan, Saudi Arabia—where a hub-and-spoke distribution of pre-calculated tables should transfer."
+      "The fix is more water, counter-intuitively: pre-calculated tables raised observed drip water application by 24.6%, from 3,340 to 4,160 m³/ha. Guided drip still used 27.4% less water than furrow while producing 60.3% higher yield.",
+      "The difference-in-differences estimates reveal a guidance gap: after receiving scheduling tables, existing drip adopters increased water application and moved closer to the researcher-supervised yield frontier.",
+      "Reference evapotranspiration is temporally stable in arid regions (Jizzakh CV = 21.1%). Nine critically water-stressed countries—Kuwait, Libya, Egypt, UAE, Qatar, Turkmenistan, Syria, Uzbekistan, and Saudi Arabia—are candidates for targeted trials, subject to local agronomic validation."
     ],
     // ДОБАВЛЕНО: привязка картинки
     figures: [
@@ -595,11 +597,11 @@ export const publications: Publication[] = [
       },
       {
         src: images.waterEvaporationStabilityMap,
-        caption: "Spatial view — evaporation stability and agricultural water stress overlap in the arid belt"
+        caption: "Spatial view — evaporation stability and agricultural water stress identify possible settings for targeted local trials"
       },
       {
         src: images.waterStressStabilityScatter,
-        caption: "Analytical view — countries with critical water stress (top) cluster at low evaporation CV (left). The transfer-target zone."
+        caption: "Analytical view — nine critically water-stressed countries with low evaporation variability are candidates for targeted trials, not evidence of direct transferability"
       }
     ]
   },
@@ -619,8 +621,7 @@ export const blogPosts: BlogPost[] = [
     venue: "CGIAR",
     year: "2025",
     url: "https://www.cgiar.org/news-events/news/why-subsidies-alone-wont-drive-adoption-water-saving-technology",
-    image:
-      "https://www.cgiar.org/sites/g/files/fvypus371/files/2025-12/Blog_WTP.jpg",
+    image: cgiarWaterSubsidiesCover,
   },
   {
     title:
@@ -636,7 +637,6 @@ export const blogPosts: BlogPost[] = [
     venue: "CGIAR",
     year: "2023",
     url: "https://www.cgiar.org/news-events/news/irrigation-innovation-navigating-challenges-in-uzbekistan-water-energy-food-environment-nexus",
-    image:
-      "https://www.cgiar.org/sites/g/files/fvypus371/files/PXL_20230828_060910858-scaled.jpg",
+    image: cgiarIrrigationInnovationCover,
   },
 ];

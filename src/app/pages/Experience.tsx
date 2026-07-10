@@ -23,6 +23,16 @@ function groupExperiencesByYear(items: Experience[]) {
   return { grouped, sortedYears };
 }
 
+function locationLabelFor(items: Experience[]) {
+  const locations = items.map((item) => {
+    if (item.orgShort.toLowerCase().includes("uzbekistan")) return "UZBEKISTAN";
+    if (item.orgShort.toLowerCase().includes("uw")) return "UW–MADISON";
+    return item.orgShort.toUpperCase();
+  });
+
+  return [...new Set(locations)].join(" & ");
+}
+
 // --- ЛОКАЛЬНЫЕ КОМПОНЕНТЫ ---
 
 function DotIcon({ kind }: { kind: ExperienceKind }) {
@@ -117,7 +127,7 @@ export default function ExperiencePage() {
             Experience
           </h1>
           <p className="text-body text-muted-foreground max-w-3xl leading-relaxed">
-            Research, teaching, and fieldwork since 2020.
+            Selected research, teaching, and fieldwork experience.
           </p>
         </div>
       </section>
@@ -125,7 +135,7 @@ export default function ExperiencePage() {
       {/* Список по годам */}
       <section className="w-full flex flex-col">
         {sortedYears.map((year) => {
-          const locationLabel = year === 2020 ? "AT NES" : "AT UW-MADISON";
+          const locationLabel = locationLabelFor(grouped[year]);
 
           return (
             <YearBlock

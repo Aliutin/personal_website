@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Anton Liutin">
+  <rect width="64" height="64" rx="14" fill="#fafafa" />
+  <circle cx="32" cy="32" r="23" fill="#ff7b1b" />
+  <path d="M21 44 29.5 20h5L43 44h-5.4l-1.8-5.6h-8.1L25.9 44H21Zm8.2-10.3h5.1l-2.5-8-2.6 8Z" fill="#fff" />
+</svg>

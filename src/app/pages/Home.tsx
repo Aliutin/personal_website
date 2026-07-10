@@ -37,12 +37,10 @@ export default function Home() {
     .slice(0, 2);
 
   const personalItems = [
-    { img: images.personal1, title: "Cat, with a buttercup crown", loc: "AT HOME" },
-    { img: images.personal2, title: "Olbrich Botanical Gardens", loc: "MADISON" },
-    { img: images.personal3, title: "Daffodil season", loc: "MOSCOW" },
-    { img: images.personal4, title: "Hiking trail views", loc: "ARIZONA" },
-    { img: images.personal1, title: "Local agriculture", loc: "FARM" },
-    { img: images.personal2, title: "Weekend getaway", loc: "CHICAGO" },
+    { img: images.personal1, title: "Olbrich Botanical Gardens", loc: "MADISON" },
+    { img: images.personal2, title: "Spring flowers", loc: "MOSCOW" },
+    { img: images.personal3, title: "Basketball at Elky Park", loc: "KIROV, RUSSIA" },
+    { img: images.personal4, title: "Cat with a buttercup crown", loc: "AT HOME" },
   ];
 
   const nextSlide = () => {
@@ -73,7 +71,7 @@ export default function Home() {
               <div className="flex flex-col lg:flex-row lg:items-center gap-1 lg:gap-3 text-small text-muted-foreground uppercase tracking-wider mb-6">
                 <span>Environmental &amp; Development Economist</span>
                 <span className="hidden lg:block w-1.5 h-1.5 bg-gray-400 rounded-full shrink-0"></span>
-                <span>Available 2026-2027</span>
+                <span>On the 2026–27 job market</span>
               </div>
               
               <h1 className="text-foreground mb-5">
@@ -83,10 +81,11 @@ export default function Home() {
               </h1>
               
               <p className="text-body text-muted-foreground max-w-[550px]">
-                PhD candidate in Agricultural &amp; Applied Economics at UW–Madison. I collect the data my questions need — building GIS pipelines
-                that link 54,946 Arizona plots to their shared canal network, running fieldwork with IFPRI and CGIAR SPIA
-                across seven regions of Uzbekistan (surveys, framed-field experiments, and farmer interviews),
-                and working with historical archival records — to measure how canal position, institutions, and technology shape crop outcomes.<br />
+                PhD candidate in Agricultural &amp; Applied Economics at UW–Madison. My research combines geospatial data,
+                original fieldwork, and archival records. I build GIS pipelines linking 54,946 agricultural plots in Arizona
+                through an interconnected system of canals; conduct interviews and focus-group discussions across seven regions
+                and a farmer survey across five regions of Uzbekistan with IFPRI; and run framed-field experiments in four regions
+                with CGIAR SPIA. I use these data to study how water systems, institutions, and technology shape economic outcomes.<br />
               </p>
             </div>
 
@@ -95,7 +94,7 @@ export default function Home() {
               <div className="px-4 md:px-6 lg:px-8 mb-4 md:mb-10 flex gap-1 w-full lg:w-fit">
                 <button
                   onClick={scrollToContact}
-                  className="flex-1 lg:flex-none bg-[#ff7b1b] text-white px-8 py-4 text-body uppercase transition-colors hover:bg-white hover:text-[#ff7b1b]"
+                  className="flex-1 lg:flex-none bg-[#b84a00] text-white px-8 py-4 text-body uppercase transition-colors hover:bg-white hover:text-[#b84a00]"
                 >
                   CONTACT ME
                 </button>
@@ -112,15 +111,15 @@ export default function Home() {
               <div className="hidden lg:flex px-8 pb-10 flex-wrap items-center gap-x-6 gap-y-2 text-small text-muted-foreground">
                 <a 
                   href={`mailto:${profile.email}`} 
-                  className="text-body text-foreground hover:text-[#ff7b1b] transition-colors uppercase tracking-wider"
+                  className="text-body text-foreground hover:text-[#b84a00] transition-colors uppercase tracking-wider"
                 >
                   {profile.email.toLowerCase()}
                 </a>
                 <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-body text-foreground uppercase tracking-wider">
-                  <a href={profile.scholarUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b]">Scholar</a>
-                  <a href={profile.orcidUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b]">ORCID</a>
-                  <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b]">GitHub</a>
+                  <a href={profile.scholarUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#b84a00]">Scholar</a>
+                  <a href={profile.orcidUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#b84a00]">ORCID</a>
+                  <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#b84a00]">GitHub</a>
                 </div>
               </div>
 
@@ -172,31 +171,31 @@ export default function Home() {
                 
                 <div className="group border-b border-border pb-6">
                   <div className="flex justify-between items-center mb-4 gap-4">
-                    <h4 className="text-foreground">Environmental Economics</h4>
+                    <h3 className="text-body font-semibold text-foreground">Environmental Economics</h3>
                     <Water className="w-6 h-6 text-foreground shrink-0 opacity-50 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <p className="text-body text-muted-foreground">
-                    Sustainable management of water resources and balancing production with environmental health.
+                    How water institutions and incentives shape resource use, production, and environmental outcomes.
                   </p>
                 </div>
 
                 <div className="group border-b border-border pb-6">
                   <div className="flex justify-between items-center mb-4 gap-4">
-                    <h4 className="text-foreground">Development Economics</h4>
+                    <h3 className="text-body font-semibold text-foreground">Development Economics</h3>
                     <Mountains className="w-6 h-6 text-foreground shrink-0 opacity-50 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <p className="text-body text-muted-foreground">
-                    Economic mechanisms of sustainable growth and policy evaluation in developing regions.
+                    How institutions, infrastructure, and policy shape technology adoption and economic opportunity in developing economies.
                   </p>
                 </div>
 
                 <div className="group border-b border-border pb-6">
                   <div className="flex justify-between items-center mb-4 gap-4">
-                    <h4 className="text-foreground">GIS &amp; Spatial Analysis</h4>
+                    <h3 className="text-body font-semibold text-foreground">GIS &amp; Spatial Analysis</h3>
                     <PlacesEarthPlanet className="w-6 h-6 text-foreground shrink-0 opacity-50 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <p className="text-body text-muted-foreground">
-                    Spatial methods and satellite data for measuring how water and infrastructure shape agricultural outcomes.
+                    Spatial methods, network data, and satellite imagery for measuring how water and infrastructure shape economic outcomes.
                   </p>
                 </div>
 
@@ -216,7 +215,7 @@ export default function Home() {
               to="/research"
               className="hidden md:inline-flex items-center gap-3 bg-[#e5e5e5] text-[#1a1a1b] px-8 py-4 text-body uppercase transition-colors hover:bg-gray-300 group"
             >
-              See all publications
+              View all research
               <ArrRigth className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -226,14 +225,12 @@ export default function Home() {
           {recentPublications.map((pub, idx) => {
             const tagStyle = publicationTagStyle(pub.tag);
             return (
-              <article
+              <Link
                 key={idx}
+                to={`/research/${pub.slug}`}
                 className={`w-full group hover:bg-white transition-colors cursor-pointer ${
                   idx > 0 ? "border-t border-border" : ""
                 } ${idx === recentPublications.length - 1 ? "border-b border-border" : ""}`}
-                onClick={() => {
-                  if (pub.url) window.open(pub.url, "_blank", "noopener,noreferrer");
-                }}
               >
                 <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 py-10 flex flex-col md:grid md:grid-cols-3">
                   
@@ -246,8 +243,8 @@ export default function Home() {
                     <p className="text-muted-foreground text-small mt-2">{pub.venue}</p>
 
                     <div className="hidden md:inline-flex mt-12 items-center gap-4 group/btn">
-                      <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
-                        Read more
+                      <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#b84a00] transition-colors">
+                        Read overview
                       </span>
                       <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
                         <ArrRigth className="w-5 h-5" />
@@ -256,7 +253,7 @@ export default function Home() {
                   </div>
                   
                   <div className="md:col-span-2 mt-6 md:mt-0 flex flex-col items-start">
-                    <h3 className="text-foreground max-w-3xl group-hover:text-[#ff7b1b] transition-colors">
+                    <h3 className="text-foreground max-w-3xl group-hover:text-[#b84a00] transition-colors">
                       {pub.title}
                     </h3>
                     <p className="text-body text-muted-foreground mt-3">
@@ -265,8 +262,8 @@ export default function Home() {
                   </div>
 
                   <div className="flex md:hidden mt-8 items-center gap-4 group/btn">
-                    <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
-                      Read more
+                    <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#b84a00] transition-colors">
+                      Read overview
                     </span>
                     <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
                       <ArrRigth className="w-5 h-5" />
@@ -274,7 +271,7 @@ export default function Home() {
                   </div>
 
                 </div>
-              </article>
+              </Link>
             );
           })}
           
@@ -283,7 +280,7 @@ export default function Home() {
               to="/research"
               className="w-full inline-flex justify-center items-center gap-3 bg-[#e5e5e5] text-[#1a1a1b] px-8 py-4 text-body uppercase transition-colors hover:bg-gray-300 group"
             >
-              See all publications
+              View all research
               <ArrRigth className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -324,7 +321,7 @@ export default function Home() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <h4 className="text-subtitle text-foreground mb-8 flex-1 group-hover:text-[#ff7b1b] transition-colors">{post.title}</h4>
+                  <h3 className="text-subtitle text-foreground mb-8 flex-1 group-hover:text-[#b84a00] transition-colors">{post.title}</h3>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-muted-foreground text-small uppercase tracking-wider">
                       <span>{post.venue}</span>
@@ -415,17 +412,17 @@ export default function Home() {
               <div className="flex items-center gap-3 text-small text-[#a1a1aa] uppercase tracking-wider mb-6">
                 <span>Environmental &amp; Development Economist</span>
               </div>
-              <h1 className="text-white mb-10 leading-[1.1]">
+              <h2 className="text-white mb-10 !text-[var(--h1-size)] !leading-[1.1]">
                 Code &amp;<br />
                 replication files<br />
-                live on GitHub.
-              </h1>
+                coming to GitHub.
+              </h2>
               
               <a
                 href={profile.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#ff7b1b] text-white px-8 py-4 text-body uppercase tracking-wider transition-colors hover:bg-white hover:text-[#ff7b1b]"
+                className="inline-flex items-center gap-3 bg-[#b84a00] text-white px-8 py-4 text-body uppercase tracking-wider transition-colors hover:bg-white hover:text-[#b84a00]"
               >
                 github.com/{profile.github}
                 <ArrowDownRight className="w-5 h-5 -rotate-45" />
@@ -436,16 +433,9 @@ export default function Home() {
               <div className="font-mono text-sm md:text-base lg:text-lg text-[#a1a1aa] leading-relaxed overflow-x-auto w-full">
                 <div className="text-[#FF7B1B] mb-4">~/research</div>
                 <pre className="whitespace-pre">
-{`├── water-graph/
-│   ├── build_network.R
-│   ├── drought_donut.py
-│   └── figures/
-├── uzbekistan-games/
-│   ├── oTree/
-│   └── analysis/
-└── cotton-scheduling/
-    ├── et_model.R
-    └── did.do`}
+{`├── water-graph/          [forthcoming]
+├── uzbekistan-games/     [forthcoming]
+└── cotton-scheduling/    [forthcoming]`}
                 </pre>
               </div>
             </div>
@@ -458,13 +448,13 @@ export default function Home() {
       <section className="w-full bg-background">
         <div className="max-w-[1440px] mx-auto">
           <div className="px-4 md:px-6 lg:px-8 pt-24 md:pt-32 pb-4 md:pb-8">
-            <h2 className="text-foreground">Something personal</h2>
+            <h2 className="text-foreground">Beyond research</h2>
           </div>
           
           {/* ДЕСКТОП И ПЛАНШЕТ: Сетка */}
-          <div className="hidden md:grid px-6 lg:px-8 pb-32 grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+          <div className="hidden md:grid px-6 lg:px-8 pb-32 grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
             {personalItems.map((item, idx) => (
-              <div key={idx} className="flex flex-col group cursor-pointer">
+              <div key={idx} className="flex flex-col group">
                 <div className="w-full aspect-[4/5] overflow-hidden bg-muted mb-4">
                   <img
                     src={item.img}
@@ -474,7 +464,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex justify-between items-baseline gap-4 mt-1">
-                  <h4 className="text-foreground">{item.title}</h4>
+                  <h3 className="text-body font-semibold text-foreground">{item.title}</h3>
                   <span className="text-small uppercase tracking-wider text-muted-foreground whitespace-nowrap">
                     {item.loc}
                   </span>
@@ -495,7 +485,7 @@ export default function Home() {
             </div>
             
             <div className="flex justify-between items-baseline gap-4 mt-1 mb-6">
-              <h4 className="text-foreground">{personalItems[currentSlide].title}</h4>
+              <h3 className="text-body font-semibold text-foreground">{personalItems[currentSlide].title}</h3>
               <span className="text-small uppercase tracking-wider text-muted-foreground whitespace-nowrap">
                 {personalItems[currentSlide].loc}
               </span>
@@ -504,12 +494,14 @@ export default function Home() {
             <div className="flex gap-1 mb-8">
               <button
                 onClick={prevSlide}
+                aria-label="Previous photo"
                 className="flex-1 bg-[#e5e5e5] h-14 flex items-center justify-center transition-colors hover:bg-gray-300"
               >
                 <ArrRigth style={{ transform: 'scaleX(-1)' }} className="w-6 h-6 text-[#1a1a1b]" />
               </button>
               <button
                 onClick={nextSlide}
+                aria-label="Next photo"
                 className="flex-1 bg-[#e5e5e5] h-14 flex items-center justify-center transition-colors hover:bg-gray-300"
               >
                 <ArrRigth className="w-6 h-6 text-[#1a1a1b]" />

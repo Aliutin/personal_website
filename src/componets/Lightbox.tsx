@@ -3,6 +3,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -68,12 +69,21 @@ export function Lightbox({
   onClose: () => void;
 }) {
   const [index, setIndex] = useState(initialIndex);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setIndex(initialIndex);
   }, [initialIndex]);
 
   const hasNav = images.length > 1;
+
+  useEffect(() => {
+    const previouslyFocused =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    closeButtonRef.current?.focus();
+    return () => previouslyFocused?.focus();
+  }, []);
 
   const goTo = useCallback(
     (next: number) => {
@@ -87,6 +97,24 @@ export function Lightbox({
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
+        return;
+      }
+      if (e.key === "Tab") {
+        const focusable = Array.from(
+          dialogRef.current?.querySelectorAll<HTMLElement>(
+            'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
+          ) ?? []
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
         return;
       }
       if (!hasNav) return;
@@ -112,6 +140,7 @@ export function Lightbox({
 
   return (
     <div
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
       aria-label={active.alt}
@@ -119,6 +148,7 @@ export function Lightbox({
       className="fixed inset-0 z-[100] bg-black/90 flex flex-col items-center justify-center p-4 md:p-8 cursor-zoom-out"
     >
       <button
+        ref={closeButtonRef}
         type="button"
         aria-label="Close"
         onClick={(e) => {
