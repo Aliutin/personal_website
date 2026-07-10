@@ -53,7 +53,7 @@ export default function Research() {
                     
                     {/* 1. Заголовок и Авторы */}
                     {/* ИЗМЕНЕНО: Используем системный тег h3 без жестких размеров */}
-                    <h2 className="text-foreground mb-3 !text-[var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#b84a00] transition-colors">
+                    <h2 className="text-foreground mb-3 !text-[var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#ff7b1b] transition-colors">
                       {pub.title}
                     </h2>
                     {/* ИЗМЕНЕНО: Простое перечисление авторов без выделения жирным */}
@@ -82,7 +82,7 @@ export default function Research() {
                         <div className="flex flex-col gap-5">
                           {pub.keyFindings.map((finding, i) => (
                             <div key={i} className="flex items-start gap-4 border-b border-border pb-4 last:border-0 last:pb-0">
-                              <span className="text-small text-[#b84a00] mt-0.5 shrink-0">
+                              <span className="text-small text-[#ff7b1b] mt-0.5 shrink-0">
                                 {String(i + 1).padStart(2, "0")}
                               </span>
                               <span className="text-body text-foreground">
@@ -121,7 +121,7 @@ export default function Research() {
                       )}
 
                       {pub.draftOnRequest && (
-                        <div className="mt-2 text-small uppercase tracking-wider text-[#b84a00]">
+                        <div className="mt-2 text-small uppercase tracking-wider text-[#ff7b1b]">
                           Draft on request
                         </div>
                       )}
@@ -135,7 +135,7 @@ export default function Research() {
                           onClick={(e) => e.stopPropagation()} 
                           className="inline-flex items-center gap-4 cursor-pointer group/btn"
                         >
-                          <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#b84a00] transition-colors">
+                          <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
                             Request Draft
                           </span>
                           <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
@@ -150,7 +150,7 @@ export default function Research() {
                           onClick={(e) => e.stopPropagation()} 
                           className="inline-flex items-center gap-4 cursor-pointer group/btn"
                         >
-                          <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#b84a00] transition-colors">
+                          <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
                             Extended preview
                           </span>
                           <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
@@ -190,7 +190,7 @@ export default function Research() {
                         )}
 
                         {pub.draftOnRequest && (
-                            <div className="mt-2 text-small uppercase tracking-wider text-[#b84a00]">
+                            <div className="mt-2 text-small uppercase tracking-wider text-[#ff7b1b]">
                             Draft on request
                           </div>
                         )}
@@ -204,7 +204,7 @@ export default function Research() {
                             onClick={(e) => e.stopPropagation()} 
                             className="inline-flex items-center gap-4 cursor-pointer group/btn"
                           >
-                            <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#b84a00] transition-colors">
+                            <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
                               Request Draft
                             </span>
                             <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
@@ -219,7 +219,7 @@ export default function Research() {
                             onClick={(e) => e.stopPropagation()} 
                             className="inline-flex items-center gap-4 cursor-pointer group/btn"
                           >
-                            <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#b84a00] transition-colors">
+                            <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
                               Extended preview
                             </span>
                             <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
@@ -240,7 +240,7 @@ export default function Research() {
                     {/* ПРАВАЯ ЧАСТЬ (2/3) */}
                     <div className="col-span-2 flex flex-col items-start max-w-[750px]">
                       {/* ИЗМЕНЕНО: Используем системный тег h3 */}
-                      <h2 className="text-foreground mb-4 !text-[var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#b84a00] transition-colors">
+                      <h2 className="text-foreground mb-4 !text-[var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#ff7b1b] transition-colors">
                         {pub.title}
                       </h2>
                       
@@ -268,7 +268,7 @@ export default function Research() {
                           <div className="flex flex-col gap-5">
                             {pub.keyFindings.map((finding, i) => (
                               <div key={i} className="flex items-start gap-4 border-b border-border pb-4 last:border-0 last:pb-0">
-                                <span className="text-small text-[#b84a00] mt-0.5 shrink-0">
+                                <span className="text-small text-[#ff7b1b] mt-0.5 shrink-0">
                                   {String(i + 1).padStart(2, "0")}
                                 </span>
                                 <span className="text-body text-foreground">

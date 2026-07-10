@@ -42,7 +42,7 @@ export default function Blog() {
                   />
                 </div>
                 
-                <h2 className="text-subtitle text-foreground mb-8 flex-1 group-hover:text-[#b84a00] transition-colors">
+                <h2 className="text-subtitle text-foreground mb-8 flex-1 group-hover:text-[#ff7b1b] transition-colors">
                   {post.title}
                 </h2>
                 

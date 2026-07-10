@@ -872,7 +872,7 @@ function ListBlock({ items }: { items: string[] }) {
     <div className="flex flex-col gap-6">
       {items.map((item, idx) => (
         <div key={item} className="flex items-start gap-5">
-          <span className="text-body font-medium text-[#b84a00] mt-1 shrink-0">
+          <span className="text-body font-medium text-[#ff7b1b] mt-1 shrink-0">
             {String(idx + 1).padStart(2, "0")}
           </span>
           <span className="text-article text-foreground">{item}</span>
@@ -1000,7 +1000,7 @@ function UpstreamMechanismFigure() {
               <div className="text-subtitle text-foreground mt-4">{step.metric}</div>
             </div>
             {index < steps.length - 1 && (
-              <div className="hidden md:flex items-center justify-center text-[#b84a00]">
+              <div className="hidden md:flex items-center justify-center text-[#ff7b1b]">
                 <ArrRigth className="w-5 h-5" />
               </div>
             )}
@@ -1065,7 +1065,7 @@ function BehavioralGamesMechanismFigure() {
               <div className="text-subtitle text-foreground mt-4">{step.metric}</div>
             </div>
             {index < steps.length - 1 && (
-              <div className="hidden md:flex items-center justify-center text-[#b84a00]">
+              <div className="hidden md:flex items-center justify-center text-[#ff7b1b]">
                 <ArrRigth className="w-5 h-5" />
               </div>
             )}
@@ -1131,7 +1131,7 @@ function WaterGuidanceFigure() {
             </div>
             {index < steps.length - 1 && (
               <div
-                className="hidden md:flex items-center justify-center text-[#b84a00]"
+                className="hidden md:flex items-center justify-center text-[#ff7b1b]"
               >
                 <ArrRigth className="w-5 h-5" />
               </div>
@@ -1172,7 +1172,7 @@ function AnchorButton({
 }) {
   const colors =
     tone === "orange"
-      ? "bg-[#b84a00] text-white hover:bg-[#963d00]"
+      ? "bg-[#ff7b1b] text-white hover:bg-orange-600"
       : "bg-[#e5e5e5] text-[#1a1a1b] hover:bg-white";
 
   return (
@@ -1210,7 +1210,7 @@ function ContactSection({
               href={resolvedPrimaryHref}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
-              className="w-full md:w-auto bg-[#b84a00] text-white px-8 py-4 text-body uppercase transition-colors hover:bg-[#963d00] text-center"
+              className="w-full md:w-auto bg-[#ff7b1b] text-white px-8 py-4 text-body uppercase transition-colors hover:bg-orange-600 text-center"
             >
               {primaryLabel}
             </a>
@@ -1228,7 +1228,7 @@ function ContactSection({
             to="/research"
             className="w-full md:w-auto inline-flex items-center justify-center gap-4 cursor-pointer group/btn"
           >
-            <span className="text-small uppercase text-foreground group-hover/btn:text-[#b84a00] transition-colors">
+            <span className="text-small uppercase text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
               Back to research
             </span>
             <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors shrink-0">

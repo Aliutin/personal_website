@@ -69,7 +69,7 @@ function Header() {
           </nav>
           <button
             onClick={scrollToContact}
-            className="bg-[#b84a00] text-white px-5 py-2.5 font-medium uppercase whitespace-nowrap hover:bg-[#963d00] transition-colors"
+            className="bg-[#ff7b1b] text-white px-5 py-2.5 font-medium uppercase whitespace-nowrap hover:bg-orange-600 transition-colors"
           >
             Contact Me
           </button>
@@ -119,7 +119,7 @@ function Header() {
                 setMenuOpen(false);
                 setTimeout(scrollToContact, 50);
               }}
-              className="bg-[#b84a00] text-white px-6 py-4 font-medium uppercase hover:bg-[#963d00] transition-colors text-center mt-6 text-lg"
+              className="bg-[#ff7b1b] text-white px-6 py-4 font-medium uppercase hover:bg-orange-600 transition-colors text-center mt-6 text-lg"
             >
               Contact Me
             </button>
@@ -146,7 +146,7 @@ function Footer() {
             <div className="flex gap-1 mt-auto pt-4 lg:pt-8 w-full md:w-auto">
               <a
                 href={`mailto:${profile.email}`}
-                className="flex-1 md:flex-none bg-[#b84a00] text-white px-8 py-4 text-small font-medium hover:bg-[#963d00] transition-colors uppercase flex items-center justify-center tracking-wider"
+                className="flex-1 md:flex-none bg-[#ff7b1b] text-white px-8 py-4 text-small font-medium hover:bg-orange-600 transition-colors uppercase flex items-center justify-center tracking-wider"
               >
                 EMAIL
               </a>
@@ -170,13 +170,13 @@ function Footer() {
             </div>
             
             <div className="flex flex-col gap-y-2 text-body md:text-lg lg:text-[22px] font-medium text-[#0E0E0D] mt-10 md:mt-12">
-              <a href={profile.scholarUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#b84a00] transition-colors w-fit">
+              <a href={profile.scholarUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b] transition-colors w-fit">
                 Google Scholar
               </a>
-              <a href={profile.orcidUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#b84a00] transition-colors w-fit">
+              <a href={profile.orcidUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b] transition-colors w-fit">
                 ORCID
               </a>
-              <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#b84a00] transition-colors w-fit">
+              <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b] transition-colors w-fit">
                 GitHub
               </a>
             </div>

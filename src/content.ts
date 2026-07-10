@@ -471,7 +471,7 @@ export type PublicationFigure = { src: string; caption?: string };
 
 export function publicationTagStyle(tag: string) {
   if (tag === "JOB MARKET PAPER") {
-    return { text: "text-[#b84a00]", dot: "bg-[#ff7b1b]" };
+    return { text: "text-[#ff7b1b]", dot: "bg-[#ff7b1b]" };
   }
   if (tag === "UNDER REVIEW" || tag === "REVISION RESUBMITTED") {
     return { text: "text-[#1a1a1b]", dot: "bg-[#1a1a1b]" };

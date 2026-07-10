@@ -94,7 +94,7 @@ export default function Home() {
               <div className="px-4 md:px-6 lg:px-8 mb-4 md:mb-10 flex gap-1 w-full lg:w-fit">
                 <button
                   onClick={scrollToContact}
-                  className="flex-1 lg:flex-none bg-[#b84a00] text-white px-8 py-4 text-body uppercase transition-colors hover:bg-white hover:text-[#b84a00]"
+                  className="flex-1 lg:flex-none bg-[#ff7b1b] text-white px-8 py-4 text-body uppercase transition-colors hover:bg-white hover:text-[#ff7b1b]"
                 >
                   CONTACT ME
                 </button>
@@ -111,15 +111,15 @@ export default function Home() {
               <div className="hidden lg:flex px-8 pb-10 flex-wrap items-center gap-x-6 gap-y-2 text-small text-muted-foreground">
                 <a 
                   href={`mailto:${profile.email}`} 
-                  className="text-body text-foreground hover:text-[#b84a00] transition-colors uppercase tracking-wider"
+                  className="text-body text-foreground hover:text-[#ff7b1b] transition-colors uppercase tracking-wider"
                 >
                   {profile.email.toLowerCase()}
                 </a>
                 <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-body text-foreground uppercase tracking-wider">
-                  <a href={profile.scholarUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#b84a00]">Scholar</a>
-                  <a href={profile.orcidUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#b84a00]">ORCID</a>
-                  <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#b84a00]">GitHub</a>
+                  <a href={profile.scholarUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b]">Scholar</a>
+                  <a href={profile.orcidUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b]">ORCID</a>
+                  <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#ff7b1b]">GitHub</a>
                 </div>
               </div>
 
@@ -243,7 +243,7 @@ export default function Home() {
                     <p className="text-muted-foreground text-small mt-2">{pub.venue}</p>
 
                     <div className="hidden md:inline-flex mt-12 items-center gap-4 group/btn">
-                      <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#b84a00] transition-colors">
+                      <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
                         Read overview
                       </span>
                       <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
@@ -253,7 +253,7 @@ export default function Home() {
                   </div>
                   
                   <div className="md:col-span-2 mt-6 md:mt-0 flex flex-col items-start">
-                    <h3 className="text-foreground max-w-3xl group-hover:text-[#b84a00] transition-colors">
+                    <h3 className="text-foreground max-w-3xl group-hover:text-[#ff7b1b] transition-colors">
                       {pub.title}
                     </h3>
                     <p className="text-body text-muted-foreground mt-3">
@@ -262,7 +262,7 @@ export default function Home() {
                   </div>
 
                   <div className="flex md:hidden mt-8 items-center gap-4 group/btn">
-                    <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#b84a00] transition-colors">
+                    <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
                       Read overview
                     </span>
                     <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
@@ -321,7 +321,7 @@ export default function Home() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <h3 className="text-subtitle text-foreground mb-8 flex-1 group-hover:text-[#b84a00] transition-colors">{post.title}</h3>
+                  <h3 className="text-subtitle text-foreground mb-8 flex-1 group-hover:text-[#ff7b1b] transition-colors">{post.title}</h3>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-muted-foreground text-small uppercase tracking-wider">
                       <span>{post.venue}</span>
@@ -422,7 +422,7 @@ export default function Home() {
                 href={profile.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#b84a00] text-white px-8 py-4 text-body uppercase tracking-wider transition-colors hover:bg-white hover:text-[#b84a00]"
+                className="inline-flex items-center gap-3 bg-[#ff7b1b] text-white px-8 py-4 text-body uppercase tracking-wider transition-colors hover:bg-white hover:text-[#ff7b1b]"
               >
                 github.com/{profile.github}
                 <ArrowDownRight className="w-5 h-5 -rotate-45" />
