@@ -229,6 +229,15 @@
     letter-spacing: var(--text-ls);
     font-weight: var(--font-weight-medium);
   }
+
+  /* Links inside headings should keep the heading scale and typeface. */
+  h1 a, h2 a, h3 a {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    font-weight: inherit;
+  }
 }
 
 /* --- КЛАССЫ ДЛЯ КОМПОНЕНТОВ --- */
