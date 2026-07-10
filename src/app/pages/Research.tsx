@@ -1,11 +1,10 @@
 import { profile, publications, researchIntro, publicationTagStyle } from "../../content";
 import { ArrRigth, Mail } from "../../componets/CustomIcons";
 import { Lightbox } from "../../componets/Lightbox";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function Research() {
-  const navigate = useNavigate();
   return (
     <div className="w-full flex flex-col bg-[#fafafa] min-h-screen">
       
@@ -30,16 +29,7 @@ export default function Research() {
             return (
               <article
                 key={idx}
-                onClick={() => navigate(`/research/${pub.slug}`)}
-                onKeyDown={(event) => {
-                  if (event.target === event.currentTarget && event.key === "Enter") {
-                    navigate(`/research/${pub.slug}`);
-                  }
-                }}
-                role="link"
-                tabIndex={0}
-                aria-label={`Read overview: ${pub.title}`}
-                className={`w-full group hover:bg-white transition-colors cursor-pointer ${
+                className={`w-full ${
                   idx > 0 ? "border-t border-border" : ""
                 }`}
               >
@@ -53,13 +43,30 @@ export default function Research() {
                     
                     {/* 1. Заголовок и Авторы */}
                     {/* ИЗМЕНЕНО: Используем системный тег h3 без жестких размеров */}
-                    <h2 className="text-foreground mb-3 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#ff7b1b] transition-colors">
-                      {pub.title}
+                    <h2 className="text-foreground mb-3 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
+                      <Link
+                        to={`/research/${pub.slug}`}
+                        className="hover:text-[#ff7b1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
+                      >
+                        {pub.title}
+                      </Link>
                     </h2>
                     {/* ИЗМЕНЕНО: Простое перечисление авторов без выделения жирным */}
-                    <p className="text-body text-muted-foreground mb-8">
+                    <p className="text-body text-muted-foreground mb-4">
                       {pub.authors.join(", ")}
                     </p>
+
+                    <Link
+                      to={`/research/${pub.slug}`}
+                      className="inline-flex self-start items-center gap-3 mb-8 group/details focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
+                    >
+                      <span className="text-small uppercase tracking-wider text-foreground group-hover/details:text-[#ff7b1b] transition-colors">
+                        More details
+                      </span>
+                      <span className="w-9 h-9 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/details:bg-foreground group-hover/details:text-background transition-colors">
+                        <ArrRigth className="w-4 h-4" />
+                      </span>
+                    </Link>
 
                     {/* 2. Абстракт */}
                     {pub.abstract && (
@@ -132,7 +139,6 @@ export default function Research() {
                       {pub.draftOnRequest ? (
                         <a
                           href={`mailto:${profile.email}?subject=${encodeURIComponent(`Draft request: ${pub.title}`)}`}
-                          onClick={(e) => e.stopPropagation()} 
                           className="inline-flex items-center gap-4 cursor-pointer group/btn"
                         >
                           <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
@@ -147,7 +153,6 @@ export default function Research() {
                           href={pub.url || "#"}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()} 
                           className="inline-flex items-center gap-4 cursor-pointer group/btn"
                         >
                           <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
@@ -201,7 +206,6 @@ export default function Research() {
                         {pub.draftOnRequest ? (
                           <a
                             href={`mailto:${profile.email}?subject=${encodeURIComponent(`Draft request: ${pub.title}`)}`}
-                            onClick={(e) => e.stopPropagation()} 
                             className="inline-flex items-center gap-4 cursor-pointer group/btn"
                           >
                             <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
@@ -216,7 +220,6 @@ export default function Research() {
                             href={pub.url || "#"}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()} 
                             className="inline-flex items-center gap-4 cursor-pointer group/btn"
                           >
                             <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
@@ -240,8 +243,13 @@ export default function Research() {
                     {/* ПРАВАЯ ЧАСТЬ (2/3) */}
                     <div className="col-span-2 flex flex-col items-start max-w-[750px]">
                       {/* ИЗМЕНЕНО: Используем системный тег h3 */}
-                      <h2 className="text-foreground mb-4 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)] group-hover:text-[#ff7b1b] transition-colors">
-                        {pub.title}
+                      <h2 className="text-foreground mb-3 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
+                        <Link
+                          to={`/research/${pub.slug}`}
+                          className="hover:text-[#ff7b1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
+                        >
+                          {pub.title}
+                        </Link>
                       </h2>
                       
                       {/* ИЗМЕНЕНО: Простое перечисление авторов без выделения жирным */}
@@ -249,8 +257,20 @@ export default function Research() {
                         {pub.authors.join(", ")}
                       </p>
 
+                      <Link
+                        to={`/research/${pub.slug}`}
+                        className="inline-flex self-start items-center gap-3 mt-4 group/details focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
+                      >
+                        <span className="text-small uppercase tracking-wider text-foreground group-hover/details:text-[#ff7b1b] transition-colors">
+                          More details
+                        </span>
+                        <span className="w-9 h-9 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/details:bg-foreground group-hover/details:text-background transition-colors">
+                          <ArrRigth className="w-4 h-4" />
+                        </span>
+                      </Link>
+
                       {pub.abstract && (
-                        <div className="mt-10">
+                        <div className="mt-8">
                           <div className="text-small uppercase tracking-wider text-muted-foreground mb-4">
                             Abstract
                           </div>

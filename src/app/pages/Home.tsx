@@ -225,10 +225,9 @@ export default function Home() {
           {recentPublications.map((pub, idx) => {
             const tagStyle = publicationTagStyle(pub.tag);
             return (
-              <Link
+              <article
                 key={idx}
-                to={`/research/${pub.slug}`}
-                className={`w-full group hover:bg-white transition-colors cursor-pointer ${
+                className={`w-full ${
                   idx > 0 ? "border-t border-border" : ""
                 } ${idx === recentPublications.length - 1 ? "border-b border-border" : ""}`}
               >
@@ -242,36 +241,47 @@ export default function Home() {
                     </div>
                     <p className="text-muted-foreground text-small mt-2">{pub.venue}</p>
 
-                    <div className="hidden md:inline-flex mt-12 items-center gap-4 group/btn">
-                      <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
-                        Read overview
-                      </span>
-                      <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
-                        <ArrRigth className="w-5 h-5" />
-                      </div>
-                    </div>
                   </div>
                   
                   <div className="md:col-span-2 mt-6 md:mt-0 flex flex-col items-start">
-                    <h3 className="text-foreground max-w-3xl group-hover:text-[#ff7b1b] transition-colors">
-                      {pub.title}
+                    <h3 className="text-foreground max-w-3xl">
+                      <Link
+                        to={`/research/${pub.slug}`}
+                        className="hover:text-[#ff7b1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
+                      >
+                        {pub.title}
+                      </Link>
                     </h3>
                     <p className="text-body text-muted-foreground mt-3">
                       {pub.authors.join(", ")}
                     </p>
+                    <Link
+                      to={`/research/${pub.slug}`}
+                      className="hidden md:inline-flex self-start mt-5 items-center gap-3 group/details focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
+                    >
+                      <span className="text-small uppercase tracking-wider text-foreground group-hover/details:text-[#ff7b1b] transition-colors">
+                        More details
+                      </span>
+                      <span className="w-9 h-9 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/details:bg-foreground group-hover/details:text-background transition-colors">
+                        <ArrRigth className="w-4 h-4" />
+                      </span>
+                    </Link>
                   </div>
 
-                  <div className="flex md:hidden mt-8 items-center gap-4 group/btn">
-                    <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
-                      Read overview
+                  <Link
+                    to={`/research/${pub.slug}`}
+                    className="flex md:hidden self-start mt-8 items-center gap-3 group/details focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
+                  >
+                    <span className="text-small uppercase tracking-wider text-foreground group-hover/details:text-[#ff7b1b] transition-colors">
+                      More details
                     </span>
-                    <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
-                      <ArrRigth className="w-5 h-5" />
-                    </div>
-                  </div>
+                    <span className="w-9 h-9 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/details:bg-foreground group-hover/details:text-background transition-colors">
+                      <ArrRigth className="w-4 h-4" />
+                    </span>
+                  </Link>
 
                 </div>
-              </Link>
+              </article>
             );
           })}
           
