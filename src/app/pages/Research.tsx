@@ -52,21 +52,9 @@ export default function Research() {
                       </Link>
                     </h2>
                     {/* ИЗМЕНЕНО: Простое перечисление авторов без выделения жирным */}
-                    <p className="text-body text-muted-foreground mb-4">
+                    <p className="text-body text-muted-foreground mb-8">
                       {pub.authors.join(", ")}
                     </p>
-
-                    <Link
-                      to={`/research/${pub.slug}`}
-                      className="inline-flex self-start items-center gap-3 mb-8 group/details focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
-                    >
-                      <span className="text-small uppercase tracking-wider text-foreground group-hover/details:text-[#ff7b1b] transition-colors">
-                        More details
-                      </span>
-                      <span className="w-9 h-9 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/details:bg-foreground group-hover/details:text-background transition-colors">
-                        <ArrRigth className="w-4 h-4" />
-                      </span>
-                    </Link>
 
                     {/* 2. Абстракт */}
                     {pub.abstract && (
@@ -135,7 +123,7 @@ export default function Research() {
                     </div>
 
                     {/* 6. Функциональная Кнопка */}
-                    <div className="w-full">
+                    <div className="w-full flex flex-col items-start gap-3">
                       {pub.draftOnRequest ? (
                         <a
                           href={`mailto:${profile.email}?subject=${encodeURIComponent(`Draft request: ${pub.title}`)}`}
@@ -163,6 +151,13 @@ export default function Research() {
                           </div>
                         </a>
                       )}
+                      <Link
+                        to={`/research/${pub.slug}`}
+                        className="inline-flex items-center gap-2 bg-[#e5e5e5] text-[#1a1a1b] px-4 py-2.5 text-small uppercase tracking-wider transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
+                      >
+                        More details
+                        <ArrRigth className="w-4 h-4" />
+                      </Link>
                     </div>
 
                   </div>
@@ -202,7 +197,7 @@ export default function Research() {
                       </div>
 
                       {/* 2. Кнопка */}
-                      <div className="mt-8 w-full">
+                      <div className="mt-8 w-full flex flex-col items-start gap-3">
                         {pub.draftOnRequest ? (
                           <a
                             href={`mailto:${profile.email}?subject=${encodeURIComponent(`Draft request: ${pub.title}`)}`}
@@ -230,6 +225,13 @@ export default function Research() {
                             </div>
                           </a>
                         )}
+                        <Link
+                          to={`/research/${pub.slug}`}
+                          className="inline-flex items-center gap-2 bg-[#e5e5e5] text-[#1a1a1b] px-4 py-2.5 text-small uppercase tracking-wider transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
+                        >
+                          More details
+                          <ArrRigth className="w-4 h-4" />
+                        </Link>
                       </div>
 
                       {/* 3. Картинка (прижата к низу) */}
@@ -257,20 +259,8 @@ export default function Research() {
                         {pub.authors.join(", ")}
                       </p>
 
-                      <Link
-                        to={`/research/${pub.slug}`}
-                        className="inline-flex self-start items-center gap-3 mt-4 group/details focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7b1b] focus-visible:ring-offset-2"
-                      >
-                        <span className="text-small uppercase tracking-wider text-foreground group-hover/details:text-[#ff7b1b] transition-colors">
-                          More details
-                        </span>
-                        <span className="w-9 h-9 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/details:bg-foreground group-hover/details:text-background transition-colors">
-                          <ArrRigth className="w-4 h-4" />
-                        </span>
-                      </Link>
-
                       {pub.abstract && (
-                        <div className="mt-8">
+                        <div className="mt-10">
                           <div className="text-small uppercase tracking-wider text-muted-foreground mb-4">
                             Abstract
                           </div>

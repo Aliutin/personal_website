@@ -213,10 +213,10 @@ export default function Home() {
             
             <Link
               to="/research"
-              className="hidden md:inline-flex items-center gap-3 bg-[#e5e5e5] text-[#1a1a1b] px-8 py-4 text-body uppercase transition-colors hover:bg-gray-300 group"
+              className="inline-flex self-start md:self-auto items-center gap-3 bg-[#e5e5e5] text-[#1a1a1b] px-5 py-3 text-small uppercase tracking-wider transition-colors hover:bg-gray-300 group"
             >
               View all research
-              <ArrRigth className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrRigth className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
@@ -285,16 +285,6 @@ export default function Home() {
             );
           })}
           
-          <div className="flex md:hidden px-4 pt-4 pb-0 justify-start w-full max-w-[1440px] mx-auto">
-            <Link
-              to="/research"
-              className="w-full inline-flex justify-center items-center gap-3 bg-[#e5e5e5] text-[#1a1a1b] px-8 py-4 text-body uppercase transition-colors hover:bg-gray-300 group"
-            >
-              View all research
-              <ArrRigth className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-
         </div>
       </section>
 
