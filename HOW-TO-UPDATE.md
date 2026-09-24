@@ -1,8 +1,9 @@
 # How to update antonliutin.com
 
 This folder is the only copy of the site source. It is a git repo linked to
-`github.com/Aliutin/personal_website`. `npm run deploy` builds `dist/` and publishes it to the
-Cloudflare Worker `antonliutin`.
+`github.com/Aliutin/personal_website`. Cloudflare builds and publishes the site automatically
+on every push to `main` (live about 1 minute later). `npm run deploy` does not work from the
+`liutin@wisc.edu` Wrangler login: that account has no access to the `antonliutin` Worker.
 
 ## Common changes
 
@@ -25,8 +26,7 @@ node -e "require('sharp')(process.argv[1]).webp({quality:88}).toFile('src/assets
 ```sh
 npm run dev       # local preview at the URL Vite prints
 npm run build     # check that it compiles
-git add -A && git commit -m "..." && git push
-npm run deploy    # publish to Cloudflare
+git add -A && git commit -m "..." && git push   # the push publishes the site
 ```
 
 Source photos: `Dropbox/Projects/Personal/Portfolio/Photos/` (originals) and

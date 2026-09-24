@@ -2,7 +2,7 @@
 
 ## 2026-09-24: photo, CV, research pages refresh
 
-Done (local, build passes, not yet committed or deployed):
+Done and live on antonliutin.com (commit 6bfc819, published by Cloudflare's GitHub build):
 - Homepage portrait: `src/assets/portrait-2026.webp` (from `Portfolio/Photos/output/imagegen/anton-liutin-homepage-background-v1.png`); social-card image `public/anton-liutin.webp` replaced too.
 - `public/cv.pdf` = Sep 14 CV (also copied to `Portfolio/CV_Anton_Liutin_2026.pdf/.html` as the master).
 - All three research pages (`content.ts` entries and the hard-coded `*Detail()` components in `src/app/pages/ResearchDetail.tsx`) rewritten from the current drafts; sources in `article-source-paths.md`. Old figures removed, new ones in `src/assets/`.
@@ -15,4 +15,4 @@ Open:
 - JMP year-by-year figure fixed at its producer (`colorado_river_clean/paper_pres/figures/create_uxyear_eventstudy_fig.py`: two-line y-label, legend above axes); the JMP main.pdf has not been recompiled with it.
 - No pages yet for Double Vision or the Alaska project (both on the CV).
 
-Next: review `npm run dev`, then `git commit`, `git push`, `npm run deploy`.
+Publishing = push to `main`; `npm run deploy` fails (Wrangler login lacks access to the Worker).
