@@ -3,7 +3,7 @@
 // All text, links, and data for the site live in this single file.
 // ============================================================================
 
-import portrait from "./assets/9639e22a7351a93d2c01765205f58231eff8179f.webp";
+import portrait from "./assets/portrait-2026.webp";
 import column1 from "./assets/bf0b7251441e4704ceca49b268e03bf6d4a58be1.webp";
 import column2 from "./assets/5136d2c4cc870258fb915013ac009e1fe7620808.webp";
 import column3 from "./assets/9c6167c3e6a3b4333785e3ce161f7341c950782d.webp";
@@ -20,24 +20,23 @@ import graph2 from "./assets/image 62.png";
 import graph3 from "./assets/image 63.png";
 import researchImage from "./assets/image 49.png";  
 import jmpStudyAreaMap from "./assets/jmp-study-area-map.png";
-import jmpWaterGraphPosition from "./assets/jmp-water-graph-position.png";
-import jmpDonutIdentification from "./assets/jmp-donut-identification.png";
-import jmpDonutCoefficients from "./assets/jmp-donut-coefficients.png";
-import jmpUpstreamDownstreamHorserace from "./assets/jmp-upstream-downstream-horserace.png";
-import jmpProductionFunction from "./assets/jmp-production-function.png";
 import behavioralGamesHero from "./assets/behavioral-games-hero.webp";
-import behavioralGamesAdoption from "./assets/behavioral-games-adoption.png";
-import behavioralGamesGini from "./assets/behavioral-games-gini.png";
 import behavioralGamesProductionFunctions from "./assets/behavioral-games-production-functions.png";
-import behavioralGamesSessionDynamics from "./assets/behavioral-games-session-dynamics.png";
-import behavioralGamesSpilloverHeatmap from "./assets/behavioral-games-spillover-heatmap.png";
-import behavioralGamesSpilloverCascade from "./assets/behavioral-games-spillover-cascade.png";
-import behavioralGamesAdoptionThreshold from "./assets/behavioral-games-adoption-threshold.png";
-import behavioralGamesGamePrimitives from "./assets/behavioral-games-game-primitives.png";
 import waterCottonHero from "./assets/water-cotton-hero.webp";
-import waterCottonKcStages from "./assets/water-cotton-kc-stages.webp";
-import waterEvaporationStabilityMap from "./assets/water-evaporation-stability-map.webp";
-import waterStressStabilityScatter from "./assets/water-stress-stability-scatter.png";
+
+import jmpWaterGraphSteps from "./assets/jmp-water-graph-steps.png";
+import jmpDistantUpstreamDesign from "./assets/jmp-distant-upstream-design.png";
+import jmpCutoffCoefficients from "./assets/jmp-cutoff-coefficients.png";
+import jmpUpstreamDownstreamContrast from "./assets/jmp-upstream-downstream-contrast.png";
+import jmpYearByYearInteractions from "./assets/jmp-year-by-year-interactions.png";
+import waterGraphicalAbstract from "./assets/water-graphical-abstract.png";
+import waterDripSchedule from "./assets/water-drip-schedule.png";
+import waterNirHubNetwork from "./assets/water-nir-hub-network.png";
+import behavioralGamesTwoGradients from "./assets/behavioral-games-two-gradients.png";
+import behavioralGamesBeliefDial from "./assets/behavioral-games-belief-dial.png";
+import behavioralGamesSpilloverAccounting from "./assets/behavioral-games-spillover-accounting.png";
+import behavioralGamesPersistence from "./assets/behavioral-games-persistence.png";
+import behavioralGamesProtocol from "./assets/behavioral-games-protocol.png";
 
 export const images = {
   portrait,
@@ -55,24 +54,22 @@ export const images = {
   graph2,
   graph3,
   jmpStudyAreaMap,
-  jmpWaterGraphPosition,
-  jmpDonutIdentification,
-  jmpDonutCoefficients,
-  jmpUpstreamDownstreamHorserace,
-  jmpProductionFunction,
   behavioralGamesHero,
-  behavioralGamesAdoption,
-  behavioralGamesGini,
   behavioralGamesProductionFunctions,
-  behavioralGamesSessionDynamics,
-  behavioralGamesSpilloverHeatmap,
-  behavioralGamesSpilloverCascade,
-  behavioralGamesAdoptionThreshold,
-  behavioralGamesGamePrimitives,
   waterCottonHero,
-  waterCottonKcStages,
-  waterEvaporationStabilityMap,
-  waterStressStabilityScatter,
+  jmpWaterGraphSteps,
+  jmpDistantUpstreamDesign,
+  jmpCutoffCoefficients,
+  jmpUpstreamDownstreamContrast,
+  jmpYearByYearInteractions,
+  waterGraphicalAbstract,
+  waterDripSchedule,
+  waterNirHubNetwork,
+  behavioralGamesTwoGradients,
+  behavioralGamesBeliefDial,
+  behavioralGamesSpilloverAccounting,
+  behavioralGamesPersistence,
+  behavioralGamesProtocol,
 };
 
 export const profile = {
@@ -114,7 +111,7 @@ export const researchInterests = [
 // --- НОВЫЙ БЛОК ДЛЯ ШАПКИ RESEARCH ---
 export const researchIntro = {
   title: "Research papers.",
-  description: "Research on water allocation and drought inequality in Arizona, alongside fieldwork-based studies of technology adoption and irrigation scheduling in Uzbekistan. Select a paper for an extended preview."
+  description: "Research on water scarcity and interdependence along Arizona's canal networks, alongside fieldwork-based studies of technology adoption and irrigation scheduling in Uzbekistan. Select a paper for an extended preview."
 };
 
 export type Education = {
@@ -497,114 +494,107 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
-    slug: "upstream-advantage",
-    title: "First in Time, Last in Line? Water Rights, Canal Position, and Drought Inequality in Arizona",
-    authors: ["Anton Liutin"],
-    year: "2026",
-    venue: "Job Market Paper · UW–Madison",
-    tag: "JOB MARKET PAPER",
-    draftOnRequest: true,
-    pages: 64,
-    abstract: "Do formal water rights eliminate within-canal inequality when water physically moves from head to tail? I build a water-graph linking 54,946 agricultural plots across Arizona's canal networks. The cross-section measures whether delivery position predicts crop outcomes; the panel uses year-to-year changes in distant upstream irrigation activity during the 2016–2023 Colorado River drought. Nearby fallowing controls absorb spatially correlated local shocks, while activity among canal-connected upstream plots beyond exclusion cutoffs provides the identifying variation. The results show a pattern-supported drought gradient concentrated in surface-water-dominant and junior-rights districts, while groundwater access and district institutions are associated with substantial attenuation.",
-    keyFindings: [
-      "Downstream plots show significantly lower canopy moisture (NDMI) and chlorophyll vigor (GCVI) after controls; the corresponding evapotranspiration level estimate is smaller and statistically insignificant. The full head-to-tail movement predicts a GCVI decline equal to 5.1% of a standard deviation.",
-      "The distant-upstream-activity × drought interaction strengthens as nearby variation is excluded. At the >10 km cutoff, the estimates are −0.008 for NDMI, −0.035 for GCVI, and −0.023 for ET; the paper treats the pattern across cutoffs and outcomes as the evidence rather than any single coefficient.",
-      "A downstream-activity placebo attenuates once distant upstream activity is included, supporting a directional water-competition interpretation most clearly for vegetation health.",
-      "The drought-state upstream-activity gradient is concentrated in surface-water-dominant districts and is near zero in groundwater-dominant and mixed districts. Junior-rights districts face substantially steeper drought amplification than senior-rights districts.",
-      "Calibrated magnitudes imply roughly $6.0 million per year of gross revenue-equivalent exposure, concentrated almost entirely in junior surface-water-dependent districts. These are scale exercises, not estimates of profit, causal welfare, or an optimal allocation."
-    ],
-    // ДОБАВЛЕНО: привязка картинки
-    figures: [
-      { src: images.jmpStudyAreaMap, caption: "Arizona study area and canal systems" },
-      { src: images.jmpWaterGraphPosition, caption: "Water-graph construction" },
-      { src: images.jmpDonutIdentification, caption: "Distant upstream activity design" },
-      { src: images.jmpDonutCoefficients, caption: "Distant upstream activity coefficients" },
-      { src: images.jmpUpstreamDownstreamHorserace, caption: "Upstream vs downstream activity placebo" },
-      { src: images.jmpProductionFunction, caption: "Calibrated water-reallocation example" }
-    ]
-  },
+      slug: "upstream-advantage",
+      title: "When Scarcity Reveals Directional Network Interdependence: Evidence from Arizona Canals",
+      authors: ["Anton Liutin"],
+      year: "2026",
+      venue: "Job Market Paper · UW–Madison",
+      tag: "JOB MARKET PAPER",
+      draftOnRequest: true,
+      pages: 41,
+      abstract: "Water rights and district rules govern claims to water, but Arizona farms receive it through canals shared with upstream users. I map 54,946 plots onto a directed canal network and follow them from 2016 to 2023. In plot fixed-effects regressions, the association between upstream cropped acreage and GCVI, a satellite yield proxy, turns more negative during sustained drought, and the change is larger when nearby upstream fields are excluded. Beyond 10 km, a downstream measure entered jointly shows no corresponding change. Within junior-rights districts, drought reveals both a plot's 2016–2019 baseline of upstream cropping and each year's departure from it. The shift appears in 2020–2022 but not in the meteorologically harsher 2010–2014 drought, when major delivery schedules largely held, and measured canal flow in Wellton-Mohawk and Yuma County WUA points the same way. The findings support an interpretation in which system slack masks delivery frictions until sustained scarcity makes them consequential.",
+      keyFindings: [
+        "Sustained drought shifts the association between upstream cropped acreage and GCVI downward: the drought interaction is −0.015 over the full upstream path and −0.035 once upstream plots within 10 km are excluded, and it is negative at every exclusion radius. Under network-level clustering only the >10 km cell is significant, so the evidence rests on the pattern across cutoffs and designs rather than any single coefficient.",
+        "The change follows the direction of flow. Beyond 10 km, with both measures entered jointly, the upstream interaction is −0.030 and the downstream interaction 0.002; their difference of −0.032 has p = 0.026 under two-way clustering and is marginal or insignificant under network clustering. The estimates identify a direction, not an actor: administered head-to-tail rationing and competition among farmers would both produce them.",
+        "Inside ten junior-rights districts, one between-plot standard deviation of the 2016–2019 upstream cropped share is associated with 0.034 lower ln(1+GCVI) under district drought, and a ten-percentage-point departure above that baseline with a −0.014 shift, with essentially no association outside drought. Next year's departure carries the opposite sign, so the coefficients describe a dynamic association rather than the effect of a single planting decision.",
+        "Timing follows delivery conditions rather than rainfall alone: year-specific interactions are near zero in 2017–2019, negative in 2020–2022, and back at zero in 2023, and a separately constructed 2008–2023 panel shows no comparable interaction in the harsher 2010–2014 drought. In Wellton-Mohawk and Yuma County WUA, more summer canal water flattens the downstream disadvantage in GCVI and crop moisture; evidence that more wells weaken the drought-related change is suggestive.",
+        "In a companion 2021–22 specification, the gap between fields at the 25th and 75th percentiles of combined upstream exposure is 1.4–2.7 percent of crop revenue at an assumed pass-through, about $21–42 per acre of cotton and $30–59 per acre of alfalfa, or roughly 14–28 percent of net returns in University of Arizona budgets. These are revenue-equivalent magnitudes of an association, not losses in profit or welfare."
+      ],
+      figures: [
+        { src: images.jmpStudyAreaMap, caption: "Arizona study area: agricultural plots, irrigation districts, and canal systems" },
+        { src: images.jmpWaterGraphSteps, caption: "Water-graph construction for an example canal network near Yuma" },
+        { src: images.jmpDistantUpstreamDesign, caption: "Distant upstream cropped acreage and local-shock controls" },
+        { src: images.jmpCutoffCoefficients, caption: "Upstream cropped acreage × drought across exclusion cutoffs" },
+        { src: images.jmpUpstreamDownstreamContrast, caption: "Upstream vs downstream cropped acreage in the joint regression" },
+        { src: images.jmpYearByYearInteractions, caption: "Year-by-year upstream interactions against drought and shortage calendars" }
+      ]
+    },
   {
-    slug: "behavioral-games",
-    title: "Using Behavioral Games to Understand Water-Saving Technology Adoption in Uzbekistan",
-    authors: ["Anton Liutin", "Jamshid Shukurullaev"],
-    year: "2026",
-    venue: "Working Paper",
-    tag: "WORKING PAPER",
-    draftOnRequest: true,
-    pages: 51,
-    abstract: "We conduct a framed field experiment with 190 farmers across four regions of Uzbekistan, covering 15 of the 16 surveyed districts in 38 five-player games. Random assignment to canal position shows that new adoption concentrates at the scarcity-stressed tail: Player 5's first-adoption hazard is 8.9 percentage points above Player 1's. Upstream adoption is associated with 0.407 units more water consumed by each downstream player, but we find no robust evidence that it triggers others to adopt. Linked survey data show that in-game behavior also reflects farmers' real water-access positions, agricultural-cluster ties, and willingness to pay.",
-    keyFindings: [
-      "Player 5's first-adoption hazard is 8.9 percentage points above Player 1's (wild-bootstrap p = 0.009; randomization-inference p = 0.001), even though the calibrated model predicts that the tail player should not adopt.",
-      "Each additional upstream adopter is associated with 0.407 units more water consumed by downstream players (wild-bootstrap p = 0.018) and a 1.9 percentage-point larger downstream share of group water (p < 0.001). Adoption itself is not randomly assigned, so these are conditional associations.",
-      "There is no robust evidence of peer-triggered adoption: the first-adoption-hazard estimate for contemporaneous upstream adoption is 0.005 (p = 0.855), and lagged estimates are not positive. The measurable spillover operates through water quantities, not observable imitation.",
-      "The conservation association is concentrated upstream: adopters in positions 1–2 consume 0.886 fewer units than non-adopters (p < 0.001), while the downstream estimate is not statistically different from zero.",
-      "Agricultural-cluster membership is associated with a 31 percentage-point higher probability of ever adopting in the game (p = 0.042); informal social connections do not robustly predict adoption once inference respects the 38 game clusters."
-    ],
-    // ДОБАВЛЕНО: привязка картинки
-    figures: [
-      {
-        src: images.behavioralGamesSpilloverHeatmap,
-        caption: "Calibrated model — upstream adoption creates downstream water benefits, while downstream adoption creates no upstream benefit"
-      },
-      {
-        src: images.behavioralGamesAdoption,
-        caption: "Raw drip-adoption rates by canal position — pooled rates are 62% for P5 and 49% for P1"
-      },
-      {
-        src: images.behavioralGamesAdoptionThreshold,
-        caption: "Calibrated model — DI profitability varies non-monotonically with water supply and canal position"
-      },
-      {
-        src: images.behavioralGamesSpilloverCascade,
-        caption: "Calibrated model — P1 adoption reduces own extraction and increases water available to every downstream player"
-      },
-      {
-        src: images.behavioralGamesGamePrimitives,
-        caption: "Game mechanics — water supply vs. infrastructure (a); GI vs. DI production curves with water-saved region shaded (b)"
-      },
-      {
-        src: images.behavioralGamesSessionDynamics,
-        caption: "Water consumption and infrastructure investment dynamics by position (empirical)"
-      },
-      {
-        src: images.behavioralGamesGini,
-        caption: "Descriptive inequality dynamics across the three experimental sessions"
-      }
-    ]
-  },
+      slug: "behavioral-games",
+      title: "When Efficiency Cannot Substitute for Allocation: Technology Adoption in a Sequential Canal",
+      authors: ["Anton Liutin", "Jamshid Shukurullaev"],
+      year: "2026",
+      venue: "Working Paper",
+      tag: "WORKING PAPER",
+      draftOnRequest: true,
+      pages: 44,
+      abstract: "We study why farmers adopt an efficiency technology where it can do least. In a lab-in-the-field experiment with 190 farmers in 38 five-person irrigation games in Uzbekistan, eventual Session-2 drip adoption rose monotonically from 36.8 percent at the canal head to 73.7 percent at the tail. Over the same seats, the model-implied net value of a round-1 purchase over each game's realized path, an evaluation extending beyond the four-round estimation window, fell from −1.60 tokens, positive in 26 of 38 games, to −33.44, positive in none. The tail's per-round gain is too small to amortize the common 45-token fee, and its loss survives high-water state bounds and every belief on the maintained upstream-restraint dial. Model-implied counterfactuals reverse the geography of demand: across six stable full-stock cells, downstream users re-extract 97.7–103.6 percent of an upstream adopter's own-extraction reduction, whereas the tail seat has no downstream user. Demand tracked exposure to scarcity; within the maintained account, technology could not substitute for water allocation.",
+      keyFindings: [
+        "When drip first became available in Session 2, eventual adoption rose monotonically down the canal: 36.8, 42.1, 44.7, 57.9, and 73.7 percent from P1 to P5. The model-implied net value of a round-1 purchase over each game's realized path moved the other way, from −1.60 to −33.44 tokens (Session 3: +11.47 to −35.74), and the tail purchase is positive in none of the 38 games in either session.",
+        "Within the maintained token account, a longer horizon or optimistic beliefs do not rescue the tail purchase. P5's per-round gain of 2.2–2.4 tokens implies a break-even of 20.4 and 18.7 productive rounds against sessions averaging 5.55 and 8.37 rounds, and even the most favorable belief on the registered upstream-restraint dial leaves P5's value between −36.2 and −10.7 tokens across the registered cases. Both calculations extrapolate beyond the four-round estimation window, and “overpayment” refers to modeled token value, not subjective welfare.",
+        "Tail participants remain close to the locked model on extraction: across 302 model-eligible paid P5 nodes, observed extraction averages 3.80 units against 3.84 model-implied. This makes a general failure to solve the extraction problem less plausible, but it does not establish comprehension or exclude confusion specific to the adoption decision.",
+        "In separate one-adopter model counterfactuals, an upstream adopter's own extraction falls by 0.253–0.623 water units per group-round, and downstream users re-extract 97.7–103.6 percent of that release across six stable full-stock cells; all six net-group 95% intervals include zero. Modeled provision sits at the head seats P1–P3 while purchases concentrate at the tail. These are controlled counterfactuals in extraction units, not identified drip effects, conservation, or welfare estimates.",
+        "Adoption differs across decision margins. Among Session-2 nonadopters, first-time Session-3 adoption was 43.5% after a full-water history and 16.1% after a degraded-water history (+27.4 percentage points, wild-cluster p = 0.016), while 83.5% of Session-2 adopters repurchased against 34.4% first-time adoption. Because histories and prior adoption are endogenous, these are descriptive associations, not learning or habit effects."
+      ],
+      figures: [
+        {
+          src: images.behavioralGamesTwoGradients,
+          caption: "Session-2 adoption rises from 36.8% at P1 to 73.7% at P5, while the model-implied realized-path value of a round-1 purchase falls from −1.60 to −33.44 tokens"
+        },
+        {
+          src: images.behavioralGamesBeliefDial,
+          caption: "Upstream restraint matters most to the tail, but no belief on the registered restraint dial makes P5 adoption pay; degraded-water Session-3 P4 is the sole pivotal cell"
+        },
+        {
+          src: images.behavioralGamesSpilloverAccounting,
+          caption: "Model-implied one-adopter accounting — downstream seats re-extract nearly all of an upstream adopter's own saving; P5 has no downstream recipient"
+        },
+        {
+          src: images.behavioralGamesPersistence,
+          caption: "Descriptive persistence across three choice margins — repurchase vs. first-time adoption, P5 extraction lag dependence, and exact investment repetition"
+        },
+        {
+          src: images.behavioralGamesProtocol,
+          caption: "Experimental protocol — fixed session order with re-randomized seats, and public within-round moves from head (P1) to tail (P5)"
+        },
+        {
+          src: images.behavioralGamesProductionFunctions,
+          caption: "Game material — printed cotton output by water input; drip peaks at about 7 water units and furrow irrigation at about 10"
+        }
+      ]
+    },
   {
-    slug: "water-conservation",
-    title: "Water Conservation Through Simplified Drip Irrigation Scheduling for Cotton Cultivation in Uzbekistan",
-    authors: ["Jamshid Shukurullaev", "Ahmad Hamidov", "Anton Liutin"],
-    year: "2026",
-    venue: "Water (MDPI)",
-    tag: "REVISION RESUBMITTED",
-    pages: 26,
-    draftOnRequest: true,
-    abstract: "Water scarcity has accelerated in Central Asia, while practical scheduling guidance for drip irrigation remains limited. We apply an FAO-56 evapotranspiration-based scheduling approach to drip-irrigated cotton in Jizzakh, packaged as pre-calculated tables for farmers, and validate it through a two-phase design: paired researcher-supervised drip–furrow fields during 2021–2023, and a 32-farmer adoption panel during 2022–2023. Pre-calculated scheduling tables can convert existing drip hardware into measurable water-saving and yield gains.",
-    keyFindings: [
-      "Phase I (researcher-supervised) establishes the production frontier: scheduled drip vs farmer-managed furrow yields +39.9% seed-cotton, uses 24.3% less water, and raises water productivity by 84.9%.",
-      "The paradox: in 2022 farmer drip plots used 47% less water than furrow yet stayed well below the Phase I frontier. Drip without scheduling means systematic under-irrigation—the intuition 'less water = better' over-saves and sacrifices yield.",
-      "The fix is more water, counter-intuitively: pre-calculated tables raised observed drip water application by 24.6%, from 3,340 to 4,160 m³/ha. Guided drip still used 27.4% less water than furrow while producing 60.3% higher yield.",
-      "The difference-in-differences estimates reveal a guidance gap: after receiving scheduling tables, existing drip adopters increased water application and moved closer to the researcher-supervised yield frontier.",
-      "Reference evapotranspiration is temporally stable in arid regions (Jizzakh CV = 21.1%). Nine critically water-stressed countries—Kuwait, Libya, Egypt, UAE, Qatar, Turkmenistan, Syria, Uzbekistan, and Saudi Arabia—are candidates for targeted trials, subject to local agronomic validation."
-    ],
-    // ДОБАВЛЕНО: привязка картинки
-    figures: [
-      {
-        src: images.waterCottonKcStages,
-        caption: "Cotton growth stages and crop coefficients — the underlying schedule indexed by Kc and ET₀"
-      },
-      {
-        src: images.waterEvaporationStabilityMap,
-        caption: "Spatial view — evaporation stability and agricultural water stress identify possible settings for targeted local trials"
-      },
-      {
-        src: images.waterStressStabilityScatter,
-        caption: "Analytical view — nine critically water-stressed countries with low evaporation variability are candidates for targeted trials, not evidence of direct transferability"
-      }
-    ]
-  },
+      slug: "water-conservation",
+      title: "Closing the Irrigation Guidance Gap: Simplified Evapotranspiration-Based Drip Scheduling for Cotton in Jizzakh, Uzbekistan",
+      authors: ["Jamshid Shukurullaev", "Ahmad Hamidov", "Anton Liutin"],
+      year: "2026",
+      venue: "Working Paper",
+      tag: "WORKING PAPER",
+      pages: 30,
+      draftOnRequest: true,
+      abstract: "Uzbekistan promotes drip irrigation as water availability falls, but farmers often receive the hardware without scheduling guidance. We test whether a simplified, pre-calculated FAO-56 evapotranspiration-based schedule for cotton in Jizzakh, requiring no on-farm sensors or specialist training, can deliver the benefits of drip irrigation to existing adopters. The schedule is validated in two phases: paired researcher-supervised drip–furrow trials on four farms over 2021–2023, and a difference-in-differences study of 32 existing drip adopters before and after they received the tables (2022–2023). In the trials, scheduled drip raised yield by 39.9% and reduced delivered water by 31.9% relative to farmer-managed furrow plots. Unguided adopters were under-irrigating; with the tables alone they raised drip water application by 24.6%, and in 2023 guided drip plots yielded 60.3% more than their furrow plots with 34.6% less water. A spatial screen over 1991–2023 shows the seasonal net irrigation requirement is stable between years wherever rainfall is a small fraction of demand.",
+      keyFindings: [
+        "In the paired Phase I trials (four farms, 2021–2023), researcher-supervised scheduled drip yielded 39.9% more seed cotton than farmer-managed furrow plots, used 31.9% less delivered water, and raised water productivity by 105.4%. Plots were not randomly assigned within farms, so this is a supervised benchmark, not an average treatment effect of drip alone.",
+        "Before guidance, in 2022, the 32 existing adopters' drip plots used 52.3% less water than their furrow plots and yielded 38.0% more, but their drip yields (3,216 kg/ha) stayed well below the Phase I drip benchmark (3,975 kg/ha). Unguided drip adopters were under-irrigating.",
+        "After receiving the tables alone, farmers raised drip water application by 24.6% in means, from 3,340 to 4,160 m³/ha; 31 of 32 applied more water and all 32 raised drip yield. Relative to the furrow trend, the difference-in-differences estimates are +16.2% for yield, +37.1% for water use, and −15.2% for water productivity.",
+        "In 2023, guided drip plots yielded 60.3% more than furrow plots with 34.6% less delivered water and 145.3% higher water productivity. These contrasts use unadjusted weir volumes for furrow; under the 0.90 district-coefficient sensitivity the 2023 water contrast is −27.4%, while the difference-in-differences estimates are unchanged.",
+        "Across 14,445 districts of water-stressed Asia and Africa, the seasonal net irrigation requirement has a median interannual CV of 5.4% in arid districts, and ten of the twelve critically water-stressed countries meet a ±10% criterion; Sudan and Pakistan do not because monsoon rain carries most of their crop demand. For Uzbekistan, 19 reference sites would reproduce district requirements within ±10% for 99% of the cotton area; the hub counts are lower bounds."
+      ],
+      figures: [
+        {
+          src: images.waterGraphicalAbstract,
+          caption: "Graphical abstract — the 32-farm panel before (2022) and after (2023) the printed tables, 2023 guided drip vs furrow contrasts, and the 19 modelled reference sites for 99% of Uzbekistan's cotton area"
+        },
+        {
+          src: images.waterDripSchedule,
+          caption: "Pre-calculated 2023 drip-irrigation and fertigation schedule for one Phase I field — design volumes per event on a nominal 3.5-day cycle, with phenological stages and Kc ranges; design targets, not realised water use"
+        },
+        {
+          src: images.waterNirHubNetwork,
+          caption: "Interannual CV of the net irrigation requirement, 1991–2023 (A); national CVs for the twelve critically water-stressed countries, ET₀ vs net requirement (B); the 40-hub network for Uzbekistan's cotton (C)"
+        }
+      ]
+    },
 ];
 export type BlogPost = {
   title: string;

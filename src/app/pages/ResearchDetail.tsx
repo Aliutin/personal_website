@@ -10,47 +10,50 @@ import {
 import { images, profile, publications } from "../../content";
 
 const upstreamDraftSubject = encodeURIComponent(
-  "Draft request: First in Time, Last in Line?"
+  "Draft request: When Scarcity Reveals Directional Network Interdependence: Evidence from Arizona Canals"
 );
 
 const behavioralGamesDraftSubject = encodeURIComponent(
-  "Draft request: Using Behavioral Games to Understand Water-Saving Technology Adoption in Uzbekistan"
+  "Draft request: When Efficiency Cannot Substitute for Allocation: Technology Adoption in a Sequential Canal"
 );
 
+const waterConservationTitle =
+  "Closing the Irrigation Guidance Gap: Simplified Evapotranspiration-Based Drip Scheduling for Cotton in Jizzakh, Uzbekistan";
+
 const waterConservationDraftSubject = encodeURIComponent(
-  "Draft request: Water Conservation Through Simplified Drip Irrigation Scheduling for Cotton Cultivation in Uzbekistan"
+  `Draft request: ${waterConservationTitle}`
 );
 
 const upstreamSelectedFigures = [
   {
     image: images.jmpStudyAreaMap,
     title: "Arizona study area and canal systems",
-    desc: "Agricultural plots cluster along Arizona's Colorado River, Salt–Gila, and upper Gila canal systems.",
+    desc: "Agricultural plots cluster along the Colorado River corridor, the Salt–Gila system, and the upper Gila Valley; 54,946 plots, 45% of them inside an irrigation district.",
   },
   {
-    image: images.jmpWaterGraphPosition,
+    image: images.jmpWaterGraphSteps,
     title: "Water-graph construction",
-    desc: "Four stages connect agricultural plots to directed canals and assign head-to-tail network positions.",
+    desc: "Four stages on a 493-plot network near Yuma: canal flow direction, plot-to-intake linking, directed plot edges, and head-to-tail signed-hop position.",
   },
   {
-    image: images.jmpDonutIdentification,
-    title: "Distant upstream activity design",
-    desc: "The design excludes nearby upstream activity from treatment, controls for nearby fallowing, and retains distant canal-connected activity.",
+    image: images.jmpDistantUpstreamDesign,
+    title: "Distant upstream cropped acreage",
+    desc: "The design leaves upstream cropping within d km out of the exposure, keeps canal-connected upstream cropping beyond d, and controls for nearby fallowing.",
   },
   {
-    image: images.jmpDonutCoefficients,
-    title: "Distant upstream activity coefficients",
-    desc: "The activity × drought interaction becomes more negative at wider spatial-exclusion cutoffs, especially for GCVI.",
+    image: images.jmpCutoffCoefficients,
+    title: "Drought interaction across exclusion cutoffs",
+    desc: "The GCVI interaction moves from −0.015 over the full upstream path to −0.035 beyond 10 km; each cutoff is a separate regression, so this is a profile rather than a tested trend.",
   },
   {
-    image: images.jmpUpstreamDownstreamHorserace,
-    title: "Upstream vs downstream activity placebo",
-    desc: "The upstream activity gradient persists while the downstream placebo attenuates, most clearly for GCVI.",
+    image: images.jmpUpstreamDownstreamContrast,
+    title: "Upstream vs downstream cropped acreage",
+    desc: "With both entered jointly, the upstream GCVI interaction stays negative as the cutoff widens while the downstream interaction flattens toward zero.",
   },
   {
-    image: images.jmpProductionFunction,
-    title: "Calibrated water-reallocation example",
-    desc: "An illustrative donor and recipient pair on an external alfalfa water-production curve; this is a scale exercise, not an estimated welfare effect.",
+    image: images.jmpYearByYearInteractions,
+    title: "Year-by-year interactions",
+    desc: "Relative to 2016, interactions are near zero in 2017–2019, negative in 2020–2022, and back at zero in 2023; they do not simply track declared shortage tiers.",
   },
 ];
 
@@ -103,18 +106,18 @@ function UpstreamAdvantageDetail() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#ff7b1b]" />
               <span>2026</span>
               <span className="w-1.5 h-1.5 rounded-full bg-gray-500" />
-              <span>64 PP</span>
+              <span>41 PP</span>
             </div>
 
             <h1 className="text-white mb-6 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
-              First in Time, Last in Line? Water Rights, Canal Position, and
-              Drought Inequality in Arizona
+              When Scarcity Reveals Directional Network Interdependence:
+              Evidence from Arizona Canals
             </h1>
             <p className="text-body text-gray-300 mb-10 max-w-3xl">
-              Do formal water rights eliminate within-canal inequality when
-              water physically moves from head to tail? A statewide water-graph
-              distinguishes static delivery position from time-varying distant
-              upstream irrigation activity during drought.
+              Water rights and district rules govern claims to water, but farms
+              receive it through canals shared with upstream users. A statewide
+              directed canal network shows when a field&apos;s yield proxy
+              starts to move with how much land is farmed upstream of it.
             </p>
 
             <div className="flex flex-wrap gap-4 w-full sm:w-auto">
@@ -136,32 +139,38 @@ function UpstreamAdvantageDetail() {
 
       <StatsBand
         stats={[
-          ["54,946", "Agricultural plots"],
+          ["54,946", "Plots on a directed canal network"],
           ["2016–2023", "Plot-year panel"],
-          ["−0.035", "GCVI activity × drought at >10 km"],
-          ["$6.0M", "Annual gross revenue-equivalent exposure"],
+          ["−0.035", "GCVI upstream × drought at >10 km"],
+          ["−0.032", "Upstream minus downstream at >10 km"],
         ]}
       />
 
       <Section id="abstract" title="Abstract">
-        Do formal water rights eliminate within-canal inequality when water
-        physically moves from head to tail? I build a water-graph linking 54,946
-        agricultural plots across Arizona&apos;s canal networks. The cross-section
-        measures whether delivery position predicts crop outcomes; the panel
-        uses year-to-year changes in distant upstream irrigation activity during
-        the 2016–2023 Colorado River drought. Nearby fallowing controls absorb
-        spatially correlated local shocks, while activity among canal-connected
-        upstream plots beyond exclusion cutoffs provides the identifying
-        variation. The results show a pattern-supported drought gradient
-        concentrated in surface-water-dominant and junior-rights districts.
+        Water rights and district rules govern claims to water, but Arizona
+        farms receive it through canals shared with upstream users. I map
+        54,946 plots onto a directed canal network and follow them from 2016 to
+        2023. In plot fixed-effects regressions, the association between
+        upstream cropped acreage and GCVI, a satellite yield proxy, turns more
+        negative during sustained drought, and the change is larger when nearby
+        upstream fields are excluded. Beyond 10 km, a downstream measure entered
+        jointly shows no corresponding change. Within junior-rights districts,
+        drought reveals both a plot&apos;s 2016–2019 baseline of upstream
+        cropping and each year&apos;s departure from it. The shift appears in
+        2020–2022 but not in the meteorologically harsher 2010–2014 drought,
+        when major delivery schedules largely held, and measured canal flow in
+        Wellton-Mohawk and Yuma County WUA points the same way. The findings
+        support an interpretation in which system slack masks delivery
+        frictions until sustained scarcity makes them consequential.
       </Section>
 
       <Section title="Approach">
         <ListBlock
           items={[
-            "Construct a directed water-graph from canal lines, flow-direction information, elevation, and USDA Crop Sequence Boundaries, then assign each plot a head-to-tail network position.",
-            "Use the cross-section to test whether plots farther from the headgate have worse satellite-derived moisture and vegetation outcomes after rich controls.",
-            "In the panel, exclude nearby upstream activity from treatment, control for rotation and non-rotation fallowing within the same geographic radius, and use activity among canal-connected upstream plots beyond cutoffs of 1, 2, 3, 5, and 10 km.",
+            "Reconstruct a directed water-graph from NHDPlus canal lines, elevation-inferred flow direction, and USDA Crop Sequence Boundaries, so that each plot has a fixed head-to-tail position and a fixed set of upstream ancestors and downstream descendants along the mapped canals.",
+            "Measure upstream cropped acreage as the log count of ancestor plots in crop each year. It moves within a plot as upstream fields enter and leave fallow, and the panel asks how its association with GCVI shifts in sustained drought (24-month SPEI), with plot and crop-by-year fixed effects.",
+            "Separate canal connection from geographic proximity by excluding ancestors within successively wider radii up to 10 km while controlling for nearby fallowing, and by entering the mirror downstream measure in the same regression as a directional negative control.",
+            "Inside ten junior-rights districts, split exposure into its 2016–2019 baseline and each year's departure from it, then check timing against year-by-year interactions, the earlier 2010–2014 drought, pre-season upstream water use, and measured canal flow.",
           ]}
         />
       </Section>
@@ -169,11 +178,11 @@ function UpstreamAdvantageDetail() {
       <Section title="Main findings">
         <ListBlock
           items={[
-            "Downstream plots show significantly lower canopy moisture (NDMI) and chlorophyll vigor (GCVI) after controls; the evapotranspiration level estimate is smaller and statistically insignificant. The full head-to-tail movement predicts a GCVI decline equal to 5.1% of a standard deviation.",
-            "The distant-upstream-activity × drought interaction strengthens as nearby variation is excluded. At the >10 km cutoff, the estimates are −0.008 for NDMI, −0.035 for GCVI, and −0.023 for ET; the evidence rests on the pattern across cutoffs and outcomes rather than any single coefficient.",
-            "A downstream-activity placebo attenuates once distant upstream activity is included, supporting a directional water-competition interpretation most clearly for vegetation health.",
-            "The gradient is concentrated in surface-water-dominant districts and is near zero in groundwater-dominant and mixed districts. Junior-rights districts face substantially steeper drought amplification than senior-rights districts.",
-            "Calibrated magnitudes imply roughly $6.0 million per year of gross revenue-equivalent exposure, concentrated almost entirely in junior surface-water-dependent districts. These are scale exercises, not estimates of profit, causal welfare, or an optimal allocation.",
+            "Sustained drought shifts the association between upstream cropped acreage and GCVI downward: the drought interaction is −0.015 over the full upstream path and −0.035 once upstream plots within 10 km are excluded, and it is negative at every exclusion radius. Under network-level clustering only the >10 km cell is significant, so the evidence rests on the pattern across cutoffs and designs rather than any single coefficient.",
+            "The change follows the direction of flow. Beyond 10 km, with both measures entered jointly, the upstream interaction is −0.030 and the downstream interaction 0.002; their difference of −0.032 has p = 0.026 under two-way clustering and is marginal or insignificant under network clustering. The estimates identify a direction, not an actor.",
+            "Inside ten junior-rights districts, one between-plot standard deviation of the 2016–2019 upstream cropped share is associated with 0.034 lower ln(1+GCVI) under district drought, and a ten-percentage-point departure above that baseline with a −0.014 shift, with essentially no association outside drought. Next year's departure carries the opposite sign, so the coefficients describe a dynamic association rather than the effect of a single planting decision.",
+            "Timing follows delivery conditions rather than rainfall alone: year-specific interactions are near zero in 2017–2019, negative in 2020–2022, and back at zero in 2023, and a separately constructed 2008–2023 panel shows no comparable interaction in the harsher 2010–2014 drought. In Wellton-Mohawk and Yuma County WUA, more summer canal water flattens the downstream disadvantage in GCVI and crop moisture; evidence that more wells weaken the drought-related change is suggestive.",
+            "In a companion 2021–22 specification, the gap between fields at the 25th and 75th percentiles of combined upstream exposure is 1.4–2.7 percent of crop revenue at an assumed pass-through, about $21–42 per acre of cotton and $30–59 per acre of alfalfa. These are revenue-equivalent magnitudes of an association, not losses in profit or welfare.",
           ]}
         />
       </Section>
@@ -188,7 +197,7 @@ function UpstreamAdvantageDetail() {
               className="md:col-span-2"
               frameClassName="min-h-[500px] md:min-h-[330px]"
               title="Web figure — evidence in three steps"
-              desc="A compact summary of the static head-to-tail gradient, the distant-upstream-activity design, and the downstream activity placebo."
+              desc="A compact summary of the distance-cutoff design, the upstream–downstream contrast, and the junior-district decomposition, with the timing and magnitude checks below."
             >
               <UpstreamMechanismFigure />
             </FigureCard>
@@ -204,32 +213,39 @@ function UpstreamAdvantageDetail() {
         </div>
       </section>
 
-      <DarkSection title="Policy implications">
+      <DarkSection title="Implications and limits">
         <StarListBlock
           items={[
             <>
-              <span className="text-white font-medium">Rights are not enough:</span>{" "}
-              formal allocation rules do not fully remove inequality created by
-              sequential delivery.
+              <span className="text-white font-medium">Allocation is not delivery:</span>{" "}
+              formal allocation operates at the source; below it, how much land
+              is farmed along the canal is associated with who bears a shortage
+              once scarcity persists.
             </>,
             <>
-              <span className="text-white font-medium">Price by volume:</span>{" "}
-              volumetric pricing is associated with a weaker drought-state
-              upstream-activity gradient, especially in junior-rights systems.
-              Because districts choose their pricing institutions, this is a
-              candidate mechanism rather than an identified policy effect.
+              <span className="text-white font-medium">Slack hides, scarcity reveals:</span>{" "}
+              the pattern appears when sustained drought wears down buffers, not
+              in the harsher 2010–2014 drought when major delivery schedules
+              largely held.
             </>,
             <>
-              <span className="text-white font-medium">Buffer scarcity with groundwater:</span>{" "}
-              greater groundwater dependence is associated with a substantially
-              weaker drought-state gradient, consistent with pumping providing
-              an alternative supply less tied to canal deliveries.
+              <span className="text-white font-medium">A direction, not an actor:</span>{" "}
+              administered head-to-tail rationing and decentralized competition
+              among farmers would both produce the estimates, and the data do
+              not distinguish them.
             </>,
             <>
-              <span className="text-white font-medium">Target the tail:</span>{" "}
-              monitoring and shortage planning should pay particular attention
-              to downstream reaches in junior, surface-water-dependent systems,
-              where the estimated drought-state exposure is concentrated.
+              <span className="text-white font-medium">Groundwater buffering is suggestive:</span>{" "}
+              the drought-related change is weaker where wells are more
+              numerous, consistent with surface-water vulnerability, without
+              yielding a uniform institutional ranking.
+            </>,
+            <>
+              <span className="text-white font-medium">Limits:</span>{" "}
+              satellite indices are yield proxies, field-level deliveries are
+              unobserved, the panel rests mostly on the largest canal systems in
+              one state and one drought episode, and the revenue magnitudes
+              assume a pass-through from GCVI to revenue.
             </>,
           ]}
         />
@@ -244,22 +260,22 @@ function UpstreamAdvantageDetail() {
 function WaterConservationDetail() {
   const gallery: LightboxImage[] = [
     {
-      src: images.waterCottonKcStages,
-      alt: "Figure 1 — Cotton stages and Kc",
+      src: images.waterGraphicalAbstract,
+      alt: "Graphical abstract",
       caption:
-        "The underlying scheduling tool: per-event water volume is the product of ET₀ × Kc × interval, indexed to crop development stage. Farmers read off the table; the calculation happens at the reference station.",
+        "The 32-farm panel before (2022) and after (2023) the printed tables, the 2023 guided drip vs furrow contrasts, and the 19 modelled reference sites that would reproduce district requirements within ±10% for 99% of Uzbekistan's cotton area.",
     },
     {
-      src: images.waterEvaporationStabilityMap,
-      alt: "Figure 3 — Spatial view: where ET is stable",
+      src: images.waterDripSchedule,
+      alt: "Figure 1 — Pre-calculated drip schedule, 2023",
       caption:
-        "Map overlay — districts in the arid belt combine low evaporation variability with high agricultural water stress, identifying settings where targeted trials may be useful.",
+        "Design drip-irrigation and fertigation schedule for one Phase I field in 2023: 300 m³/ha establishment irrigation, then events on a nominal 3.5-day cycle, with phenological stages and Kc ranges. Values are design targets from climatic-normal ET₀ and stage Kc, not realised water use.",
     },
     {
-      src: images.waterStressStabilityScatter,
-      alt: "Figure 5 — Analytical view: water stress vs evaporation stability",
+      src: images.waterNirHubNetwork,
+      alt: "Figure 3 — The net irrigation requirement and its hub network",
       caption:
-        "Nine critically water-stressed countries sit on the low-evaporation-variability side of the plot and are candidates for targeted trials; local agronomic validation is required before applying the scheduling approach.",
+        "(A) Interannual CV of the net irrigation requirement, 1991–2023, across 14,445 districts; rainfed districts in grey. (B) National CVs for the twelve critically water-stressed countries, ET₀ against the net requirement. (C) The 40 hubs serving Uzbekistan's cotton within ±10% and 100 km.",
     },
   ];
   return (
@@ -277,24 +293,23 @@ function WaterConservationDetail() {
 
           <div className="w-full lg:w-[70%] bg-[#1a1a1b] p-6 md:p-8 lg:p-8 flex flex-col items-start lg:absolute lg:bottom-0 lg:left-0 z-10">
             <div className="flex flex-wrap items-center gap-2 text-small uppercase text-[#a1a1aa] mb-6">
-              <span>REVISION RESUBMITTED</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#1a1a1b] ring-2 ring-white/40" />
+              <span>WORKING PAPER</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-gray-400" />
               <span>2026</span>
               <span className="w-1.5 h-1.5 rounded-full bg-gray-500" />
-              <span>26 PP</span>
+              <span>30 PP</span>
             </div>
 
             <h1 className="text-white mb-6 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
-              Water Conservation Through Simplified Drip Irrigation Scheduling
-              for Cotton Cultivation in Uzbekistan
+              {waterConservationTitle}
             </h1>
             <p className="text-body text-gray-300 mb-10 max-w-3xl">
-              Drip without scheduling under-irrigates: farmers using only
-              intuition apply 47% less water than furrow but produce yields
-              well below the experimental frontier. The fix isn't more
-              conservation — pre-calculated tables raise observed drip water
-              from 3,340 to 4,160 m³/ha (24.6%). Guided drip then produces
-              60.3% more cotton with 27.4% less water than furrow.
+              Existing drip adopters in Jizzakh were under-irrigating: in 2022
+              their drip plots used 52.3% less water than furrow but yielded
+              well below the supervised benchmark. With a pre-calculated table
+              alone, they raised drip water from 3,340 to 4,160 m³/ha (24.6%),
+              and in 2023 guided drip yielded 60.3% more than furrow with 34.6%
+              less delivered water.
             </p>
 
             <div className="flex flex-wrap gap-4 w-full sm:w-auto">
@@ -316,30 +331,38 @@ function WaterConservationDetail() {
 
       <StatsBand
         stats={[
-          ["+60.3%", "Guided drip yield vs furrow"],
-          ["−27.4%", "Guided drip water use vs furrow"],
-          ["+24.6%", "Observed drip water increase with tables"],
-          ["9", "Countries identified for targeted local trials"],
+          ["+60.3%", "Guided drip yield vs furrow, 2023"],
+          ["−34.6%", "Guided drip delivered water vs furrow, 2023"],
+          ["+24.6%", "Drip water increase with tables"],
+          ["19", "Modelled reference sites for 99% of Uzbek cotton area"],
         ]}
       />
 
       <Section id="abstract" title="Abstract">
-        Water scarcity has accelerated in Central Asia, while practical
-        scheduling guidance for drip irrigation remains limited. We apply an
-        FAO-56 evapotranspiration-based scheduling approach to drip-irrigated
-        cotton in Jizzakh, packaged as pre-calculated tables for farmers, and
-        validate it through a two-phase design: paired researcher-supervised
-        drip–furrow fields during 2021–2023, and a 32-farmer adoption panel
-        during 2022–2023. Pre-calculated scheduling tables can convert existing
-        drip hardware into measurable water-saving and yield gains.
+        Uzbekistan promotes drip irrigation as water availability falls, but
+        farmers often receive the hardware without scheduling guidance. We test
+        whether a simplified, pre-calculated FAO-56 evapotranspiration-based
+        schedule for cotton in Jizzakh, requiring no on-farm sensors or
+        specialist training, can deliver the benefits of drip irrigation to
+        existing adopters. The schedule is validated in two phases: paired
+        researcher-supervised drip–furrow trials on four farms over 2021–2023,
+        and a difference-in-differences study of 32 existing drip adopters
+        before and after they received the tables (2022–2023). In the trials,
+        scheduled drip raised yield by 39.9% and reduced delivered water by
+        31.9% relative to farmer-managed furrow plots. Unguided adopters were
+        under-irrigating; with the tables alone they raised drip water
+        application by 24.6%, and in 2023 guided drip plots yielded 60.3% more
+        than their furrow plots with 34.6% less water. A spatial screen over
+        1991–2023 shows the seasonal net irrigation requirement is stable
+        between years wherever rainfall is a small fraction of demand.
       </Section>
 
       <Section title="Approach">
         <ListBlock
           items={[
-            "Validate an FAO-56 ET₀ × Kc schedule on researcher-supervised experimental plots, comparing scheduled drip plots with farmer-managed furrow controls.",
-            "Transfer the same scheduling logic to farmers' drip plots through simple pre-calculated tables rather than real-time sensors or farmer-side calculations.",
-            "Use a Difference-in-Differences design to isolate the effect of scheduling guidance, then test where the approach can scale using evaporation-stability data.",
+            "Phase I: validate a climatic-normal FAO-56 ET₀ × Kc schedule on four paired fields (2021–2023, 24 plot-years), comparing researcher-supervised drip plots with farmer-managed furrow plots on the same farms.",
+            "Phase II: give 32 purposively selected existing drip adopters the same schedule as pre-calculated tables before the 2023 season, with no hardware, training or fertigation advice, and estimate a difference-in-differences model against their unguided furrow plots (128 plot-years).",
+            "Water is delivered water measured by drip flow meters and furrow weirs, without loss adjustment; a 0.90 district-coefficient sensitivity is reported. A spatial screen then tests where the seasonal net irrigation requirement is stable enough for a printed table.",
           ]}
         />
       </Section>
@@ -347,11 +370,11 @@ function WaterConservationDetail() {
       <Section title="Main findings">
         <ListBlock
           items={[
-            "Phase I (researcher-supervised) establishes the production frontier: scheduled drip vs farmer-managed furrow yields +39.9% seed-cotton, uses 24.3% less water, and raises water productivity by 84.9%.",
-            "The paradox: in 2022 farmer drip plots used 47% less water than furrow yet stayed well below the Phase I frontier. Drip without scheduling means systematic under-irrigation — the intuition 'less water = better' over-saves and sacrifices yield.",
-            "The fix is more water, counter-intuitively: pre-calculated tables raised observed drip water application by 24.6%, from 3,340 to 4,160 m³/ha. Guided drip still used 27.4% less water than furrow while producing 60.3% higher yield.",
-            "The difference-in-differences estimates reveal a guidance gap: after receiving scheduling tables, existing drip adopters increased water application and moved closer to the researcher-supervised yield frontier.",
-            "Reference evapotranspiration is temporally stable in arid regions (Jizzakh CV = 21.1%). Nine critically water-stressed countries — Kuwait, Libya, Egypt, UAE, Qatar, Turkmenistan, Syria, Uzbekistan, and Saudi Arabia — are candidates for targeted trials, subject to local agronomic validation.",
+            "In the paired Phase I trials (four farms, 2021–2023), researcher-supervised scheduled drip yielded 39.9% more seed cotton than farmer-managed furrow plots, used 31.9% less delivered water, and raised water productivity by 105.4%. Plots were not randomly assigned within farms, so this is a supervised benchmark, not an average treatment effect of drip alone.",
+            "Before guidance, in 2022, the 32 existing adopters' drip plots used 52.3% less water than their furrow plots and yielded 38.0% more, but their drip yields (3,216 kg/ha) stayed well below the Phase I drip benchmark (3,975 kg/ha). Unguided drip adopters were under-irrigating.",
+            "After receiving the tables alone, farmers raised drip water application by 24.6% in means, from 3,340 to 4,160 m³/ha; 31 of 32 applied more water and all 32 raised drip yield. Relative to the furrow trend, the difference-in-differences estimates are +16.2% for yield, +37.1% for water use, and −15.2% for water productivity.",
+            "In 2023, guided drip plots yielded 60.3% more than furrow plots with 34.6% less delivered water and 145.3% higher water productivity. These contrasts use unadjusted weir volumes for furrow; under the 0.90 district-coefficient sensitivity the 2023 water contrast is −27.4%, while the difference-in-differences estimates are unchanged.",
+            "Across 14,445 districts of water-stressed Asia and Africa, the seasonal net irrigation requirement has a median interannual CV of 5.4% in arid districts, and ten of the twelve critically water-stressed countries meet a ±10% criterion; Sudan and Pakistan do not because monsoon rain carries most of their crop demand. For Uzbekistan, 19 reference sites would reproduce district requirements within ±10% for 99% of the cotton area; the hub counts are lower bounds.",
           ]}
         />
       </Section>
@@ -365,28 +388,31 @@ function WaterConservationDetail() {
             <FigureCard
               className="md:col-span-2"
               frameClassName="min-h-[450px] md:min-h-[330px]"
-              title="Web figure — the under-irrigation paradox in three steps"
-              desc="Phase I sets the frontier; drip alone (Phase II 2022) under-irrigates; tables (Phase II 2023) raise observed drip water by 24.6% while keeping it 27.4% below furrow."
+              title="Web figure — scheduling guidance in three steps"
+              desc="Phase I sets the supervised benchmark; unguided drip adopters (Phase II, 2022) under-irrigate; with tables (Phase II, 2023) they apply 24.6% more drip water while staying 34.6% below furrow."
             >
               <WaterGuidanceFigure />
             </FigureCard>
             <FigureCard
-              image={images.waterCottonKcStages}
-              title="Figure 1 — Cotton stages and Kc"
-              desc="The underlying scheduling tool: per-event water volume is the product of ET₀ × Kc × interval, indexed to crop development stage. Farmers read off the table; the calculation happens at the reference station."
-            />
-            <FigureCard
-              image={images.waterEvaporationStabilityMap}
-              title="Figure 3 — Spatial view: where ET is stable"
-              desc="Map overlay — districts in the arid belt combine low evaporation variability with high agricultural water stress, identifying settings where targeted trials may be useful."
-              frameClassName="aspect-[16/7]"
+              className="md:col-span-2"
+              frameClassName="aspect-[5/2]"
+              image={images.waterGraphicalAbstract}
+              title="Graphical abstract"
+              desc="The 32-farm panel before (2022) and after (2023) the printed tables, the 2023 guided drip vs furrow contrasts, and the 19 modelled reference sites that would reproduce district requirements within ±10% for 99% of Uzbekistan's cotton area."
             />
             <FigureCard
               className="md:col-span-2"
               frameClassName="aspect-[16/9]"
-              image={images.waterStressStabilityScatter}
-              title="Figure 5 — Analytical view: water stress vs evaporation stability"
-              desc="Each country is plotted by agricultural water stress (y, log) against evaporation CV (x, log). Nine critically water-stressed countries sit on the low-CV side and are candidates for targeted trials; local agronomic validation is required before applying the scheduling approach."
+              image={images.waterDripSchedule}
+              title="Figure 1 — Pre-calculated drip schedule, 2023"
+              desc="Design drip-irrigation and fertigation schedule for one Phase I field: 300 m³/ha establishment irrigation, then events on a nominal 3.5-day cycle, with phenological stages and Kc ranges. Values are design targets from climatic-normal ET₀ and stage Kc, not realised water use."
+            />
+            <FigureCard
+              className="md:col-span-2"
+              frameClassName="aspect-[6/5]"
+              image={images.waterNirHubNetwork}
+              title="Figure 3 — The net irrigation requirement and its hub network"
+              desc="(A) Interannual CV of the net irrigation requirement, 1991–2023, across 14,445 districts; rainfed districts in grey. (B) National CVs for the twelve critically water-stressed countries, ET₀ against the net requirement. (C) The 40 hubs serving Uzbekistan's cotton within ±10% and 100 km."
             />
           </div>
         </div>
@@ -396,23 +422,27 @@ function WaterConservationDetail() {
         <StarListBlock
           items={[
             <>
-              <span className="text-white font-medium">Pair hardware with scheduling guidance:</span>{" "}
-              the field evidence shows that drip equipment alone can leave
-              farmers under-irrigating. Pre-calculated irrigation tables offer
-              a lightweight way to improve water application and yields.
+              <span className="text-white font-medium">Pair hardware subsidies with pre-calculated tables:</span>{" "}
+              this is the paper&apos;s strongest finding. Existing drip adopters
+              responded to a simple table of per-event volumes indexed by growth
+              stage, with no additional training. Hardware alone left them
+              under-irrigating.
             </>,
             <>
-              <span className="text-white font-medium">Test the approach where ET is stable:</span>{" "}
-              Kuwait, Libya, Egypt, the UAE, Qatar, Turkmenistan, Syria,
-              Uzbekistan, and Saudi Arabia combine critical water stress with
-              stable July evapotranspiration. They are candidates for targeted
-              trials, but implementation requires local agronomic validation.
+              <span className="text-white font-medium">Issue district tables from reference locations:</span>{" "}
+              19 reference locations would reproduce district tables within
+              ±10% for 99% of Uzbekistan&apos;s cotton area, and 40 would cover
+              all of it. Each table should carry a rain-skip rule. The piedmont
+              districts, where spring and early-summer rain falls, need their
+              own tables.
             </>,
             <>
-              <span className="text-white font-medium">Keep extension lightweight:</span>{" "}
-              extension officers can distribute tables and calibrate operating
-              hours from local pressure and emitter specifications, without
-              asking farmers to perform FAO-56 calculations or install on-farm sensors.
+              <span className="text-white font-medium">Use extension to distribute tables, not to teach scheduling:</span>{" "}
+              officers can deliver and explain the season&apos;s table, calibrate
+              operating hours to each farm&apos;s pressure and emitters, and
+              collect meter readings. The evidence covers cotton on four trial
+              fields and 32 Jizzakh farms; other crops, soils and farmer
+              populations remain untested.
             </>,
           ]}
         />
@@ -430,46 +460,40 @@ function WaterConservationDetail() {
 function BehavioralGamesDetail() {
   const gallery: LightboxImage[] = [
     {
-      src: images.behavioralGamesSpilloverHeatmap,
-      alt: "Calibrated-model spillover matrix by adopter and affected player",
+      src: images.behavioralGamesTwoGradients,
+      alt: "Session-2 adoption and model-implied realized-path value of drip by canal seat",
       caption:
-        "The calibrated model separates private value from cross-player benefits. Upstream adoption raises downstream players' lifetime payoffs, while downstream adoption creates no upstream water benefit. These are modeled quantities, not experimental treatment effects.",
+        "Eventual Session-2 adoption rises from 36.8% at P1 to 73.7% at P5, while the model-implied net value of a round-1 purchase over each game's realized path falls from −1.60 tokens (positive in 26 of 38 games) to −33.44 (positive in none). The value series is a conditional-choice index, not a welfare measure; rounds beyond the four-round estimation window carry the round-4 session shift forward.",
     },
     {
-      src: images.behavioralGamesAdoption,
-      alt: "Raw drip-irrigation adoption rates by canal position and session",
+      src: images.behavioralGamesBeliefDial,
+      alt: "Sensitivity of modeled adoption value to upstream restraint and the belief dial",
       caption:
-        "Pooled raw adoption is 62% for Player 5 and 49% for Player 1. In the preferred first-adoption-hazard specification, Player 5 is 8.9 percentage points above Player 1 (wild-bootstrap p = 0.009; randomization-inference p = 0.001).",
+        "Moving every upstream neighbor to high restraint is worth +12.97 tokens to P5 and 0 to P1 within the four-round window. Yet across the registered cases, P5's best value on the belief dial stays between −36.2 and −10.7 tokens; degraded-water Session-3 P4 is the sole cell where the dial changes the sign. Beliefs are not recovered; this is a logical benchmark.",
     },
     {
-      src: images.behavioralGamesAdoptionThreshold,
-      alt: "Calibrated-model drip-irrigation profitability by water supply and position",
+      src: images.behavioralGamesSpilloverAccounting,
+      alt: "Model-implied one-adopter spillover accounting and accumulation by number of drip seats",
       caption:
-        "The calibrated model predicts a non-monotonic adoption response to water supply. It does not predict adoption by Player 5 at the calibrated technology cost, making the tail player's high experimental adoption a substantive tension rather than a model confirmation.",
+        "Each row assigns drip to one seat against an all-gravity benchmark. Downstream seats re-extract 97.7–103.6% of the adopter's own saving across six stable full-stock cells, all six net-group intervals include zero, and P5 has no downstream recipient. Model-implied contrasts in extraction units, not welfare, conservation, or identified drip effects.",
     },
     {
-      src: images.behavioralGamesSpilloverCascade,
-      alt: "Calibrated-model extraction changes when Player 1 adopts drip irrigation",
+      src: images.behavioralGamesPersistence,
+      alt: "Persistence diagnostics for adoption, tail extraction, and investment",
       caption:
-        "In the calibrated model, Player 1 adoption reduces own extraction by 0.52 units and raises water consumption at each downstream position. The experimental counterpart is a conditional association: 0.407 more downstream water units per upstream adopter.",
+        "In Session 3, 83.5% of prior adopters repurchased against 34.4% first-time adoption; P5 ceiling choices show excess lag dependence of 0.236 [0.087, 0.372] beyond modeled state; exact investment repetition is 0.3825 observed versus 0.1350 under the maintained law. A descriptive synthesis, not a common causal estimate.",
     },
     {
-      src: images.behavioralGamesGamePrimitives,
-      alt: "Game water-supply function and gravity-versus-drip production curves",
+      src: images.behavioralGamesProtocol,
+      alt: "Session sequence and within-round move order in the irrigation game",
       caption:
-        "The game links shared infrastructure to water supply and gives drip irrigation a lower water optimum and higher peak output than gravity irrigation. Players choose infrastructure, extraction, and adoption sequentially.",
+        "The same five farmers play three sessions in fixed order, with seats re-randomized between sessions. Within a round, each farmer publicly invests, adopts drip if eligible, and extracts before the next downstream farmer chooses.",
     },
     {
-      src: images.behavioralGamesSessionDynamics,
-      alt: "Water consumption and infrastructure investment by player position and round",
+      src: images.behavioralGamesProductionFunctions,
+      alt: "Printed cotton output by water input for drip and furrow irrigation",
       caption:
-        "Raw dynamics show a persistent upstream–downstream gradient in water extraction (left), while infrastructure investment stays near-symmetric across positions (right). The asymmetry is in extraction, not in maintenance contributions.",
-    },
-    {
-      src: images.behavioralGamesGini,
-      alt: "Descriptive Gini indexes for water consumption and investment by session and round",
-      caption:
-        "These raw paths describe how water-consumption and investment inequality evolve across sessions. The paper's Gini regressions use conventional standard errors and are treated as descriptive, not causal evidence that adoption reduces inequality.",
+        "The chart shown to participants: drip reaches maximum output with about 7 water units, furrow irrigation with about 10. Drip beats gravity only at intermediate water levels (4–9 units), so greater scarcity does not make drip progressively more valuable.",
     },
   ];
   return (
@@ -491,19 +515,18 @@ function BehavioralGamesDetail() {
               <span className="w-1.5 h-1.5 rounded-full bg-gray-400" />
               <span>2026</span>
               <span className="w-1.5 h-1.5 rounded-full bg-gray-500" />
-              <span>51 PP</span>
+              <span>44 PP</span>
             </div>
 
             <h1 className="text-white mb-6 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
-              Using Behavioral Games to Understand Water-Saving Technology
-              Adoption in Uzbekistan
+              When Efficiency Cannot Substitute for Allocation: Technology
+              Adoption in a Sequential Canal
             </h1>
             <p className="text-body text-gray-300 mb-10 max-w-3xl">
-              A framed field experiment with 190 farmers shows that canal
-              position shapes both technology uptake and who benefits. Tail
-              players adopt sooner, while upstream adoption is associated with
-              more water consumed downstream. The physical water spillover is
-              measurable; peer-triggered adoption is not.
+              In irrigation games with 190 Uzbek farmers, demand for drip rose
+              toward the canal tail while the model-implied return to buying it
+              fell. Within the maintained token account, the tail can buy
+              efficiency but cannot buy upstream restraint.
             </p>
 
             <div className="flex flex-wrap gap-4 w-full sm:w-auto">
@@ -526,32 +549,38 @@ function BehavioralGamesDetail() {
       <StatsBand
         stats={[
           ["190", "Farmers across four regions"],
-          ["15 of 16", "Surveyed districts represented"],
-          ["38", "Five-player games"],
-          ["+0.407", "Downstream water per upstream adopter"],
+          ["38", "Five-person canal games"],
+          ["36.8% → 73.7%", "Session-2 adoption, head to tail"],
+          ["0 of 38", "Games where the tail purchase pays (model-implied)"],
         ]}
       />
 
       <Section id="abstract" title="Abstract">
-        We conduct a framed field experiment with 190 farmers across four
-        regions of Uzbekistan, modifying the standard Irrigation Game to include
-        an explicit drip irrigation adoption decision. Random assignment to
-        canal position shows that new adoption concentrates at the
-        scarcity-stressed tail: Player 5's first-adoption hazard is 8.9
-        percentage points above Player 1's. Upstream adoption is associated
-        with 0.407 units more water consumed by downstream players, but there is
-        no robust evidence that it triggers others to adopt. Linked survey data
-        show that in-game behavior also reflects farmers' real water-access
-        positions, agricultural-cluster ties, and willingness to pay.
+        We study why farmers adopt an efficiency technology where it can do
+        least. In a lab-in-the-field experiment with 190 farmers in 38
+        five-person irrigation games in Uzbekistan, eventual Session-2 drip
+        adoption rose monotonically from 36.8 percent at the canal head to 73.7
+        percent at the tail. Over the same seats, the model-implied net value of
+        a round-1 purchase over each game's realized path, an evaluation
+        extending beyond the four-round estimation window, fell from −1.60
+        tokens, positive in 26 of 38 games, to −33.44, positive in none. The
+        tail's per-round gain is too small to amortize the common 45-token fee,
+        and its loss survives high-water state bounds and every belief on the
+        maintained upstream-restraint dial. Model-implied counterfactuals
+        reverse the geography of demand: across six stable full-stock cells,
+        downstream users re-extract 97.7–103.6 percent of an upstream adopter's
+        own-extraction reduction, whereas the tail seat has no downstream user.
+        Demand tracked exposure to scarcity; within the maintained account,
+        technology could not substitute for water allocation.
       </Section>
 
       <Section title="Approach">
         <ListBlock
           items={[
-            "Run 38 five-player games across four regions and 15 of the 16 surveyed districts. Each game has three sessions, with canal positions randomly reassigned between sessions.",
-            "Extend the standard Irrigation Game so farmers choose infrastructure investment, water extraction, and whether to adopt drip irrigation during gameplay.",
-            "Use game-clustered inference with wild-bootstrap p-values; the randomized position result is also tested with within-game-session randomization inference.",
-            "Link 133 participants to survey measures of real water access, agricultural-cluster ties, willingness to pay, social connections, and actual drip adoption.",
+            "Run 38 five-person irrigation games with 190 farmers from 4 administrative regions and 15 of the 16 surveyed districts, recruited from a 914-farmer survey roster. Water moves publicly from P1 at the head to P5 at the tail, and seats are re-randomized between sessions.",
+            "Session 1 offers gravity irrigation only; Sessions 2 and 3 add a priced drip option, charged in three 15-token installments, that expires at the session boundary. Session 3 lowers the announced water cap by two units per round.",
+            "Freeze a behavioral account of extraction built on the exact printed payoff cards and the canal's water recursion. Adoption choices enter neither its estimation nor its selection: it is a measuring instrument, not an adoption model.",
+            "Use that account to value adoption nodes and to trace water in separate one-adopter counterfactuals. Observed contrasts use game-clustered inference over 38 clusters; because adoption is chosen, adoption comparisons are descriptive.",
           ]}
         />
       </Section>
@@ -559,11 +588,11 @@ function BehavioralGamesDetail() {
       <Section title="Main findings">
         <ListBlock
           items={[
-            "Player 5's first-adoption hazard is 8.9 percentage points above Player 1's (wild-bootstrap p = 0.009; randomization-inference p = 0.001), even though the calibrated model predicts that the tail player should not adopt.",
-            "Each additional upstream adopter is associated with 0.407 units more water consumed downstream (wild-bootstrap p = 0.018) and a 1.9 percentage-point larger downstream share of group water (p < 0.001). Adoption itself is not randomized, so these are conditional associations.",
-            "There is no robust evidence of peer-triggered adoption: the contemporaneous first-adoption-hazard estimate is 0.005 (p = 0.855), and lagged estimates are not positive. The measurable spillover operates through water quantities, not observable imitation.",
-            "The conservation association is concentrated upstream: adopters in positions 1–2 consume 0.886 fewer units than non-adopters (p < 0.001), while the downstream estimate is not statistically different from zero.",
-            "Agricultural-cluster membership is associated with a 31 percentage-point higher probability of ever adopting in the game (p = 0.042); informal social connections do not robustly predict adoption once inference respects the 38 game clusters.",
+            "When drip first became available in Session 2, eventual adoption rose monotonically down the canal: 36.8, 42.1, 44.7, 57.9, and 73.7 percent from P1 to P5. The model-implied net value of a round-1 purchase over each game's realized path moved the other way, from −1.60 to −33.44 tokens (Session 3: +11.47 to −35.74), and the tail purchase is positive in none of the 38 games in either session.",
+            "Within the maintained token account, a longer horizon or optimistic beliefs do not rescue the tail purchase. P5's per-round gain of 2.2–2.4 tokens implies a break-even of 20.4 and 18.7 productive rounds against sessions averaging 5.55 and 8.37 rounds, and even the most favorable belief on the registered upstream-restraint dial leaves P5's value between −36.2 and −10.7 tokens across the registered cases. Both calculations extrapolate beyond the four-round estimation window, and “overpayment” refers to modeled token value, not subjective welfare.",
+            "Tail participants remain close to the locked model on extraction: across 302 model-eligible paid P5 nodes, observed extraction averages 3.80 units against 3.84 model-implied. This makes a general failure to solve the extraction problem less plausible, but it does not establish comprehension or exclude confusion specific to the adoption decision.",
+            "In separate one-adopter model counterfactuals, an upstream adopter's own extraction falls by 0.253–0.623 water units per group-round, and downstream users re-extract 97.7–103.6 percent of that release across six stable full-stock cells; all six net-group 95% intervals include zero. Modeled provision sits at the head seats P1–P3 while purchases concentrate at the tail. These are controlled counterfactuals in extraction units, not identified drip effects, conservation, or welfare estimates.",
+            "Adoption differs across decision margins. Among Session-2 nonadopters, first-time Session-3 adoption was 43.5% after a full-water history and 16.1% after a degraded-water history (+27.4 percentage points, wild-cluster p = 0.016), while 83.5% of Session-2 adopters repurchased against 34.4% first-time adoption. Because histories and prior adoption are endogenous, these are descriptive associations, not learning or habit effects.",
           ]}
         />
       </Section>
@@ -577,55 +606,52 @@ function BehavioralGamesDetail() {
             <FigureCard
               className="md:col-span-2"
               frameClassName="min-h-[500px] md:min-h-[330px]"
-              title="Web figure — three results"
-              desc="Randomized canal position shifts first-adoption timing; upstream adoption is associated with a physical water spillover; peer-triggered adoption is not supported by the preferred specification."
+              title="Web figure — the inversion in three steps"
+              desc="Demand rises toward the tail, the model-implied return to a tail purchase is negative in every realized game, and modeled water released by upstream adopters is almost fully re-extracted downstream."
             >
               <BehavioralGamesMechanismFigure />
             </FigureCard>
             <FigureCard
               className="md:col-span-2"
               frameClassName="aspect-[4/3] md:aspect-[5/4]"
-              image={images.behavioralGamesSpilloverHeatmap}
-              title="Calibrated model — private value and cross-player benefits"
-              desc="The matrix separates an adopter's private value from benefits to other players. Upstream adoption raises downstream players' lifetime payoffs, while downstream adoption creates no upstream water benefit. These are modeled quantities, not experimental treatment effects."
-            />
-            <FigureCard
-              image={images.behavioralGamesAdoption}
-              title="Empirical — adoption by position"
-              desc="Pooled raw adoption is 62% for Player 5 and 49% for Player 1. In the preferred first-adoption-hazard specification, Player 5 is 8.9 percentage points above Player 1 (wild-bootstrap p = 0.009; randomization-inference p = 0.001)."
-            />
-            <FigureCard
-              image={images.behavioralGamesAdoptionThreshold}
-              title="Calibrated model — adoption thresholds"
-              desc="Modeled adoption responds non-monotonically to water supply. At the calibrated technology cost, the model does not predict adoption by Player 5; the tail player's high experimental adoption is therefore a substantive tension rather than a model confirmation."
+              image={images.behavioralGamesTwoGradients}
+              title="Two opposing gradients"
+              desc="Eventual Session-2 adoption rises from 36.8% at P1 to 73.7% at P5, while the model-implied realized-path value of a round-1 purchase falls from −1.60 tokens (positive in 26 of 38 games) to −33.44 (positive in none). The value series is a conditional-choice index, not a welfare measure."
             />
             <FigureCard
               className="md:col-span-2"
-              frameClassName="aspect-[16/8]"
-              image={images.behavioralGamesSpilloverCascade}
-              title="Calibrated model — extraction spillover from P1 adoption"
-              desc="In the model, Player 1 adoption reduces own extraction by 0.52 units and raises consumption at every downstream position. The experimental counterpart is a conditional association: 0.407 more downstream water units per upstream adopter."
+              frameClassName="aspect-[16/7]"
+              image={images.behavioralGamesBeliefDial}
+              title="Model-implied — the belief-dial check"
+              desc="Upstream restraint is worth most to the tail (+12.97 tokens at P5 within the four-round window), but P5's best value on the dial stays between −36.2 and −10.7 tokens across registered cases. Beliefs are not recovered; the dial is a logical benchmark."
             />
             <FigureCard
               className="md:col-span-2"
-              frameClassName="aspect-[16/8]"
-              image={images.behavioralGamesGamePrimitives}
-              title="Game mechanics — shared supply and technology"
-              desc="The game links shared infrastructure to water supply and gives drip irrigation a lower water optimum and higher peak output than gravity irrigation. Players choose infrastructure, extraction, and adoption sequentially."
+              frameClassName="aspect-[4/3]"
+              image={images.behavioralGamesSpilloverAccounting}
+              title="Model-implied — spillover accounting along a one-way canal"
+              desc="Downstream seats re-extract 97.7–103.6% of an upstream adopter's own saving across six stable full-stock cells, and P5 has no downstream recipient. These are controlled contrasts in extraction units, not welfare, conservation, or identified drip effects."
             />
             <FigureCard
               className="md:col-span-2"
-              frameClassName="aspect-[16/8]"
-              image={images.behavioralGamesSessionDynamics}
-              title="Empirical — water and investment dynamics"
-              desc="Raw dynamics show a persistent upstream–downstream gradient in water extraction (left), while infrastructure investment stays near-symmetric across positions (right). The asymmetry is in extraction, not in maintenance contributions."
+              frameClassName="aspect-[16/6]"
+              image={images.behavioralGamesPersistence}
+              title="Descriptive — persistence across three choice margins"
+              desc="83.5% of prior adopters repurchased in Session 3 against 34.4% first-time adoption; tail extraction and investment also repeat more than the maintained account predicts. The panels share a sequence signature, not an identified mechanism."
             />
             <FigureCard
               className="md:col-span-2"
-              frameClassName="aspect-[16/8]"
-              image={images.behavioralGamesGini}
-              title="Descriptive — distributional dynamics"
-              desc="The raw paths show how water-consumption and investment inequality evolve across sessions. The paper's Gini regressions use conventional standard errors and are treated as descriptive, not causal evidence that adoption reduces inequality."
+              frameClassName="aspect-[16/9]"
+              image={images.behavioralGamesProtocol}
+              title="Game protocol"
+              desc="The same five farmers play three sessions in fixed order with seats re-randomized between sessions; within a round, each farmer publicly invests, adopts drip if eligible, and extracts before the next downstream farmer chooses."
+            />
+            <FigureCard
+              className="md:col-span-2"
+              frameClassName="aspect-[16/10]"
+              image={images.behavioralGamesProductionFunctions}
+              title="Game material — printed payoff curves"
+              desc="Drip reaches maximum output with about 7 water units and furrow irrigation with about 10. Drip beats gravity only at intermediate water levels, so greater scarcity does not make drip progressively more valuable."
             />
           </div>
         </div>
@@ -635,32 +661,35 @@ function BehavioralGamesDetail() {
         <StarListBlock
           items={[
             <>
-              <span className="text-white font-medium">Test position-based targeting:</span>{" "}
-              in the calibrated model, a 0.21-token subsidy to Player 1 changes
-              the equilibrium and raises group welfare by 4.4 tokens, while
-              fully subsidizing Players 4–5 reaches the same 80% adoption rate
-              with a 9.7-token welfare loss. These are illustrative model-based
-              counterfactuals, not estimates from randomized subsidy variation.
+              <span className="text-white font-medium">Efficiency is not allocation:</span>{" "}
+              a tail-end participant can buy a technology that changes
+              extraction once water arrives, but cannot thereby buy upstream
+              restraint or make water arrive. Uzbekistan's drip subsidies of UZS
+              8–12 million per hectare (30–40% of installation cost) likewise do
+              not determine who receives canal water.
             </>,
             <>
-              <span className="text-white font-medium">Separate water effects from peer effects:</span>{" "}
-              upstream adoption is associated with more water consumed
-              downstream, but it does not robustly predict new adoption by
-              downstream players. Program design should measure water outcomes
-              directly rather than assume that visible adoption will induce peers.
+              <span className="text-white font-medium">Targeting by felt scarcity:</span>{" "}
+              read as an interpretation of model-implied objects, not a measured
+              targeting result, subsidies allocated by felt scarcity would
+              concentrate at the tail, while the maintained account locates
+              private token returns and the source of downstream redistribution
+              upstream. The experiment provides no optimal target, tipping
+              subsidy, or welfare estimate.
             </>,
             <>
-              <span className="text-white font-medium">Evaluate agricultural clusters as an implementation channel:</span>{" "}
-              cluster membership is associated with a 31 percentage-point
-              higher probability of ever adopting in the game, while informal
-              social connections do not robustly predict adoption. The cluster
-              result is observational and should be tested before scaling.
+              <span className="text-white font-medium">Redistribution, not conservation:</span>{" "}
+              in the model, water released by an upstream adopter is almost fully
+              re-extracted downstream, and wider drip assignment can raise modeled
+              group extraction. Plot-level efficiency need not imply system-level
+              conservation.
             </>,
             <>
-              <span className="text-white font-medium">Use games as measurement:</span>{" "}
-              farmer-rated similarity to real decisions is 0.81 / 1.0;
-              behavioral games can reveal where adoption incentives come from
-              before scaling a subsidy program.
+              <span className="text-white font-medium">Scope:</span>{" "}
+              only canal position is randomized; inference rests on 38 game
+              clusters; the realized payment stake of an adoption decision was
+              about ±0.3 tokens; and adoption in a stylized canal game is not
+              field installation.
             </>,
           ]}
         />
@@ -956,24 +985,24 @@ function FigureCard({
 function UpstreamMechanismFigure() {
   const steps = [
     {
-      label: "Cross-section",
-      title: "A static head-to-tail gradient",
-      body: "Tail-end plots have lower NDMI and GCVI after controls. The ET estimate is small and statistically indistinguishable from zero.",
-      metric: "5.1% of a GCVI SD",
+      label: "Distance cutoffs",
+      title: "Drought shifts the upstream association",
+      body: "The GCVI × drought interaction is negative at every exclusion radius and most negative once upstream plots within 10 km are excluded; nearby fallow controls absorb local shocks.",
+      metric: "−0.015 → −0.035",
       tone: "border-[#1a1a1b] bg-white",
     },
     {
-      label: "Donut identification",
-      title: "Distant activity matters in drought",
-      body: "Nearby fallow controls absorb local shocks while successively excluding upstream activity within 1, 2, 3, 5, and 10 km.",
-      metric: "−0.035 GCVI at >10 km",
+      label: "Directional contrast",
+      title: "Upstream, not downstream",
+      body: "In the same >10 km regression, upstream cropped acreage carries a negative drought interaction while the downstream interaction is approximately zero. The contrast is specific to GCVI.",
+      metric: "−0.030 vs. +0.002",
       tone: "border-[#ff7b1b] bg-[#fff7ed]",
     },
     {
-      label: "Directional placebo",
-      title: "Directionality is clearest for GCVI",
-      body: "In the same >10 km regression, distant upstream activity predicts lower GCVI during drought; downstream activity is near zero.",
-      metric: "−0.030 vs. +0.002",
+      label: "Junior-rights districts",
+      title: "Baseline and annual departures",
+      body: "Drought reveals both the 2016–2019 upstream cropped share a plot inherits and each year's departure from it; outside drought the departure is unrelated to GCVI.",
+      metric: "−0.014 per 10 pp",
       tone: "border-[#0f766e] bg-[#f0fdfa]",
     },
   ];
@@ -1009,10 +1038,10 @@ function UpstreamMechanismFigure() {
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 border-t border-border pt-4">
-        <MiniMetric value="2.0×" label="NDMI coefficient magnitude, full → >10 km" />
-        <MiniMetric value="2.3×" label="GCVI coefficient magnitude" />
-        <MiniMetric value="2.1×" label="ET coefficient magnitude" />
-        <MiniMetric value="$6.0M/yr" label="Gross revenue-equivalent exposure" />
+        <MiniMetric value="2020–22" label="Negative year-specific interactions; zero again in 2023" />
+        <MiniMetric value="2010–14" label="Harsher drought, schedules held: no comparable interaction" />
+        <MiniMetric value="p = 0.026" label="Upstream − downstream at >10 km, two-way clustering" />
+        <MiniMetric value="1.4–2.7%" label="Revenue-equivalent gap, 25th vs 75th percentile field, 2021–22" />
       </div>
     </div>
   );
@@ -1021,24 +1050,24 @@ function UpstreamMechanismFigure() {
 function BehavioralGamesMechanismFigure() {
   const steps = [
     {
-      label: "Who adopts?",
-      title: "Tail players adopt sooner",
-      body: "Random assignment to canal position shows that Player 5's first-adoption hazard is 8.9 percentage points above Player 1's. The result survives game-clustered and randomization inference.",
-      metric: "+8.9 pp",
+      label: "Who buys?",
+      title: "Demand rises toward the tail",
+      body: "When drip first became available in Session 2, eventual adoption rose monotonically from 36.8% at the canal head (P1) to 73.7% at the tail (P5). Seats are randomized but adoption is chosen, so the gradient is descriptive.",
+      metric: "36.8% → 73.7%",
       tone: "border-[#0f766e] bg-[#f0fdfa]",
     },
     {
-      label: "Where's the spillover?",
-      title: "Through physical water quantities",
-      body: "Each additional upstream adopter is associated with 0.407 units more water consumed by downstream players and a 1.9 percentage-point larger downstream share of group water.",
-      metric: "+0.407 / adopter",
+      label: "Does it pay?",
+      title: "The tail purchase pays in no realized game",
+      body: "The model-implied net value of a round-1 purchase over each game's realized path falls from −1.60 tokens at P1 to −33.44 at P5, positive in none of 38 games. Values beyond the four-round estimation window are extrapolated.",
+      metric: "−33.44 tokens (0/38)",
       tone: "border-[#ff7b1b] bg-[#fff7ed]",
     },
     {
-      label: "Do peers follow?",
-      title: "No robust peer-triggered adoption",
-      body: "The first-adoption-hazard estimate for contemporaneous upstream adoption is 0.005 (p = 0.855), and lagged estimates are not positive. The water spillover does not imply imitation.",
-      metric: "0.005 (p = 0.855)",
+      label: "Where does water go?",
+      title: "Redistribution, not conservation",
+      body: "In one-adopter model counterfactuals, downstream seats re-extract 97.7–103.6% of an upstream adopter's own saving, and P5 has no downstream recipient. These are model-implied contrasts, not identified drip effects.",
+      metric: "97.7–103.6% re-extracted",
       tone: "border-[#1a1a1b] bg-white",
     },
   ];
@@ -1076,8 +1105,8 @@ function BehavioralGamesMechanismFigure() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 border-t border-border pt-4">
         <MiniMetric value="190" label="farmers in four regions" />
         <MiniMetric value="15 of 16" label="surveyed districts represented" />
-        <MiniMetric value="38" label="five-player games" />
-        <MiniMetric value="133" label="linked survey records" />
+        <MiniMetric value="38" label="five-person canal games" />
+        <MiniMetric value="3.80 vs 3.84" label="P5 extraction, observed vs model (302 nodes)" />
       </div>
     </div>
   );
@@ -1087,23 +1116,23 @@ function WaterGuidanceFigure() {
   const steps = [
     {
       label: "Phase I — researcher-supervised",
-      title: "Production frontier under scheduling",
-      body: "FAO-56 schedule applied on paired drip–furrow fields. Scheduled drip yields more and uses less water than furrow — the performance ceiling for correctly scheduled drip.",
-      metric: "+39.9% yield / −24.3% water",
+      title: "Supervised benchmark",
+      body: "FAO-56 schedule applied to the drip plot of four paired drip–furrow fields, 2021–2023. Scheduled drip yields more and uses less delivered water than the farmer-managed furrow plot. This is a supervised benchmark, not a randomised effect of drip alone.",
+      metric: "+39.9% yield / −31.9% water",
       tone: "border-[#ff7b1b] bg-[#fff7ed]",
     },
     {
       label: "Phase II 2022 — no guidance",
       title: "Drip alone under-irrigates",
-      body: "Farmer adopters managed drip by intuition. Water savings are far larger than Phase I (−47% vs −24%), but yield growth lags — only +38% over furrow, 19% below the Phase I frontier. The intuition 'less water = better' over-saves and leaves yield on the table.",
-      metric: "+38% yield / −47% water",
+      body: "32 existing adopters managed drip by their own judgement. Their drip plots used far less water than furrow, but drip yield averaged 3,216 kg/ha, against 3,975 kg/ha on the Phase I drip plots that season.",
+      metric: "+38.0% yield / −52.3% water",
       tone: "border-[#0f766e] bg-[#f0fdfa]",
     },
     {
       label: "Phase II 2023 — tables added",
-      title: "Yield jumps to the frontier",
-      body: "Pre-calculated per-event volumes raise observed drip water from 3,340 to 4,160 m³/ha, a 24.6% increase. Guided drip still uses 27.4% less water than furrow while producing 60.3% higher yield and converging on the Phase I frontier.",
-      metric: "+60.3% yield / −27.4% water",
+      title: "Yields move toward the benchmark",
+      body: "With pre-calculated per-event volumes alone, mean drip water rose from 3,340 to 4,160 m³/ha (24.6%). Guided drip still used 34.6% less delivered water than furrow while yielding 60.3% more.",
+      metric: "+60.3% yield / −34.6% water",
       tone: "border-[#1a1a1b] bg-white",
     },
   ];
@@ -1141,10 +1170,10 @@ function WaterGuidanceFigure() {
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 border-t border-border pt-4">
-        <MiniMetric value="+22%" label="farmer drip yield, 2022 → 2023 (tables)" />
-        <MiniMetric value="+84.9%" label="water productivity gain (scheduled)" />
-        <MiniMetric value="−24.3%" label="water vs furrow (scheduled)" />
-        <MiniMetric value="9 countries" label="candidates for locally validated trials" />
+        <MiniMetric value="+16.2%" label="DiD yield effect of tables vs furrow trend" />
+        <MiniMetric value="+105.4%" label="water productivity, scheduled drip vs furrow (Phase I)" />
+        <MiniMetric value="32 of 32" label="farmers raised drip yield, 2022 → 2023" />
+        <MiniMetric value="10 of 12" label="critically water-stressed countries meet ±10% on net requirement" />
       </div>
     </div>
   );
