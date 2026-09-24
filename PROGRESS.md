@@ -13,6 +13,6 @@ Open:
 - Water page uses the v19 manuscript title "Closing the Irrigation Guidance Gap…" (user decision 2026-09-24); the Sep 14 CV still has the old title.
 - JMP page count shows 41 (main text + references; user decision).
 - JMP year-by-year figure fixed at its producer (`colorado_river_clean/paper_pres/figures/create_uxyear_eventstudy_fig.py`: two-line y-label, legend above axes); the JMP main.pdf has not been recompiled with it.
-- No pages yet for Double Vision or the Alaska project (both on the CV).
+- Double Vision page (`/research/double-vision`) live 2026-09-24; hero is a CC BY-SA 3.0 Wikimedia photo credited on the page. No page yet for the Alaska project.
 
 Publishing = push to `main`; `npm run deploy` fails (Wrangler login lacks access to the Worker).

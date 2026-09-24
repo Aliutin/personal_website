@@ -38,7 +38,22 @@ import behavioralGamesSpilloverAccounting from "./assets/behavioral-games-spillo
 import behavioralGamesPersistence from "./assets/behavioral-games-persistence.png";
 import behavioralGamesProtocol from "./assets/behavioral-games-protocol.png";
 
+import doubleVisionHero from "./assets/double-vision-hero-ferghana-cotton.webp";
+import doubleVisionPreview from "./assets/double-vision-preview.png";
+import doubleVisionInformationFlow from "./assets/double-vision-information-flow.png";
+import doubleVisionCoverageHeatmap from "./assets/double-vision-coverage-heatmap.png";
+import doubleVisionAttentionTimeline from "./assets/double-vision-attention-timeline.png";
+import doubleVisionTypology from "./assets/double-vision-typology.png";
+import doubleVisionTopicPlacebo from "./assets/double-vision-topic-placebo.png";
+
 export const images = {
+  doubleVisionHero,
+  doubleVisionPreview,
+  doubleVisionInformationFlow,
+  doubleVisionCoverageHeatmap,
+  doubleVisionAttentionTimeline,
+  doubleVisionTypology,
+  doubleVisionTopicPlacebo,
   portrait,
   researchImage,
   column1,
@@ -560,6 +575,50 @@ export const publications: Publication[] = [
         {
           src: images.behavioralGamesProductionFunctions,
           caption: "Game material — printed cotton output by water input; drip peaks at about 7 water units and furrow irrigation at about 10"
+        }
+      ]
+    },
+  {
+      slug: "double-vision",
+      title: "Double Vision: Donor Information, Farmer Voice, and Irrigation Policy Reform in Uzbekistan",
+      authors: ["Muzna Alvi", "Anton Liutin", "Paul Castañeda Dower", "Claudia Ringler"],
+      year: "2026",
+      venue: "Working Paper",
+      tag: "WORKING PAPER",
+      draftOnRequest: true,
+      pages: 45,
+      abstract: "This paper asks whether donor knowledge can substitute for farmer feedback once a policy moves from design to implementation. Read from formal sources, Uzbekistan's flagship subsidy program for water-saving irrigation technologies looks like a success. We compare five information channels and the legislative record over the program's design (2018–21) and implementation (2022–25) phases: a pseudonymous farmer Telegram forum with about 330,000 messages, farmer focus groups and interviews, independent and state media, donor documents, and 327 laws and decrees. An ensemble of language models classifies every source against one 14-problem schema. Farmer-facing and state–donor sources organize implementation problems differently, and the gap is systematic. Year-to-year legislative attention covaries with donor attention, while the association with farmer voice is not detectable in the main window and depends on timing. Within a problem, the version that enters law follows the donor account. Donor knowledge can fill an information vacuum at the design stage, but we find no evidence that it replaces the implementation information held by policy users.",
+      keyFindings: [
+        "The view from above and the view from below do not name the same problems. Forced adoption appears in 2.7% of WST-related Telegram messages but in under 0.05% of state-newspaper articles and in no implementation-phase law; contractor fraud, among the most frequent problems in the chat, is absent from donor documents.",
+        "The wedge is systematic and, descriptively, widens after rollout. Donor organizations and the state press rank the 14 problems alike, while during implementation Telegram's ranking is essentially uncorrelated with every donor channel and agrees only with the independent outlet Kun.uz; by 2025 the chat raised problems at roughly 36 times the rate of the state press.",
+        "Legislative attention covaries with donor attention. In a problem-by-year panel for 2021–25, a problem's donor attention is positively associated with the next year's problem-targeted laws (permutation p = 0.012), while the farmer-voice association is not detectable (p = 0.194) and depends on timing. The two coefficients cannot be told apart, so the evidence shows a more consistent donor association, not a larger donor effect.",
+        "Within a problem, the law speaks in the donors' terms. Across the ten legislated problems, a sub-aspect's share of donor attention predicts how many laws carry it while its share of farmer attention does not; a ten-point rise in donor share multiplies the expected law count by about one and a half. Corruption/fund misuse is the one problem whose legal wording sits closer to the farmer account.",
+        "The response is selective. Generic, donor-legible problems such as cost, training, and water supply draw formal response, while forced adoption and low yield/profit, the two problems farmers raise most among those the law never touches, receive no law in either phase. No full-sample specification detects a post-law decline in farmer complaints, a gauge that rules out large improvements more clearly than modest ones."
+      ],
+      figures: [
+        {
+          src: images.doubleVisionPreview,
+          caption: "The 14 WST problems by expert-rated observability and solvability; working feedback loops sit mostly among the problems easier for the center to observe, with low yield/profit the clearest exception"
+        },
+        {
+          src: images.doubleVisionInformationFlow,
+          caption: "Information flows about WST performance among the main actors, and where the five channels and the legislative record sit"
+        },
+        {
+          src: images.doubleVisionCoverageHeatmap,
+          caption: "Per-problem coverage by channel, 2022–25 — farmer-facing and official channels do not cover the same problems"
+        },
+        {
+          src: images.doubleVisionAttentionTimeline,
+          caption: "Aggregate WST problem attention by year — farmer voice rises after 2022 while the state press, donors, and laws peak at the implementation launch and then fall"
+        },
+        {
+          src: images.doubleVisionTypology,
+          caption: "Five-profile policy-learning typology — two working loops and three weak or broken loops"
+        },
+        {
+          src: images.doubleVisionTopicPlacebo,
+          caption: "Topic placebo — the Telegram–Gov.News divergence appears for WST but not for weather, pests, or war consequences"
         }
       ]
     },

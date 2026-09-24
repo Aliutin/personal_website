@@ -24,6 +24,13 @@ const waterConservationDraftSubject = encodeURIComponent(
   `Draft request: ${waterConservationTitle}`
 );
 
+const doubleVisionTitle =
+  "Double Vision: Donor Information, Farmer Voice, and Irrigation Policy Reform in Uzbekistan";
+
+const doubleVisionDraftSubject = encodeURIComponent(
+  `Draft request: ${doubleVisionTitle}`
+);
+
 const upstreamSelectedFigures = [
   {
     image: images.jmpStudyAreaMap,
@@ -70,6 +77,10 @@ export default function ResearchDetail() {
 
   if (slug === "behavioral-games") {
     return <BehavioralGamesDetail />;
+  }
+
+  if (slug === "double-vision") {
+    return <DoubleVisionDetail />;
   }
 
   const publication = publications.find((item) => item.slug === slug);
@@ -701,6 +712,271 @@ function BehavioralGamesDetail() {
   );
 }
 
+function DoubleVisionDetail() {
+  const gallery: LightboxImage[] = [
+    {
+      src: images.doubleVisionPreview,
+      alt: "The 14 WST problems placed by observability and solvability, marked by whether the formal feedback loop works",
+      caption:
+        "Problems are placed by expert pairwise ratings of how observable each is to the central government and how solvable it is (whiskers are 80% credible intervals). Open green markers are problems whose formal feedback loop works, solid red markers those where it breaks down; triangles show whether the problem's decree count grew or shrank after rollout.",
+    },
+    {
+      src: images.doubleVisionInformationFlow,
+      alt: "Diagram of information flows about WST performance among the president, ministries, donors, local governments, farmers, and the six corpora",
+      caption:
+        "Solid arrows are formal, directive flows; dashed arrows informational or advisory flows; ⊗ marks where a flow thins or breaks. Donor knowledge enters mainly at design; farmer experience accumulates during implementation and surfaces in the Telegram chat and the focus groups.",
+    },
+    {
+      src: images.doubleVisionCoverageHeatmap,
+      alt: "Heatmap of per-problem coverage by channel in the implementation phase",
+      caption:
+        "Percent of WST-related texts (Telegram, focus groups, Kun.uz, Gov.News), of implementation-phase donor documents, and of implementation-phase act–problem links (laws) that mention each problem, 2022–25. Columns are sorted by the Telegram rate.",
+    },
+    {
+      src: images.doubleVisionAttentionTimeline,
+      alt: "Yearly WST problem attention for Telegram, Kun.uz, Gov.News, donors, and laws",
+      caption:
+        "Problem tags per 100 WST-related texts (Telegram, Kun.uz, Gov.News), per 100 documents (donors), and problem–decree links per year (laws), 2019–25. Units and y-scales are channel-specific and not comparable across panels.",
+    },
+    {
+      src: images.doubleVisionTypology,
+      alt: "Five-profile policy-learning typology with design and implementation signals",
+      caption:
+        "The 14 problems clustered on design- and implementation-phase attention across four channels and the law. Cells are profile medians of within-channel percentile ranks; the right-hand cells report the pairwise ratings of observability, solvability, and donor-pressure sensitivity. With 14 problems the typology is descriptive.",
+    },
+    {
+      src: images.doubleVisionTopicPlacebo,
+      alt: "Telegram and Gov.News problem rates by year for WST and three placebo topics",
+      caption:
+        "Share of topic-related texts with at least one problem mention, by source and year, for WST and three placebo topics: adverse weather, pests and crop disease, and consequences of the Russia–Ukraine war. Panel y-scales are independent and topic schemas differ.",
+    },
+  ];
+  return (
+    <FigureGroup figures={gallery}>
+    <div className="w-full flex flex-col bg-[#fafafa] min-h-screen">
+      <ResearchHeader />
+
+      <section className="w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 pb-16">
+        <div className="w-full flex flex-col lg:block lg:relative lg:h-[570px] overflow-hidden">
+          <img
+            src={images.doubleVisionHero}
+            alt="A cotton field in the Ferghana Valley, Uzbekistan, with pickers in the distance"
+            className="w-full h-[300px] md:h-[450px] lg:h-full object-cover object-center lg:object-top lg:absolute lg:inset-0"
+          />
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Cotton_field_ferghana.JPG"
+            target="_blank"
+            rel="noreferrer"
+            className="self-end text-[11px] text-muted-foreground py-1 lg:absolute lg:top-0 lg:right-0 lg:z-10 lg:bg-black/50 lg:text-white lg:px-2"
+          >
+            Photo: Man77, CC BY-SA 3.0, via Wikimedia Commons
+          </a>
+
+          <div className="w-full lg:w-[70%] bg-[#1a1a1b] p-6 md:p-8 lg:p-8 flex flex-col items-start lg:absolute lg:bottom-0 lg:left-0 z-10">
+            <div className="flex flex-wrap items-center gap-2 text-small uppercase text-[#a1a1aa] mb-6">
+              <span>WORKING PAPER</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-gray-400" />
+              <span>2026</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-gray-500" />
+              <span>45 PP</span>
+            </div>
+
+            <h1 className="text-white mb-6 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
+              {doubleVisionTitle}
+            </h1>
+            <p className="text-body text-gray-300 mb-10 max-w-3xl">
+              Read from formal sources, Uzbekistan&apos;s drip-irrigation
+              subsidy looks like a success. Set against about 330,000 farmer
+              Telegram messages, the state press, and donor documents, the laws
+              passed during implementation describe the program&apos;s problems
+              in the donors&apos; terms rather than the farmers&apos;.
+            </p>
+
+            <div className="flex flex-wrap gap-4 w-full sm:w-auto">
+              <AnchorButton href="#selected-figures" tone="light">
+                View figures
+                <ArrRigth className="w-4 h-4 rotate-90" />
+              </AnchorButton>
+              <AnchorButton
+                href={`mailto:${profile.email}?subject=${doubleVisionDraftSubject}`}
+                tone="orange"
+              >
+                Request draft
+                <Mail className="w-4 h-4" />
+              </AnchorButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <StatsBand
+        stats={[
+          ["≈330,000", "Farmer Telegram messages, 2020–25"],
+          ["≈146,000", "State-newspaper articles digitized by OCR"],
+          ["327", "Laws and decrees from a bilingual corpus"],
+          ["14", "Problems in one schema across all sources"],
+        ]}
+      />
+
+      <Section id="abstract" title="Abstract">
+        This paper asks whether donor knowledge can substitute for farmer
+        feedback once a policy moves from design to implementation. Read from
+        formal sources, Uzbekistan&apos;s flagship subsidy program for
+        water-saving irrigation technologies looks like a success. We compare
+        five information channels and the legislative record over the
+        program&apos;s design (2018–21) and implementation (2022–25) phases: a
+        pseudonymous farmer Telegram forum with about 330,000 messages, farmer
+        focus groups and interviews, independent and state media, donor
+        documents, and 327 laws and decrees. An ensemble of language models
+        classifies every source against one 14-problem schema. Farmer-facing
+        and state–donor sources organize implementation problems differently,
+        and the gap is systematic. Year-to-year legislative attention covaries
+        with donor attention, while the association with farmer voice is not
+        detectable in the main window and depends on timing. Within a problem,
+        the version that enters law follows the donor account. Donor knowledge
+        can fill an information vacuum at the design stage, but we find no
+        evidence that it replaces the implementation information held by
+        policy users.
+      </Section>
+
+      <Section title="Approach">
+        <ListBlock
+          items={[
+            "Assemble five information channels that differ in exposure to government influence, plus the legislative record: a pseudonymous farmer Telegram chat (December 2020–2025), 21 focus groups and in-depth interviews in 15 districts, the independent news platform Kun.uz, four state newspapers digitized with a custom OCR pipeline, 269 donor documents from 12 organizations, and 327 distinct laws and decrees collapsed from Russian and Uzbek records.",
+            "Build a 14-problem schema from the focus groups and apply it identically to every corpus. A binary screen selects texts about water-saving technology; a three-model language-model ensemble assigns their problems by majority vote. Below the problem level, two independent models code 94 sub-aspects, so that sources can be compared on how they describe the same problem.",
+            "Check the labels against a 100-text sample coded by a domain expert blind to the models: problem detection matches the expert with accuracy 0.86, and on Telegram the ensemble reproduces the expert's problem-share ranking (Spearman ρ = 0.90). Inference rests on rankings, schema alignment, and within-problem comparisons rather than on absolute prevalence.",
+            "Split all series into design (2018–21) and implementation (2022–25). Test each hypothesis against an observation stated in advance: coverage rates by channel, rank correlations across the 14 problems, a problem-by-year Poisson panel of laws on lagged donor and farmer attention, and a sub-aspect model with problem fixed effects, the last two with permutation inference.",
+          ]}
+        />
+      </Section>
+
+      <Section title="Main findings">
+        <ListBlock
+          items={[
+            "The view from above and the view from below do not name the same problems. Forced adoption appears in 2.7% of WST-related Telegram messages but in under 0.05% of state-newspaper articles and in no implementation-phase law; contractor fraud, among the most frequent problems in the chat, is absent from donor documents.",
+            "The wedge is systematic and, descriptively, widens after rollout. Donor organizations and the state press rank the 14 problems alike, while during implementation Telegram's ranking is essentially uncorrelated with every donor channel and agrees only with the independent outlet Kun.uz; by 2025 the chat raised problems at roughly 36 times the rate of the state press.",
+            "Legislative attention covaries with donor attention. In a problem-by-year panel for 2021–25, a problem's donor attention is positively associated with the next year's problem-targeted laws (permutation p = 0.012), while the farmer-voice association is not detectable (p = 0.194) and depends on timing. The two coefficients cannot be told apart, so the evidence shows a more consistent donor association, not a larger donor effect.",
+            "Within a problem, the law speaks in the donors' terms. Across the ten legislated problems, a sub-aspect's share of donor attention predicts how many laws carry it while its share of farmer attention does not; a ten-point rise in donor share multiplies the expected law count by about one and a half. Corruption/fund misuse is the one problem whose legal wording sits closer to the farmer account.",
+            "The response is selective. Generic, donor-legible problems such as cost, training, and water supply draw formal response, while forced adoption and low yield/profit, the two problems farmers raise most among those the law never touches, receive no law in either phase. No full-sample specification detects a post-law decline in farmer complaints, a gauge that rules out large improvements more clearly than modest ones.",
+          ]}
+        />
+      </Section>
+
+      <section id="selected-figures" className="w-full border-b border-border scroll-mt-24">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-1">
+            <h2 className="text-subtitle text-foreground">Selected figures</h2>
+          </div>
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+            <FigureCard
+              className="md:col-span-2"
+              frameClassName="min-h-[500px] md:min-h-[330px]"
+              title="Web figure — double vision in three steps"
+              desc="Farmer-facing and official sources name different problems, the difference forms two coherent problem schemas, and within a problem the law follows the donor account; the panel and response checks are below."
+            >
+              <DoubleVisionMechanismFigure />
+            </FigureCard>
+            <FigureCard
+              className="md:col-span-2"
+              frameClassName="aspect-[1/1]"
+              image={images.doubleVisionPreview}
+              title="Figure 1 — Where the feedback loop works"
+              desc="Working feedback loops sit mostly among problems that are easier for the central government to observe; breakdowns concentrate among the hard-to-observe failures. Low yield/profit is the clearest exception: observable, but unanswered. Positions come from expert pairwise ratings."
+            />
+            <FigureCard
+              className="md:col-span-2"
+              frameClassName="aspect-[9/10]"
+              image={images.doubleVisionInformationFlow}
+              title="Figure 2 — How information about the program flows"
+              desc="Donor knowledge reaches lawmaking through donor documents; farmer experience surfaces in the Telegram chat and the focus groups, and its contribution to lawmaking is timing-dependent. Whether donors relay farmer voice remains unresolved."
+            />
+            <FigureCard
+              className="md:col-span-2"
+              frameClassName="aspect-[16/9]"
+              image={images.doubleVisionCoverageHeatmap}
+              title="Figure 3 — What each channel mentions, 2022–25"
+              desc="High cost and unpaid subsidies are visible across channels. Forced adoption is concentrated in Telegram and Kun.uz and nearly absent from the state press and the law; contractor fraud is absent from donor documents."
+            />
+            <FigureCard
+              className="md:col-span-2"
+              frameClassName="aspect-[3/1]"
+              image={images.doubleVisionAttentionTimeline}
+              title="Figure 4 — The wedge opens over time"
+              desc="Farmer voice on Telegram rises year on year after 2022, while the state press, donors, Kun.uz, and laws peak around the implementation launch and then fall. Problem-targeted decrees follow official coverage rather than farmer voice."
+            />
+            <FigureCard
+              className="md:col-span-2"
+              frameClassName="aspect-[1/1]"
+              image={images.doubleVisionTypology}
+              title="Figure 5 — Five policy-learning profiles"
+              desc="Two working loops, donor-mediated and state-learning, and three weak or broken ones: governance failures, decay/coercion, and abandoned/dormant. The profile names are interpretive labels, and with 14 problems the typology describes the joint pattern rather than testing it."
+            />
+            <FigureCard
+              className="md:col-span-2"
+              frameClassName="aspect-[4/3]"
+              image={images.doubleVisionTopicPlacebo}
+              title="Figure 7 — Topic placebo"
+              desc="For water-saving technology, Telegram problem attention rises through implementation while official attention falls. Adverse weather, pests, and war consequences do not reproduce the divergence, so the wedge is specific to the policy rather than a generic chat-versus-newspaper difference."
+            />
+          </div>
+        </div>
+      </section>
+
+      <DarkSection title="Implications and scope">
+        <StarListBlock
+          items={[
+            <>
+              <span className="text-white font-medium">Donor knowledge is design-stage knowledge:</span>{" "}
+              donors can anticipate generic adoption barriers, and formal
+              systems convert donor-legible problems into instruments readily.
+              After rollout the information that matters is held by policy
+              users, and we find no robust evidence that donor attention
+              carries it upward.
+            </>,
+            <>
+              <span className="text-white font-medium">Selective, not silent:</span>{" "}
+              generic problems from the global adoption template, such as cost,
+              training, water supply, and soil or climate mismatch, draw formal
+              response. Problems that surface only through local
+              implementation, such as coercion, contractor fraud, faulty
+              installation, corruption, and the claim that drip irrigation does
+              not pay, are reflected far less readily.
+            </>,
+            <>
+              <span className="text-white font-medium">The constraint is the channel:</span>{" "}
+              breakdowns concentrate where a signal is hard to verify centrally
+              or politically costly to act on. What binds is the channel that
+              carries local information into formal response, not farmer voice
+              as such.
+            </>,
+            <>
+              <span className="text-white font-medium">A forward test:</span>{" "}
+              if the loop is merely slow rather than selective, lawmaking in
+              2026–27 should pivot toward the 2023–25 farmer agenda of
+              coercion, contractor accountability, and profitability. The
+              continuously updated law corpus makes this directly checkable.
+            </>,
+            <>
+              <span className="text-white font-medium">Scope:</span>{" "}
+              formal response is measured as problem-targeted laws and decrees,
+              so administrative and budgetary responses are not observed; the
+              problem-level comparisons rest on 14 problems; the farmer-facing
+              channels are self-selected; and the post-law event windows are
+              correlational.
+            </>,
+          ]}
+        />
+      </DarkSection>
+
+      <ContactSection
+        primaryHref={`mailto:${profile.email}?subject=${doubleVisionDraftSubject}`}
+        primaryLabel="Request draft"
+      />
+    </div>
+    </FigureGroup>
+  );
+}
+
 function GenericResearchDetail({
   publication,
 }: {
@@ -1174,6 +1450,71 @@ function WaterGuidanceFigure() {
         <MiniMetric value="+105.4%" label="water productivity, scheduled drip vs furrow (Phase I)" />
         <MiniMetric value="32 of 32" label="farmers raised drip yield, 2022 → 2023" />
         <MiniMetric value="10 of 12" label="critically water-stressed countries meet ±10% on net requirement" />
+      </div>
+    </div>
+  );
+}
+
+function DoubleVisionMechanismFigure() {
+  const steps = [
+    {
+      label: "Which problems?",
+      title: "Above and below name different problems",
+      body: "Forced adoption appears in 2.7% of WST-related Telegram messages but in under 0.05% of state-newspaper articles and in no implementation-phase law. Official sources concentrate on generic, program-template problems.",
+      metric: "2.7% vs <0.05%",
+      tone: "border-[#0f766e] bg-[#f0fdfa]",
+    },
+    {
+      label: "Is it systematic?",
+      title: "Two problem schemas",
+      body: "Donor organizations and the state press rank the 14 problems alike. During implementation, Telegram's ranking is essentially uncorrelated with every donor channel and agrees only with the independent outlet Kun.uz.",
+      metric: "ρ = −0.20 to +0.15",
+      tone: "border-[#1a1a1b] bg-white",
+    },
+    {
+      label: "Whose version enters law?",
+      title: "The law speaks in the donors' terms",
+      body: "Holding the problem fixed, the law's mix of sub-aspects correlates with the donor account and not with the farmer account; the difference is statistically clear.",
+      metric: "r = +0.56 vs +0.05",
+      tone: "border-[#ff7b1b] bg-[#fff7ed]",
+    },
+  ];
+
+  return (
+    <div className="w-full h-full bg-white p-4 md:p-6 flex flex-col justify-between gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_28px_1fr_28px_1fr] gap-3 md:gap-4 items-stretch">
+        {steps.map((step, index) => (
+          <Fragment key={step.label}>
+            <div
+              className={`border-l-4 ${step.tone} p-4 min-h-[150px] flex flex-col justify-between`}
+            >
+              <div>
+                <div className="text-small uppercase text-muted-foreground mb-2">
+                  {step.label}
+                </div>
+                <div className="text-body text-foreground font-semibold mb-2">
+                  {step.title}
+                </div>
+                <p className="text-small text-muted-foreground leading-relaxed">
+                  {step.body}
+                </p>
+              </div>
+              <div className="text-subtitle text-foreground mt-4">{step.metric}</div>
+            </div>
+            {index < steps.length - 1 && (
+              <div className="hidden md:flex items-center justify-center text-[#ff7b1b]">
+                <ArrRigth className="w-5 h-5" />
+              </div>
+            )}
+          </Fragment>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 border-t border-border pt-4">
+        <MiniMetric value="≈36×" label="Telegram vs state-press problem rate, 2025" />
+        <MiniMetric value="p = 0.012" label="Donor attention → next-year laws, 2021–25 (farmer voice: p = 0.194)" />
+        <MiniMetric value="≈1.5×" label="Expected law count per ten-point rise in a sub-aspect's donor share" />
+        <MiniMetric value="0 laws" label="On forced adoption or low yield/profit, in either phase" />
       </div>
     </div>
   );
