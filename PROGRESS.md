@@ -1,5 +1,9 @@
 # Progress
 
+## 2026-10-01: JMP retitle
+
+Pushed commit d25ae29 (Cloudflare publishes from `main`): the JMP page h1, the draft-request email subject (`upstreamDraftSubject`), and the `publications` entry in `src/content.ts` now read "Who Runs Short in a Drought? Water Rights and Canal Delivery in Arizona" (paper `main.tex` built Sept 28; Anton approved the title everywhere). `public/cv.pdf` = Oct 1 Portfolio CV with the same title change. The slug stays `/research/upstream-advantage` so existing links keep working. Page text and numbers are still from the Sept 23 draft. `npm run build` passed, but it is slow from Dropbox (tsc about 4.5 min, vite about 8 min).
+
 ## 2026-09-24: photo, CV, research pages refresh
 
 Done and live on antonliutin.com (commit 6bfc819, published by Cloudflare's GitHub build):
