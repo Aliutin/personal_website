@@ -10,7 +10,7 @@ import {
 import { images, profile, publications } from "../../content";
 
 const upstreamDraftSubject = encodeURIComponent(
-  "Draft request: When Scarcity Reveals Directional Network Interdependence: Evidence from Arizona Canals"
+  "Draft request: Who Runs Short in a Drought? Water Rights and Canal Delivery in Arizona"
 );
 
 const behavioralGamesDraftSubject = encodeURIComponent(
@@ -121,8 +121,8 @@ function UpstreamAdvantageDetail() {
             </div>
 
             <h1 className="text-white mb-6 !text-[length:var(--h3-size)] !leading-[var(--h3-lh)]">
-              When Scarcity Reveals Directional Network Interdependence:
-              Evidence from Arizona Canals
+              Who Runs Short in a Drought? Water Rights and Canal Delivery
+              in Arizona
             </h1>
             <p className="text-body text-gray-300 mb-10 max-w-3xl">
               Water rights and district rules govern claims to water, but farms

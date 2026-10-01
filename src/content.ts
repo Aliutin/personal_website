@@ -510,7 +510,7 @@ export type Publication = {
 export const publications: Publication[] = [
   {
       slug: "upstream-advantage",
-      title: "When Scarcity Reveals Directional Network Interdependence: Evidence from Arizona Canals",
+      title: "Who Runs Short in a Drought? Water Rights and Canal Delivery in Arizona",
       authors: ["Anton Liutin"],
       year: "2026",
       venue: "Job Market Paper · UW–Madison",
