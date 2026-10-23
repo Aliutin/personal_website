@@ -1,5 +1,9 @@
 # Progress
 
+## 2026-10-23: latest JMP draft published at /jmp.pdf
+
+Pushed commit c822ee0: `public/jmp.pdf` = the October 20 JMP build (`Colorado River/colorado_river_clean/paper_pres/draft_tex/main.pdf`, 132 pages, with the new section 7.3). It is live at https://antonliutin.com/jmp.pdf (checked: HTTP 200, application/pdf, 2,981,983 bytes). Anton chose this so that every JMP he sends can say "Latest version: antonliutin.com/jmp.pdf". **When the JMP is rebuilt, copy the new `main.pdf` over `public/jmp.pdf` and push.** The JMP page (`/research/upstream-advantage`) still shows only the "Request Draft" email button; it does not link to the PDF yet. `public/cv.pdf` is still the Oct 1 CV (the approved build is Oct 13).
+
 ## 2026-10-01: JMP retitle
 
 Pushed commit d25ae29 (Cloudflare publishes from `main`): the JMP page h1, the draft-request email subject (`upstreamDraftSubject`), and the `publications` entry in `src/content.ts` now read "Who Runs Short in a Drought? Water Rights and Canal Delivery in Arizona" (paper `main.tex` built Sept 28; Anton approved the title everywhere). `public/cv.pdf` = Oct 1 Portfolio CV with the same title change. The slug stays `/research/upstream-advantage` so existing links keep working. Page text and numbers are still from the Sept 23 draft. `npm run build` passed, but it is slow from Dropbox (tsc about 4.5 min, vite about 8 min).
