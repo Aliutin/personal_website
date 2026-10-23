@@ -515,7 +515,7 @@ export const publications: Publication[] = [
       year: "2026",
       venue: "Job Market Paper · UW–Madison",
       tag: "JOB MARKET PAPER",
-      draftOnRequest: true,
+      url: "/jmp.pdf",
       pages: 41,
       abstract: "Water rights and district rules govern claims to water, but Arizona farms receive it through canals shared with upstream users. I map 54,946 plots onto a directed canal network and follow them from 2016 to 2023. In plot fixed-effects regressions, the association between upstream cropped acreage and GCVI, a satellite yield proxy, turns more negative during sustained drought, and the change is larger when nearby upstream fields are excluded. Beyond 10 km, a downstream measure entered jointly shows no corresponding change. Within junior-rights districts, drought reveals both a plot's 2016–2019 baseline of upstream cropping and each year's departure from it. The shift appears in 2020–2022 but not in the meteorologically harsher 2010–2014 drought, when major delivery schedules largely held, and measured canal flow in Wellton-Mohawk and Yuma County WUA points the same way. The findings support an interpretation in which system slack masks delivery frictions until sustained scarcity makes them consequential.",
       keyFindings: [

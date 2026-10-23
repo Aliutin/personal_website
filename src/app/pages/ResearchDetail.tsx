@@ -9,10 +9,6 @@ import {
 } from "../../componets/Lightbox";
 import { images, profile, publications } from "../../content";
 
-const upstreamDraftSubject = encodeURIComponent(
-  "Draft request: Who Runs Short in a Drought? Water Rights and Canal Delivery in Arizona"
-);
-
 const behavioralGamesDraftSubject = encodeURIComponent(
   "Draft request: When Efficiency Cannot Substitute for Allocation: Technology Adoption in a Sequential Canal"
 );
@@ -136,12 +132,9 @@ function UpstreamAdvantageDetail() {
                 View figures
                 <ArrRigth className="w-4 h-4 rotate-90" />
               </AnchorButton>
-              <AnchorButton
-                href={`mailto:${profile.email}?subject=${upstreamDraftSubject}`}
-                tone="orange"
-              >
-                Request draft
-                <Mail className="w-4 h-4" />
+              <AnchorButton href="/jmp.pdf" tone="orange" external>
+                Download PDF
+                <ArrRigth className="w-4 h-4 rotate-90" />
               </AnchorButton>
             </div>
           </div>

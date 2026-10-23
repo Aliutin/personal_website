@@ -144,7 +144,7 @@ export default function Research() {
                           className="inline-flex items-center gap-4 cursor-pointer group/btn"
                         >
                           <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
-                            Extended preview
+                            {pub.url?.endsWith(".pdf") ? "Download PDF" : "Extended preview"}
                           </span>
                           <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
                             <ArrRigth className="w-5 h-5" />
@@ -218,7 +218,7 @@ export default function Research() {
                             className="inline-flex items-center gap-4 cursor-pointer group/btn"
                           >
                             <span className="text-small uppercase tracking-wider text-foreground group-hover/btn:text-[#ff7b1b] transition-colors">
-                              Extended preview
+                              {pub.url?.endsWith(".pdf") ? "Download PDF" : "Extended preview"}
                             </span>
                             <div className="w-12 h-12 bg-[#e5e5e5] text-[#1a1a1b] flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-colors">
                               <ArrRigth className="w-5 h-5" />
