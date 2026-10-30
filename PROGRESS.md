@@ -24,3 +24,5 @@ Open:
 - Double Vision page (`/research/double-vision`) live 2026-09-24; hero is a CC BY-SA 3.0 Wikimedia photo credited on the page. No page yet for the Alaska project.
 
 Publishing = push to `main`; `npm run deploy` fails (Wrangler login lacks access to the Worker).
+
+- 2026-10-30: Posted current drafts with 'Latest version' links: /jmp.pdf (October 26 build), /behavioral-games.pdf (October 29 build, retitled 'Behavioral Games and Water-Saving Technology Adoption in Uzbekistan', abstract from abstract_v2.tex), /double-vision.pdf (September 18 draft); both coauthored papers no longer 'draft on request'. Updated /cv.pdf (October 30 CV). Follow-up: the behavioral-games key findings and figure captions and the JMP page text still describe older results.
