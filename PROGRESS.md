@@ -1,5 +1,9 @@
 # Progress
 
+## 2026-11-12: November 12 JMP build at /jmp.pdf; new CV at /cv.pdf
+
+Anton: "post". Commit 865558e. `public/jmp.pdf` = `Colorado River/colorado_river_clean/paper_pres/draft_tex/main.pdf` (saved 19:45 Nov 12, 120 pages, dated November 12, 2026), used directly: a text search found no placeholder or to-do box. Page 1 stamped with PyMuPDF as below (baseline 44 pt, tiro 8.9664 pt, colour (0,0,0.6), link). 9.8 MB because the new maps are vector graphics; image recompression saves only 1 MB, so the file is unchanged. The same stamped file is the application JMP: `Portfolio/applications/job/_APPROVED/2_Papers/JMP_Who_Runs_Short_in_a_Drought_2026-11-12_with_link.pdf`. `public/cv.pdf` = the November 12 CV (new JMP summary: 28,588 fields). **Still stale:** the `pages:` count, abstract, hero text, stat band ("54,946" plots) and key findings in `src/content.ts` / `ResearchDetail.tsx` describe older drafts; rewrite with Anton's review.
+
 ## 2026-11-02: November 2 JMP draft at /jmp.pdf
 
 Anton asked for the latest Colorado River draft on the site. `public/jmp.pdf` is now built from `Colorado River/colorado_river_clean/paper_pres/draft_tex/main.tex` as of 19:15 on Nov 2 (92 pages; 50 of main text and references, so `pages: 50` in `src/content.ts`). The entry's abstract is copied verbatim from `main.tex`.
