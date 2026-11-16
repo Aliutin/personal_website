@@ -1,5 +1,9 @@
 # Progress
 
+## 2026-11-16: November 16 evening JMP build at /jmp.pdf
+
+Anton: "okay upload latest draft on website". `public/jmp.pdf` = `Colorado River/colorado_river_clean/paper_pres/draft_tex/main.pdf` (built 16:24 Nov 16, 126 pages, dated November 16, 2026), used directly: a text search found no placeholder or to-do box. This build carries the consistency audit of Nov 16 (abstract, Sections 2, 5-9, appendix; "branch", "intake", "place on the canal"; Figure A4 relabelled; Table 4's note on the position percentiles). Page 1 stamped with PyMuPDF as before ("Latest version: antonliutin.com/jmp.pdf", tiro 8.9664 pt, colour (0,0,0.6), centred, baseline 44 pt, link), position and link read from the Nov 15 copy; the text differs from `main.pdf` only by the stamp. The same stamped file is `Portfolio/applications/job/_APPROVED/2_Papers/JMP_Who_Runs_Short_in_a_Drought_2026-11-16_evening_with_link.pdf` (the earlier `..._2026-11-16_with_link.pdf`, made 15:59 from an earlier build for applications, is kept as it was). Site text (abstract, stat band, key findings) is still stale, as before.
+
 ## 2026-11-15: November 15 JMP build at /jmp.pdf
 
 Anton: "Yes, update JMP on website". `public/jmp.pdf` = `Colorado River/colorado_river_clean/paper_pres/draft_tex/main.pdf` saved 17:31 Nov 15 (127 pages, dated November 15, 2026), used directly: a text search found no placeholder or to-do box. Page 1 stamped with PyMuPDF as before ("Latest version: antonliutin.com/jmp.pdf", tiro 8.9664 pt, colour (0,0,0.6), centred, baseline 44 pt, link). The same stamped file is `Portfolio/applications/job/_APPROVED/2_Papers/JMP_Who_Runs_Short_in_a_Drought_2026-11-15_with_link.pdf`. Site text (abstract, stat band, key findings) is still stale, as before.
