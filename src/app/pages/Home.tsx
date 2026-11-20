@@ -82,8 +82,7 @@ export default function Home() {
               
               <p className="text-body text-muted-foreground max-w-[550px]">
                 PhD candidate in Agricultural &amp; Applied Economics at UW–Madison. My research combines geospatial data,
-                original fieldwork, and archival records. I build GIS pipelines linking 54,946 agricultural plots in Arizona
-                through an interconnected system of canals; conduct interviews and focus-group discussions across seven regions
+                original fieldwork, and archival records. I trace Arizona&apos;s canals from their sources to 28,588 fields; conduct interviews and focus-group discussions across seven regions
                 and a farmer survey across five regions of Uzbekistan with IFPRI; and run framed-field experiments in four regions
                 with CGIAR SPIA. I use these data to study how water systems, institutions, and technology shape economic outcomes.<br />
               </p>

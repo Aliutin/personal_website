@@ -20,6 +20,10 @@ import graph2 from "./assets/image 62.png";
 import graph3 from "./assets/image 63.png";
 import researchImage from "./assets/image 49.png";  
 import jmpStudyAreaMap from "./assets/jmp-study-area-map.png";
+import jmp2026Fallow2021 from "./assets/jmp2026-fallow-2021.png";
+import jmp2026CutSources from "./assets/jmp2026-cut-sources.png";
+import jmp2026Network from "./assets/jmp2026-network.png";
+import jmp2026StudyArea from "./assets/jmp2026-study-area.png";
 import behavioralGamesHero from "./assets/behavioral-games-hero.webp";
 import behavioralGamesProductionFunctions from "./assets/behavioral-games-production-functions.png";
 import waterCottonHero from "./assets/water-cotton-hero.webp";
@@ -69,6 +73,10 @@ export const images = {
   graph2,
   graph3,
   jmpStudyAreaMap,
+  jmp2026Fallow2021,
+  jmp2026CutSources,
+  jmp2026Network,
+  jmp2026StudyArea,
   behavioralGamesHero,
   behavioralGamesProductionFunctions,
   waterCottonHero,
@@ -516,22 +524,19 @@ export const publications: Publication[] = [
       venue: "Job Market Paper · UW–Madison",
       tag: "JOB MARKET PAPER",
       url: "/jmp.pdf",
-      pages: 50,
-      abstract: "In Arizona, water rights and irrigation district rules determine how much water each farm may use, while the water reaches farms through canals shared with other farms. Along a canal, water reaches upstream farms first, so most of what they use is no longer available to farms farther down. I use recent droughts to ask whether farms with the same rights share water shortages equally. I trace Arizona's canals from their sources to 28,427 fields. Each month, I measure the water used by the fields upstream and downstream of each field. In a drought month, a field uses less water when the fields upstream of it use more, and not when the fields downstream do. In junior-rights districts, which lose surface water first, position decides who goes short. Fields that usually sit low on the canal are left fallow more often in drought. Planted fields grow less when their upstream neighbours plant more than usual. In senior-rights districts, fields lose water when the whole canal draws more. Over the drought years of 2019–2023, position costs junior fields $3.4 million at net return, mostly through fallowing. The drier years of 2008–2015, when deliveries were not cut, show no such effect. For large surface-water districts with monthly water records, I predict each field's surface-water shortfall each month from the records, crop demand and the irrigation network. In Maricopa–Stanfield, fields without a well use about 18 percent less water in a month when canal water is predicted to meet none of their crop demand than when it meets all of it. Where district wells pump into the canals marks which fields keep water. In the Upper Gila, which rotates water, equal sharing within a canal fits best. Farms with the same rights do not share the costs of delivery shortfalls equally.",
+      pages: 130,
+      abstract: "Water rights and seasonal allotments set how much water Arizona farms may use from shared canals. I ask whether farms with the same rights share a shortage equally. I trace the canals to 28,588 fields and measure monthly water use by satellite. I estimate how each district divides its water. In the 2021 drought, fields that usually sit far down a canal were left fallow more often and used less water in districts with junior rights to Central Arizona Project (CAP) water. Where canals rotate water, fields share a shortage. In the Maricopa–Stanfield district, fields far down the canals ran short while CAP water entered at the head. In the 2022–2023 cut, the district relied on wells that pump into its canals, and fields they could not reach ran short. Farmers knew the cut before planting and left land fallow. This first wave caused most of the loss, $8.0–12.1 million a year, or 24 to 40 percent of what the district's farmland normally earns. In a second wave, planted fields these wells could not reach ran short in peak months. Fields near water sources do not take extra water. Who runs short depends on when and where canals can deliver water.",
       keyFindings: [
-        "Sustained drought shifts the association between upstream cropped acreage and GCVI downward: the drought interaction is −0.015 over the full upstream path and −0.035 once upstream plots within 10 km are excluded, and it is negative at every exclusion radius. Under network-level clustering only the >10 km cell is significant, so the evidence rests on the pattern across cutoffs and designs rather than any single coefficient.",
-        "The change follows the direction of flow. Beyond 10 km, with both measures entered jointly, the upstream interaction is −0.030 and the downstream interaction 0.002; their difference of −0.032 has p = 0.026 under two-way clustering and is marginal or insignificant under network clustering. The estimates identify a direction, not an actor: administered head-to-tail rationing and competition among farmers would both produce them.",
-        "Inside ten junior-rights districts, one between-plot standard deviation of the 2016–2019 upstream cropped share is associated with 0.034 lower ln(1+GCVI) under district drought, and a ten-percentage-point departure above that baseline with a −0.014 shift, with essentially no association outside drought. Next year's departure carries the opposite sign, so the coefficients describe a dynamic association rather than the effect of a single planting decision.",
-        "Timing follows delivery conditions rather than rainfall alone: year-specific interactions are near zero in 2017–2019, negative in 2020–2022, and back at zero in 2023, and a separately constructed 2008–2023 panel shows no comparable interaction in the harsher 2010–2014 drought. In Wellton-Mohawk and Yuma County WUA, more summer canal water flattens the downstream disadvantage in GCVI and crop moisture; evidence that more wells weaken the drought-related change is suggestive.",
-        "In a companion 2021–22 specification, the gap between fields at the 25th and 75th percentiles of combined upstream exposure is 1.4–2.7 percent of crop revenue at an assumed pass-through, about $21–42 per acre of cotton and $30–59 per acre of alfalfa, or roughly 14–28 percent of net returns in University of Arizona budgets. These are revenue-equivalent magnitudes of an association, not losses in profit or welfare."
+        "In the 2021 drought, in irrigation districts with junior rights to Central Arizona Project (CAP) water, fields far down a canal were left fallow more often and used less water.",
+        "The shortfall fell on fields with no groundwater to fall back on, no well of their own and no well pumping into the canal just above them. Among these fields, those farther down the canal used 7 to 10 percent less of the water their crops needed than fields nearer the head. Fields below a well pumping into the canal did not show this drop.",
+        "Where canals rotate water, as in the Upper Gila, fields share a shortage. Senior-rights irrigation districts show no such pattern, and neither did the droughts of 2008–2015, when CAP supply was full.",
+        "In the 2022–2023 cut, Maricopa–Stanfield relied on wells that pump into its canals, and fields the wells could not reach ran short. Farmers knew about the cut before planting and left land fallow. Fallowing before planting caused most of the loss. Keeping every field planted and sharing the water would have cost about three times as much.",
       ],
       figures: [
-        { src: images.jmpStudyAreaMap, caption: "Arizona study area: agricultural plots, irrigation districts, and canal systems" },
-        { src: images.jmpWaterGraphSteps, caption: "Water-graph construction for an example canal network near Yuma" },
-        { src: images.jmpDistantUpstreamDesign, caption: "Distant upstream cropped acreage and local-shock controls" },
-        { src: images.jmpCutoffCoefficients, caption: "Upstream cropped acreage × drought across exclusion cutoffs" },
-        { src: images.jmpUpstreamDownstreamContrast, caption: "Upstream vs downstream cropped acreage in the joint regression" },
-        { src: images.jmpYearByYearInteractions, caption: "Year-by-year upstream interactions against drought and shortage calendars" }
+        { src: images.jmp2026Fallow2021, caption: "In the 2021 drought, in junior-rights CAP irrigation districts, fallowing fell 3.3 points in the head third of each canal and rose about 4 points farther down." },
+        { src: images.jmp2026CutSources, caption: "As Maricopa–Stanfield's CAP water fell from 122 to 4 thousand acre-feet, the fields that used less water were no longer those far from the head but those far from the canal pumps." },
+        { src: images.jmp2026Network, caption: "Maricopa–Stanfield's 19 canal branches, and one field with its upstream fields (blue) and downstream fields (orange) along its route from the head." },
+        { src: images.jmp2026StudyArea, caption: "Arizona's fields, rivers and the CAP aqueduct, with the junior-rights CAP districts, the Upper Gila canals and the senior-rights districts." },
       ]
     },
   {
